@@ -9,7 +9,7 @@ struct Studentas
 	double vidurkis;
 };
 
-void informacijos_ivedimas(vector<Studentas> studentai)
+void informacijos_ivedimas(vector<Studentas> &studentai)
 {
 	int studentu_skaicius;
 	int pazymiu_skaicius;
@@ -40,7 +40,7 @@ void informacijos_ivedimas(vector<Studentas> studentai)
 	}
 }
 
-double galutinis_pazymys(Studentas studentas)
+double galutinis_pazymys_vid(Studentas studentas)
 {
 	double vidurkis;
 	double suma = 0;
@@ -51,6 +51,23 @@ double galutinis_pazymys(Studentas studentas)
 	vidurkis = suma / studentas.pazymiai.size();
 
 	return vidurkis * 0.4 + studentas.egzamino_pazymys * 0.6;
+}
+
+double galutinis_pazymys_med(Studentas studentas)
+{
+	double mediana;
+	sort(studentas.pazymiai.begin(), studentas.pazymiai.end());
+
+	if (studentas.pazymiai.size() % 2 == 0)
+	{
+		mediana = (studentas.pazymiai[studentas.pazymiai.size() / 2 - 1] + studentas.pazymiai[studentas.pazymiai.size() / 2 + 1]);
+	}
+	else
+	{
+		mediana = studentas.pazymiai[studentas.pazymiai.size() / 2];
+	}
+
+	return mediana * 0.4 + studentas.egzamino_pazymys * 0.6;
 }
 
 void output(vector<Studentas> studentai)
@@ -65,15 +82,17 @@ void output(vector<Studentas> studentai)
 		}
 		cout << "Egzamino pazymys: " << studentai[i].egzamino_pazymys << endl;
 
-		// 	cout << "Vardas: " << studentai[i].vardas << endl;
-		// 	cout << "Pavarde: " << studentai[i].pavarde << endl;
-		// 	cout << "Pazymiai: ";
-		// 	for (int j = 0; j < studentai[i].pazymiai.size(); j++)
-		// 	{
-		// 		cout << studentai[i].pazymiai[j] << " ";
-		// 	}
-		// 	cout << endl;
-		// 	cout << "Egzamino pazymys: " << studentai[i].egzamino_pazymys << endl;
+		string skaiciavimo_budas;
+		cout << "Iveskite kaip norite apskaiciuoti galutini pazymi: (Vidurkis/ Mediana): ";
+		cin >> skaiciavimo_budas;
+		if (skaiciavimo_budas == "Vidurkis")
+		{
+			cout << "Galutinis (Vid.): " << galutinis_pazymys_vid(studentai[i]) << endl;
+		}
+		else if (skaiciavimo_budas == "Mediana")
+		{
+			cout << "Galutinis (Med.): " << galutinis_pazymys_med(studentai[i]) << endl;
+		}
 	}
 }
 
