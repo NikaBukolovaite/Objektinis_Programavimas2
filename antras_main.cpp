@@ -11,36 +11,44 @@ struct Studentas
 
 void informacijos_ivedimas(vector<Studentas> &studentai)
 {
-	int studentu_skaicius = 0;
-	cout << "Iveskite kiek studentu norite ivesti: ";
-	while (studentu_skaicius <= 0)
+	while (true)
 	{
-		cin >> studentu_skaicius;
-	}
-	for (int i = 0; i < studentu_skaicius; i++)
-	{
-		int pazymiu_skaicius = 0;
 		Studentas laikinas;
-		cout << "Iveskite studento varda: ";
+		cout << "Iveskite studento varda ir pavarde (Jei norite baigti irasyma irasykite 'n'.): ";
 		cin >> laikinas.vardas;
-		cout << "Iveskite studento pavarde: ";
-		cin >> laikinas.pavarde;
-		cout << "Iveskite kiek viso yra pazymiu: ";
-		while (pazymiu_skaicius <= 0)
+		if (laikinas.vardas == "n")
 		{
-			cin >> pazymiu_skaicius;
+			return;
 		}
-		for (int j = 0; j < pazymiu_skaicius; j++)
+		else
 		{
-			int pazymys = 0;
-			cout << "Iveskite " << j + 1 << " pazymi: ";
-			while (pazymys < 1 || pazymys > 10)
-			{
-				cin >> pazymys;
-			}
-			laikinas.pazymiai.push_back(pazymys);
+			cin >> laikinas.pavarde;
 		}
+		cout << "Iveskite studento namu darbu pazymius (Jei norite baigti pazymiu irasyma irasykite -1.): ";
+		int pazymys = 0;
+		while (pazymys != -1)
+		{
+			cin >> pazymys;
 
+			if (pazymys == -1)
+			{
+				break;
+			}
+			else if (pazymys <= 0 || pazymys > 10 || cin.fail())
+			{
+				cout << "Ivedete netinkama simboli. Iveskite dar karta: ";
+				cin >> pazymys;
+				if (cin.fail())
+				{
+					cin.clear();
+					cin.ignore();
+				}
+			}
+			else
+			{
+				laikinas.pazymiai.push_back(pazymys);
+			}
+		}
 		cout << "Iveskite egzamino pazymi: ";
 		while (laikinas.egzamino_pazymys < 1 || laikinas.egzamino_pazymys > 10)
 		{
@@ -49,7 +57,6 @@ void informacijos_ivedimas(vector<Studentas> &studentai)
 		studentai.push_back(laikinas);
 	}
 }
-
 double galutinis_pazymys_vid(Studentas studentas)
 {
 	double vidurkis;
@@ -70,7 +77,7 @@ double galutinis_pazymys_med(Studentas studentas)
 
 	if (studentas.pazymiai.size() % 2 == 0)
 	{
-		mediana = (studentas.pazymiai[studentas.pazymiai.size() / 2 - 1] + studentas.pazymiai[studentas.pazymiai.size() / 2 + 1]) / 2;
+		mediana = (studentas.pazymiai[studentas.pazymiai.size() / 2 - 1] + studentas.pazymiai[studentas.pazymiai.size() / 2]) / 2.0;
 	}
 	else
 	{
