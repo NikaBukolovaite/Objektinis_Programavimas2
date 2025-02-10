@@ -80,16 +80,17 @@ double galutinis_pazymys_vid(Studentas studentas)
 
 double galutinis_pazymys_med(Studentas studentas)
 {
-	double mediana;
-	sort(studentas.pazymiai.begin(), studentas.pazymiai.end());
+	vector<int> temp_pazymiai(studentas.pazymiai, studentas.pazymiai + studentas.pazymiu_skaicius);
+	sort(temp_pazymiai.begin(), temp_pazymiai.end());
 
-	if (studentas.pazymiai.size() % 2 == 0)
+	double mediana;
+	if (studentas.pazymiu_skaicius % 2 == 0)
 	{
-		mediana = (studentas.pazymiai[studentas.pazymiai.size() / 2 - 1] + studentas.pazymiai[studentas.pazymiai.size() / 2]) / 2.0;
+		mediana = (studentas.pazymiai[studentas.pazymiu_skaicius / 2 - 1] + studentas.pazymiai[studentas.pazymiu_skaicius / 2]) / 2.0;
 	}
 	else
 	{
-		mediana = studentas.pazymiai[studentas.pazymiai.size() / 2];
+		mediana = temp_pazymiai[studentas.pazymiu_skaicius / 2];
 	}
 
 	return mediana * 0.4 + studentas.egzamino_pazymys * 0.6;
