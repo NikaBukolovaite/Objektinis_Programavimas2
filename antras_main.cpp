@@ -49,6 +49,7 @@ void informacijos_ivedimas(vector<Studentas> &studentai)
 				laikinas.pazymiai.push_back(pazymys);
 			}
 		}
+
 		cout << "Iveskite egzamino pazymi: ";
 		while (laikinas.egzamino_pazymys < 1 || laikinas.egzamino_pazymys > 10)
 		{

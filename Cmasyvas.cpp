@@ -5,7 +5,8 @@ struct Studentas
 	string vardas;
 	string pavarde;
 	int *pazymiai;
-	int egzamino_pazymys;
+	int pazymiu_skaicius = 0;
+	int egzamino_pazymys = 0;
 	double vidurkis;
 };
 
@@ -25,6 +26,7 @@ void informacijos_ivedimas(vector<Studentas> &studentai)
 			cin >> laikinas.pavarde;
 		}
 		cout << "Iveskite studento namu darbu pazymius (Jei norite baigti pazymiu irasyma irasykite -1.): ";
+		vector<int> laikini_pazymiai;
 		int pazymys = 0;
 		while (pazymys != -1)
 		{
@@ -46,9 +48,16 @@ void informacijos_ivedimas(vector<Studentas> &studentai)
 			}
 			else
 			{
-				laikinas.pazymiai = new int[pazymys];
+				laikini_pazymiai.push_back(pazymys);
 			}
 		}
+		laikinas.pazymiu_skaicius = laikini_pazymiai.size();
+		laikinas.pazymiai = new int[laikinas.pazymiu_skaicius];
+		for (int i = 0; i < laikinas.pazymiu_skaicius; i++)
+		{
+			laikinas.pazymiai[i] = laikini_pazymiai[i];
+		}
+
 		cout << "Iveskite egzamino pazymi: ";
 		while (laikinas.egzamino_pazymys < 1 || laikinas.egzamino_pazymys > 10)
 		{
@@ -57,31 +66,30 @@ void informacijos_ivedimas(vector<Studentas> &studentai)
 		studentai.push_back(laikinas);
 	}
 }
-double galutinis_pazymys_vid(int arr[], int size, Studentas studentas)
+double galutinis_pazymys_vid(Studentas studentas)
 {
-	double vidurkis;
 	double suma = 0;
-	for (int i = 0; i < size; i++)
+	for (int i = 0; i < studentas.pazymiu_skaicius; i++)
 	{
-		suma += arr[i];
+		suma += studentas.pazymiai[i];
 	}
-	vidurkis = suma / size;
+	double vidurkis = suma / studentas.pazymiu_skaicius;
 
 	return vidurkis * 0.4 + studentas.egzamino_pazymys * 0.6;
 }
 
-double galutinis_pazymys_med(int arr[], int size, Studentas studentas)
+double galutinis_pazymys_med(Studentas studentas)
 {
 	double mediana;
-	sort(arr, arr + size);
+	sort(studentas.pazymiai.begin(), studentas.pazymiai.end());
 
-	if (size % 2 == 0)
+	if (studentas.pazymiai.size() % 2 == 0)
 	{
-		mediana = (arr[size / 2 - 1] + arr[size / 2]) / 2.0;
+		mediana = (studentas.pazymiai[studentas.pazymiai.size() / 2 - 1] + studentas.pazymiai[studentas.pazymiai.size() / 2]) / 2.0;
 	}
 	else
 	{
-		mediana = arr[size / 2];
+		mediana = studentas.pazymiai[studentas.pazymiai.size() / 2];
 	}
 
 	return mediana * 0.4 + studentas.egzamino_pazymys * 0.6;
