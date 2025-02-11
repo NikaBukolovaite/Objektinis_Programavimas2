@@ -13,12 +13,13 @@ struct Studentas
 int Meniu()
 {
 	int pasirinkimas = 0;
-	cout << "Meniu" << endl;
-	cout << "--------------------------------------------------------------------------------------\n";
-	cout << "Jei norite ivesti visa informacija rankiniu budu irasykite 1.\n"
-		 << "Jei norite sugeneruoti atsitiktinius pazymius irasykite 2.\n"
-		 << "Jei norite atsitiktinai sugeneruoti pazymius ir studentu vardus, pavardes irasykite 3.\n"
-		 << "Jei norite baigti programa irasykite 4.\n";
+	cout << "Meniu\n"
+		 << "--------------------------------------------------------------------------------------\n"
+		 << "Pasirinkite veiksma ivesdami: \n"
+		 << "1 - Jei norite ivesti visa informacija rankiniu budu.\n"
+		 << "2 - Jei norite sugeneruoti atsitiktinius pazymius.\n"
+		 << "3 - Jei norite atsitiktinai sugeneruoti pazymius ir studentu vardus, pavardes.\n"
+		 << "4 - Jei norite baigti programa.\n";
 
 	while (pasirinkimas < 1 || pasirinkimas > 4)
 	{
@@ -60,28 +61,29 @@ void informacijos_ivedimas(vector<Studentas> &studentai, int pasirinkimas)
 		{
 			string random_vardas[10] = {"Marija", "Arnas", "Tomas", "Greta", "Gabija", "Paulius", "Lukas", "Egle", "Rokas", "Ieva"};
 			string random_pavarde[10] = {"Petrauskaite", "Petrauskas", "Tomauskas", "Gretauskaite", "Gabijauskaite", "Paulauskas", "Lukauskaite", "Matuolis", "Rokauskas", "Ievauskaite"};
-			int generavimas;
-			cout << "Jei norite sugeneruoti varda ir pavarde irasykite 1, jei norite uzbaigti programa irasykite 0: ";
-			cin >> generavimas;
-			if (generavimas == 0)
+			int generavimas = 0;
+			cout << "Jei norite sugeneruoti varda ir pavarde irasykite 1, jei norite uzbaigti programa irasykite 2: ";
+			while (generavimas != 1 && generavimas != 2)
 			{
-				break;
-			}
-			else if (generavimas = 1)
-			{
-				laikinas.vardas = random_vardas[rand() % 10];
-				laikinas.pavarde = random_pavarde[rand() % 10];
-			}
-			else
-			{
-				cout << "Ivedete netinkama simboli. Iveskite dar karta: ";
-				if (cin.fail())
+				cin >> generavimas;
+				if (generavimas == 2)
 				{
+					return;
+				}
+				else if (generavimas == 1)
+				{
+					laikinas.vardas = random_vardas[rand() % 10];
+					laikinas.pavarde = random_pavarde[rand() % 10];
+				}
+				else if (generavimas != 2 || generavimas != 1 || cin.fail())
+				{
+					cout << "Ivedete netinkama simboli. Iveskite dar karta: ";
 					cin.clear();
 					cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 				}
 			}
 		}
+
 		if (pasirinkimas == 1)
 		{
 			cout << "Iveskite studento namu darbu pazymius (Jei norite baigti pazymiu irasyma irasykite -1.): ";
