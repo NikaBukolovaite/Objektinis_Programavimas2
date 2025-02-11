@@ -6,11 +6,14 @@
 #include <iomanip>
 #include <sstream>
 #include <limits>
+#include <random>
+#include <ctime>
 
 // using std::
 using std::cin;
 using std::cout;
 using std::endl;
+using std::fixed;
 using std::left;
 using std::max;
 using std::right;

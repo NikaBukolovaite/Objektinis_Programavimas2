@@ -34,17 +34,39 @@ void informacijos_ivedimas(vector<Studentas> &studentai)
 		{
 			int pazymys = 0;
 			cout << "Iveskite " << j + 1 << " pazymi: ";
-			while (pazymys < 1 || pazymys > 10)
+			cin >> pazymys;
+			while (pazymys < 1 || pazymys > 10 || cin.fail())
 			{
-				cin >> pazymys;
+				if (pazymys < 1 || pazymys > 10 || cin.fail())
+				{
+					cin.clear();
+					cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+					cout << "Ivedete netinkama simboli. Iveskite dar karta: ";
+					cin >> pazymys;
+				}
+				else
+				{
+					cin >> pazymys;
+				}
 			}
 			laikinas.pazymiai.push_back(pazymys);
 		}
 
 		cout << "Iveskite egzamino pazymi: ";
-		while (laikinas.egzamino_pazymys < 1 || laikinas.egzamino_pazymys > 10)
+		cin >> laikinas.egzamino_pazymys;
+		while (laikinas.egzamino_pazymys < 1 || laikinas.egzamino_pazymys > 10 || cin.fail())
 		{
-			cin >> laikinas.egzamino_pazymys;
+			if (laikinas.egzamino_pazymys < 1 || laikinas.egzamino_pazymys > 10 || cin.fail())
+			{
+				cin.clear();
+				cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+				cout << "Ivedete netinkama simboli. Iveskite dar karta: ";
+				cin >> laikinas.egzamino_pazymys;
+			}
+			else
+			{
+				cin >> laikinas.egzamino_pazymys;
+			}
 		}
 		studentai.push_back(laikinas);
 	}
@@ -70,7 +92,7 @@ double galutinis_pazymys_med(Studentas studentas)
 
 	if (studentas.pazymiai.size() % 2 == 0)
 	{
-		mediana = (studentas.pazymiai[studentas.pazymiai.size() / 2 - 1] + studentas.pazymiai[studentas.pazymiai.size() / 2]) / 2;
+		mediana = (studentas.pazymiai[studentas.pazymiai.size() / 2 - 1] + studentas.pazymiai[studentas.pazymiai.size() / 2]) / 2.0;
 	}
 	else
 	{
@@ -84,15 +106,17 @@ void output(vector<Studentas> studentai)
 {
 	string skaiciavimo_budas;
 	cout << "Iveskite kaip norite apskaiciuoti galutini pazymi: (Vidurkis/ Mediana): ";
+	cin >> skaiciavimo_budas;
 	while (skaiciavimo_budas != "Vidurkis" && skaiciavimo_budas != "Mediana")
 	{
 		if (skaiciavimo_budas != "Vidurkis" && skaiciavimo_budas != "Mediana")
 		{
+			cout << "Ivestas neteisingas skaiciavimo budas. Iveskite dar karta kaip norite apskaiciuoti galutini pazymi: (Vidurkis/ Mediana): " << endl;
 			cin >> skaiciavimo_budas;
 		}
 		else
 		{
-			cout << "Ivestas neteisingas skaiciavimo budas. Iveskite dar karta kaip norite apskaiciuoti galutini pazymi: (Vidurkis/ Mediana): ";
+			cin >> skaiciavimo_budas;
 		}
 	}
 
