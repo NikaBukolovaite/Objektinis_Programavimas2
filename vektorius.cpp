@@ -98,7 +98,6 @@ void informacijos_ivedimas(vector<Studentas> &studentai, int pasirinkimas)
 				else if (pazymys <= 0 || pazymys > 10 || cin.fail())
 				{
 					cout << "Ivedete netinkama simboli. Iveskite dar karta: ";
-					cin >> pazymys;
 					if (cin.fail())
 					{
 						cin.clear();
@@ -141,7 +140,6 @@ void informacijos_ivedimas(vector<Studentas> &studentai, int pasirinkimas)
 				if (pazymiu_kiekis <= 0 || pazymiu_kiekis > 100 || cin.fail())
 				{
 					cout << "Ivedete netinkama simboli. Iveskite dar karta: ";
-					cin >> pazymiu_kiekis;
 					if (cin.fail())
 					{
 						cin.clear();
@@ -165,6 +163,10 @@ void informacijos_ivedimas(vector<Studentas> &studentai, int pasirinkimas)
 }
 double galutinis_pazymys_vid(Studentas studentas)
 {
+	if (studentas.pazymiai.size() == 0)
+	{
+		return studentas.egzamino_pazymys * 0.6;
+	}
 	double vidurkis;
 	double suma = 0;
 	for (int i = 0; i < studentas.pazymiai.size(); i++)
@@ -178,6 +180,10 @@ double galutinis_pazymys_vid(Studentas studentas)
 
 double galutinis_pazymys_med(Studentas studentas)
 {
+	if (studentas.pazymiai.size() == 0)
+	{
+		return studentas.egzamino_pazymys * 0.6;
+	}
 	double mediana;
 	sort(studentas.pazymiai.begin(), studentas.pazymiai.end());
 
