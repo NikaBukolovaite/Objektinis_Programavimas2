@@ -70,7 +70,7 @@ double galutinis_pazymys_med(Studentas studentas)
 
 	if (studentas.pazymiai.size() % 2 == 0)
 	{
-		mediana = (studentas.pazymiai[studentas.pazymiai.size() / 2 - 1] + studentas.pazymiai[studentas.pazymiai.size() / 2 + 1]) / 2;
+		mediana = (studentas.pazymiai[studentas.pazymiai.size() / 2 - 1] + studentas.pazymiai[studentas.pazymiai.size() / 2]) / 2;
 	}
 	else
 	{

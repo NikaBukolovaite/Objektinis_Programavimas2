@@ -5,12 +5,14 @@
 #include <algorithm>
 #include <iomanip>
 #include <sstream>
+#include <limits>
 
 // using std::
 using std::cin;
 using std::cout;
 using std::endl;
 using std::left;
+using std::max;
 using std::right;
 using std::setprecision;
 using std::setw;
