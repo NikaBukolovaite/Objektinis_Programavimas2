@@ -9,7 +9,6 @@
 #include <random>
 #include <ctime>
 
-// using std::
 using std::cin;
 using std::cout;
 using std::endl;
