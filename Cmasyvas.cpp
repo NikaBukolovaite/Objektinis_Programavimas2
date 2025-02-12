@@ -1,10 +1,12 @@
 #include "santrauka.h"
 
+int PRADINIS_DYDIS = 10;
+
 struct Studentas
 {
 	string vardas;
 	string pavarde;
-	int *pazymiai = nullptr;
+	int *pazymiai = new int[PRADINIS_DYDIS];
 	int egzamino_pazymys = 0;
 	int pazymiu_skaicius = 0;
 	double vidurkis;
@@ -87,7 +89,8 @@ void informacijos_ivedimas(vector<Studentas> &studentai, int pasirinkimas)
 		if (pasirinkimas == 1)
 		{
 			cout << "Iveskite studento namu darbu pazymius (Jei norite baigti pazymiu irasyma irasykite -1.): ";
-			int *laikini_pazymiai = new int[1000];
+			int pazymiu_max_talpa = 10;
+			int *laikini_pazymiai = new int[pazymiu_max_talpa];
 			int pazymiu_kiekis = 0;
 			int pazymys = 0;
 			while (pazymys != -1)
@@ -109,6 +112,17 @@ void informacijos_ivedimas(vector<Studentas> &studentai, int pasirinkimas)
 				}
 				else
 				{
+					if (pazymiu_kiekis == pazymiu_max_talpa)
+					{
+						pazymiu_max_talpa *= 2;
+						int *temp = new int[pazymiu_max_talpa];
+						for (int i = 0; i < pazymiu_kiekis; i++)
+						{
+							temp[i] = laikini_pazymiai[i];
+						}
+						delete[] laikini_pazymiai;
+						laikini_pazymiai = temp;
+					}
 					laikini_pazymiai[pazymiu_kiekis++] = pazymys;
 				}
 			}
@@ -142,7 +156,8 @@ void informacijos_ivedimas(vector<Studentas> &studentai, int pasirinkimas)
 
 		else if (pasirinkimas == 2 || pasirinkimas == 3)
 		{
-			int *laikini_pazymiai = new int[1000];
+			int pazymiu_max_talpa = 10;
+			int *laikini_pazymiai = new int[pazymiu_max_talpa];
 			int pazymiu_kiekis = 0;
 			int pazymys = 0;
 			cout << "Iveskite kiek pazymiu norite sugeneruoti: ";
@@ -165,6 +180,19 @@ void informacijos_ivedimas(vector<Studentas> &studentai, int pasirinkimas)
 			{
 				int pazymys = rand() % 10 + 1;
 				cout << pazymys << " ";
+
+				if (pazymiu_kiekis == pazymiu_max_talpa)
+				{
+					pazymiu_max_talpa *= 2;
+					int *temp = new int[pazymiu_max_talpa];
+					for (int i = 0; i < pazymiu_kiekis; i++)
+					{
+						temp[i] = laikini_pazymiai[i];
+					}
+					delete[] laikini_pazymiai;
+					laikini_pazymiai = temp;
+				}
+
 				laikini_pazymiai[i] = pazymys;
 			}
 			cout << endl;
@@ -279,4 +307,9 @@ int main()
 	vector<Studentas> studentai;
 	informacijos_ivedimas(studentai, pasirinkimas);
 	output(studentai);
+
+	for (auto studentas : studentai)
+	{
+		delete[] studentas.pazymiai;
+	}
 }
