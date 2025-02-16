@@ -238,7 +238,7 @@ double galutinis_pazymys_med(Studentas studentas)
 	return mediana * 0.4 + studentas.egzamino_pazymys * 0.6;
 }
 
-int skaiciavimo_budas(vector<Studentas> studentai)
+int koks_galutinis()
 {
 	int skaiciavimo_budas = 0;
 	cout << "Iveskite kaip norite apskaiciuoti galutini pazymi: \n"
@@ -246,10 +246,10 @@ int skaiciavimo_budas(vector<Studentas> studentai)
 		 << "2 - Jei norite apskaiciuoti mediana; \n"
 		 << "3 - Jei norite apsaiciuoti abu. \n";
 
-	while (skaiciavimo_budas != 1 && skaiciavimo_budas != 2 && skaiciavimo_budas != 3)
+	while (skaiciavimo_budas < 1 || skaiciavimo_budas > 3)
 	{
 		cin >> skaiciavimo_budas;
-		if (skaiciavimo_budas != 1 || skaiciavimo_budas != 2 || skaiciavimo_budas != 3 || cin.fail())
+		if (skaiciavimo_budas < 1 || skaiciavimo_budas > 3 || cin.fail())
 		{
 			cout << "Ivedete netinkama simboli. Iveskite dar karta: ";
 			if (cin.fail())
@@ -262,21 +262,19 @@ int skaiciavimo_budas(vector<Studentas> studentai)
 	return skaiciavimo_budas;
 }
 
-int isvedimo_budas(vector<Studentas> studentai)
+int failas_ar_konsole()
 {
 	int isvedimo_budas = 0;
 	cout << "Kaip norite isvesti faila: \n"
 		 << "1 - Jei norite isvesti i konsole; \n"
 		 << "2 - Jei norite isvesti i faila. \n";
 
-	while (isvedimo_budas != 1 && isvedimo_budas != 2)
+	while (isvedimo_budas < 1 || isvedimo_budas > 2)
 	{
 		cin >> isvedimo_budas;
-		if (isvedimo_budas != 1 || isvedimo_budas != 2 || cin.fail())
+		if (isvedimo_budas < 1 || isvedimo_budas > 2 || cin.fail())
 		{
-			cout << "Ivestas neteisingas isvedimo budas. Iveskite dar karta kaip norite isvesti faila: \n"
-				 << "1 - Jei norite isvesti i konsole; \n"
-				 << "2 - Jei norite isvesti i faila. \n";
+			cout << "Ivedete netinkama simboli. Iveskite dar karta: ";
 			if (cin.fail())
 			{
 				cin.clear();
@@ -373,7 +371,7 @@ int main()
 	vector<Studentas> studentai;
 	string read_vardas;
 	informacijos_ivedimas(studentai, pasirinkimas);
-	skaiciavimo_budas(studentai);
-	isvedimo_budas(studentai);
-	output(studentai, skaiciavimo_budas(studentai), isvedimo_budas(studentai));
+	int skaiciavimo_budas = koks_galutinis();
+	int isvedimo_budas = failas_ar_konsole();
+	output(studentai, skaiciavimo_budas, isvedimo_budas);
 }
