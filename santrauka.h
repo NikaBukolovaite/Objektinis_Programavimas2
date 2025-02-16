@@ -18,6 +18,7 @@ using std::ifstream;
 using std::istringstream;
 using std::left;
 using std::max;
+using std::ofstream;
 using std::right;
 using std::setprecision;
 using std::setw;

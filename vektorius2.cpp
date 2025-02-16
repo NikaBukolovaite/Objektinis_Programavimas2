@@ -37,13 +37,13 @@ int Meniu()
 	return pasirinkimas;
 }
 
-void failo_nuskaitymas(string read_vardas, vector<Studentas> &studentai)
+void failo_nuskaitymas(vector<Studentas> &studentai)
 {
-	ifstream failas(read_vardas);
+	ifstream failas("kursiokai.txt");
 	string eilute;
 	if (!failas)
 	{
-		std::cerr << "Klaida: nepavyko atidaryti failo!" << std::endl;
+		std::cerr << "Klaida: nepavyko atidaryti failo!" << endl;
 		return;
 	}
 	getline(failas, eilute);
@@ -74,7 +74,13 @@ void informacijos_ivedimas(vector<Studentas> &studentai, int pasirinkimas)
 	{
 		Studentas laikinas;
 
-		if (pasirinkimas == 1 || pasirinkimas == 2)
+		if (pasirinkimas == 4)
+		{
+			failo_nuskaitymas(studentai);
+			return;
+		}
+
+		else if (pasirinkimas == 1 || pasirinkimas == 2)
 		{
 			cout << "Iveskite studento varda ir pavarde (Jei norite baigti irasyma irasykite 'n'.): ";
 			cin >> laikinas.vardas;
@@ -232,60 +238,127 @@ double galutinis_pazymys_med(Studentas studentas)
 	return mediana * 0.4 + studentas.egzamino_pazymys * 0.6;
 }
 
-void output(vector<Studentas> studentai)
+int skaiciavimo_budas(vector<Studentas> studentai)
 {
-	int skaiciavimo_budas;
+	int skaiciavimo_budas = 0;
 	cout << "Iveskite kaip norite apskaiciuoti galutini pazymi: \n"
 		 << "1 - Jei norite apskaiciuoti vidurki; \n"
 		 << "2 - Jei norite apskaiciuoti mediana; \n"
 		 << "3 - Jei norite apsaiciuoti abu. \n";
-	cin >> skaiciavimo_budas;
+
 	while (skaiciavimo_budas != 1 && skaiciavimo_budas != 2 && skaiciavimo_budas != 3)
 	{
-		if (skaiciavimo_budas != 1 && skaiciavimo_budas != 2 && skaiciavimo_budas != 3)
+		cin >> skaiciavimo_budas;
+		if (skaiciavimo_budas != 1 || skaiciavimo_budas != 2 || skaiciavimo_budas != 3 || cin.fail())
 		{
-			cout << "Ivestas neteisingas skaiciavimo budas. Iveskite dar karta kaip norite apskaiciuoti galutini pazymi: \n"
-				 << "1 - Jei norite apskaiciuoti vidurki; \n"
-				 << "2 - Jei norite apskaiciuoti mediana; \n"
-				 << "3 - Jei norite apsaiciuoti abu." << endl;
-			cin >> skaiciavimo_budas;
-		}
-		else
-		{
-			cin >> skaiciavimo_budas;
+			cout << "Ivedete netinkama simboli. Iveskite dar karta: ";
+			if (cin.fail())
+			{
+				cin.clear();
+				cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			}
 		}
 	}
+	return skaiciavimo_budas;
+}
 
-	cout << setw(15) << left << "Vardas" << setw(15) << left << "Pavarde";
-	if (skaiciavimo_budas == 1)
-	{
-		cout << setw(15) << left << "Galutinis (Vid.): " << endl;
-	}
-	else if (skaiciavimo_budas == 2)
-	{
-		cout << setw(15) << left << "Galutinis (Med.): " << endl;
-	}
-	else if (skaiciavimo_budas == 3)
-	{
-		cout << setw(15) << left << "Galutinis (Vid.)" << setw(15) << left << "Galutinis (Med.)" << endl;
-	}
-	cout << "--------------------------------------------------------------------------------------\n";
+int isvedimo_budas(vector<Studentas> studentai)
+{
+	int isvedimo_budas = 0;
+	cout << "Kaip norite isvesti faila: \n"
+		 << "1 - Jei norite isvesti i konsole; \n"
+		 << "2 - Jei norite isvesti i faila. \n";
 
-	for (int i = 0; i < studentai.size(); i++)
+	while (isvedimo_budas != 1 && isvedimo_budas != 2)
 	{
-		cout << setw(15) << left << studentai[i].vardas << setw(15) << left << studentai[i].pavarde;
+		cin >> isvedimo_budas;
+		if (isvedimo_budas != 1 || isvedimo_budas != 2 || cin.fail())
+		{
+			cout << "Ivestas neteisingas isvedimo budas. Iveskite dar karta kaip norite isvesti faila: \n"
+				 << "1 - Jei norite isvesti i konsole; \n"
+				 << "2 - Jei norite isvesti i faila. \n";
+			if (cin.fail())
+			{
+				cin.clear();
+				cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			}
+		}
+	}
+	return isvedimo_budas;
+}
+
+void output(vector<Studentas> studentai, int skaiciavimo_budas, int isvedimo_budas)
+{
+	if (isvedimo_budas == 1)
+	{
+		cout << setw(15) << left << "Vardas" << setw(15) << left << "Pavarde";
 		if (skaiciavimo_budas == 1)
 		{
-			cout << setw(15) << left << setprecision(3) << galutinis_pazymys_vid(studentai[i]) << endl;
+			cout << setw(15) << left << "Galutinis (Vid.): " << endl;
 		}
 		else if (skaiciavimo_budas == 2)
 		{
-			cout << setw(15) << left << setprecision(3) << galutinis_pazymys_med(studentai[i]) << endl;
+			cout << setw(15) << left << "Galutinis (Med.): " << endl;
 		}
 		else if (skaiciavimo_budas == 3)
 		{
-			cout << setw(15) << left << setprecision(3) << galutinis_pazymys_vid(studentai[i]) << setw(15) << left << setprecision(3) << galutinis_pazymys_med(studentai[i]) << endl;
+			cout << setw(20) << left << "Galutinis (Vid.)" << setw(15) << left << "Galutinis (Med.)" << endl;
 		}
+		cout << "--------------------------------------------------------------------------------------\n";
+
+		for (int i = 0; i < studentai.size(); i++)
+		{
+			cout << setw(15) << left << studentai[i].vardas << setw(15) << left << studentai[i].pavarde;
+			if (skaiciavimo_budas == 1)
+			{
+				cout << setw(15) << left << setprecision(3) << galutinis_pazymys_vid(studentai[i]) << endl;
+			}
+			else if (skaiciavimo_budas == 2)
+			{
+				cout << setw(15) << left << setprecision(3) << galutinis_pazymys_med(studentai[i]) << endl;
+			}
+			else if (skaiciavimo_budas == 3)
+			{
+				cout << setw(20) << left << setprecision(3) << galutinis_pazymys_vid(studentai[i]) << setw(15) << left << setprecision(3) << galutinis_pazymys_med(studentai[i]) << endl;
+			}
+		}
+	}
+
+	else if (isvedimo_budas == 2)
+	{
+		ofstream failas("rezultatai.txt");
+		failas << setw(15) << left << "Vardas" << setw(15) << left << "Pavarde";
+		if (skaiciavimo_budas == 1)
+		{
+			failas << setw(15) << left << "Galutinis (Vid.): " << endl;
+		}
+		else if (skaiciavimo_budas == 2)
+		{
+			failas << setw(15) << left << "Galutinis (Med.): " << endl;
+		}
+		else if (skaiciavimo_budas == 3)
+		{
+			failas << setw(20) << left << "Galutinis (Vid.)" << setw(15) << left << "Galutinis (Med.)" << endl;
+		}
+		failas << "--------------------------------------------------------------------------------------\n";
+
+		for (int i = 0; i < studentai.size(); i++)
+		{
+			failas << setw(15) << left << studentai[i].vardas << setw(15) << left << studentai[i].pavarde;
+			if (skaiciavimo_budas == 1)
+			{
+				failas << setw(15) << left << setprecision(3) << galutinis_pazymys_vid(studentai[i]) << endl;
+			}
+			else if (skaiciavimo_budas == 2)
+			{
+				failas << setw(15) << left << setprecision(3) << galutinis_pazymys_med(studentai[i]) << endl;
+			}
+			else if (skaiciavimo_budas == 3)
+			{
+				failas << setw(20) << left << setprecision(3) << galutinis_pazymys_vid(studentai[i]) << setw(15) << left << setprecision(3) << galutinis_pazymys_med(studentai[i]) << endl;
+			}
+		}
+		failas.close();
 	}
 }
 
@@ -298,6 +371,9 @@ int main()
 	}
 	srand(time(NULL));
 	vector<Studentas> studentai;
+	string read_vardas;
 	informacijos_ivedimas(studentai, pasirinkimas);
-	output(studentai);
+	skaiciavimo_budas(studentai);
+	isvedimo_budas(studentai);
+	output(studentai, skaiciavimo_budas(studentai), isvedimo_budas(studentai));
 }
