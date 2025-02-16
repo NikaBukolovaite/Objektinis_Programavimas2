@@ -285,6 +285,95 @@ int failas_ar_konsole()
 	return isvedimo_budas;
 }
 
+int rusiavimas()
+{
+	int kaip_surusiuoti = 0;
+	cout << "Kaip norite surusiuoti studentus: \n"
+		 << "1 - Jei norite surusiuoti pagal varda; \n"
+		 << "2 - Jei norite surusiuoti pagal pavarde; \n"
+		 << "3 - Jei norite surusiuoti pagal vidurki (nuo maziausio iki didziausio). \n"
+		 << "4 - Jei norite surusiuoti pagal vidurki (nuo didziausio iki maziausio). \n"
+		 << "5 - Jei norite surusiuoti pagal mediana (nuo maziausio iki didziausio). \n"
+		 << "6 - Jei norite surusiuoti pagal mediana (nuo didziausio iki maziausio). \n";
+
+	while (kaip_surusiuoti < 1 || kaip_surusiuoti > 6)
+	{
+		cin >> kaip_surusiuoti;
+		if (kaip_surusiuoti < 1 || kaip_surusiuoti > 6 || cin.fail())
+		{
+			cout << "Ivedete netinkama simboli. Iveskite dar karta: ";
+			if (cin.fail())
+			{
+				cin.clear();
+				cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			}
+		}
+	}
+	return kaip_surusiuoti;
+}
+
+bool vardoRusiavimas(const Studentas &studentas, const Studentas &studentas2)
+{
+	if (studentas.vardas.find("Vardas") == 0 && studentas2.vardas.find("Vardas") == 0)
+	{
+		try
+		{
+			int num1 = stoi(studentas.vardas.substr(6));
+			int num2 = stoi(studentas2.vardas.substr(6));
+			return num1 < num2;
+		}
+		catch (const std::invalid_argument &)
+		{
+			return studentas.vardas < studentas2.vardas;
+		}
+	}
+	else
+	{
+		return studentas.vardas < studentas2.vardas;
+	}
+}
+
+bool pavardeRusiavimas(const Studentas &studentas, const Studentas &studentas2)
+{
+	if (studentas.pavarde.find("Pavarde") == 0 && studentas2.pavarde.find("Pavarde") == 0)
+	{
+		try
+		{
+			int num1 = stoi(studentas.pavarde.substr(7));
+			int num2 = stoi(studentas2.pavarde.substr(7));
+			return num1 < num2;
+		}
+		catch (const std::invalid_argument &)
+		{
+			return studentas.pavarde < studentas2.pavarde;
+		}
+	}
+	else
+	{
+		return studentas.pavarde < studentas2.pavarde;
+	}
+}
+
+bool vidurkioNuoMazRusiavimas(const Studentas &studentas, const Studentas &studentas2)
+{
+	return galutinis_pazymys_vid(studentas) < galutinis_pazymys_vid(studentas2);
+}
+
+bool vidurkioNuoDidRusiavimas(const Studentas &studentas, const Studentas &studentas2)
+{
+	return galutinis_pazymys_vid(studentas) > galutinis_pazymys_vid(studentas2);
+}
+
+bool medianosNuoMazRusiavimas(const Studentas &studentas, const Studentas &studentas2)
+{
+	return galutinis_pazymys_med(studentas) < galutinis_pazymys_med(studentas2);
+}
+
+bool medianosNuoDidRusiavimas(const Studentas &studentas, const Studentas &studentas2)
+{
+	return galutinis_pazymys_med(studentas) > galutinis_pazymys_med(studentas2);
+}
+
 void output(vector<Studentas> studentai, int skaiciavimo_budas, int isvedimo_budas)
 {
 	if (isvedimo_budas == 1)
@@ -360,6 +449,64 @@ void output(vector<Studentas> studentai, int skaiciavimo_budas, int isvedimo_bud
 	}
 }
 
+void terminalas(vector<Studentas> &studentai, int kaip_surusiuoti, int skaiciavimo_budas)
+{
+	if (kaip_surusiuoti == 1)
+	{
+		sort(studentai.begin(), studentai.end(), vardoRusiavimas);
+	}
+	else if (kaip_surusiuoti == 2)
+	{
+		sort(studentai.begin(), studentai.end(), pavardeRusiavimas);
+	}
+	else if (kaip_surusiuoti == 3)
+	{
+		sort(studentai.begin(), studentai.end(), vidurkioNuoMazRusiavimas);
+	}
+	else if (kaip_surusiuoti == 4)
+	{
+		sort(studentai.begin(), studentai.end(), vidurkioNuoDidRusiavimas);
+	}
+	else if (kaip_surusiuoti == 5)
+	{
+		sort(studentai.begin(), studentai.end(), medianosNuoMazRusiavimas);
+	}
+	else if (kaip_surusiuoti == 6)
+	{
+		sort(studentai.begin(), studentai.end(), medianosNuoDidRusiavimas);
+	}
+	output(studentai, skaiciavimo_budas, 1);
+}
+
+void failas(vector<Studentas> &studentai, int kaip_surusiuoti, int skaiciavimo_budas)
+{
+	if (kaip_surusiuoti == 1)
+	{
+		sort(studentai.begin(), studentai.end(), vardoRusiavimas);
+	}
+	else if (kaip_surusiuoti == 2)
+	{
+		sort(studentai.begin(), studentai.end(), pavardeRusiavimas);
+	}
+	else if (kaip_surusiuoti == 3)
+	{
+		sort(studentai.begin(), studentai.end(), vidurkioNuoMazRusiavimas);
+	}
+	else if (kaip_surusiuoti == 4)
+	{
+		sort(studentai.begin(), studentai.end(), vidurkioNuoDidRusiavimas);
+	}
+	else if (kaip_surusiuoti == 5)
+	{
+		sort(studentai.begin(), studentai.end(), medianosNuoMazRusiavimas);
+	}
+	else if (kaip_surusiuoti == 6)
+	{
+		sort(studentai.begin(), studentai.end(), medianosNuoDidRusiavimas);
+	}
+	output(studentai, skaiciavimo_budas, 2);
+}
+
 int main()
 {
 	int pasirinkimas = Meniu();
@@ -373,5 +520,13 @@ int main()
 	informacijos_ivedimas(studentai, pasirinkimas);
 	int skaiciavimo_budas = koks_galutinis();
 	int isvedimo_budas = failas_ar_konsole();
-	output(studentai, skaiciavimo_budas, isvedimo_budas);
+	int kaip_surusiuoti = rusiavimas();
+	if (isvedimo_budas == 1)
+	{
+		terminalas(studentai, kaip_surusiuoti, skaiciavimo_budas);
+	}
+	else if (isvedimo_budas == 2)
+	{
+		failas(studentai, kaip_surusiuoti, skaiciavimo_budas);
+	}
 }
