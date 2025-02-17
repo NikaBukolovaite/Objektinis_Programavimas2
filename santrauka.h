@@ -9,6 +9,7 @@
 #include <random>
 #include <ctime>
 #include <chrono>
+#include <ostream>
 
 using std::cin;
 using std::cout;
@@ -19,9 +20,11 @@ using std::istringstream;
 using std::left;
 using std::max;
 using std::ofstream;
+using std::ostream;
 using std::right;
 using std::setprecision;
 using std::setw;
 using std::sort;
 using std::string;
+using std::to_string;
 using std::vector;

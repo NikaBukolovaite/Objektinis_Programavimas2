@@ -359,87 +359,39 @@ bool medianosNuoDidRusiavimas(const Studentas &studentas, const Studentas &stude
 	return galutinis_pazymys_med(studentas) > galutinis_pazymys_med(studentas2);
 }
 
-void output(vector<Studentas> studentai, int skaiciavimo_budas, int isvedimo_budas)
+void output(ostream &out, vector<Studentas> studentai, int skaiciavimo_budas, int isvedimo_budas)
 {
-	string output = "";
-	for (auto &studentas : studentai)
+	out << setw(15) << left << "Vardas" << setw(15) << left << "Pavarde";
+	switch (skaiciavimo_budas)
 	{
-		output += studentas.vardas + " " + studentas.pavarde + " " +
-				  to_string(galutinis_pazymys_vid(studentas)) + " " +
-				  to_string(galutinis_pazymys_med(studentas)) + "\n";
+	case 1:
+		out << setw(15) << left << "Galutinis (Vid.): " << endl;
+		break;
+	case 2:
+		out << setw(15) << left << "Galutinis (Med.): " << endl;
+		break;
+	case 3:
+		out << setw(20) << left << "Galutinis (Vid.)" << setw(15) << left << "Galutinis (Med.)" << endl;
+		break;
 	}
-	cout << output;
-	// if (isvedimo_budas == 1)
-	// {
-	// 	cout << setw(15) << left << "Vardas" << setw(15) << left << "Pavarde";
-	// 	switch (skaiciavimo_budas)
-	// 	{
-	// 	case 1:
-	// 		cout << setw(15) << left << "Galutinis (Vid.): " << endl;
-	// 		break;
-	// 	case 2:
-	// 		cout << setw(15) << left << "Galutinis (Med.): " << endl;
-	// 		break;
-	// 	case 3:
-	// 		cout << setw(20) << left << "Galutinis (Vid.)" << setw(15) << left << "Galutinis (Med.)" << endl;
-	// 		break;
-	// 	}
-	// 	cout << "--------------------------------------------------------------------------------------\n";
+	out << "--------------------------------------------------------------------------------------\n";
 
-	// 	for (int i = 0; i < studentai.size(); i++)
-	// 	{
-	// 		cout << setw(15) << left << studentai[i].vardas << setw(15) << left << studentai[i].pavarde;
-	// 		if (skaiciavimo_budas == 1)
-	// 		{
-	// 			cout << setw(15) << left << setprecision(3) << galutinis_pazymys_vid(studentai[i]) << endl;
-	// 		}
-	// 		else if (skaiciavimo_budas == 2)
-	// 		{
-	// 			cout << setw(15) << left << setprecision(3) << galutinis_pazymys_med(studentai[i]) << endl;
-	// 		}
-	// 		else if (skaiciavimo_budas == 3)
-	// 		{
-	// 			cout << setw(20) << left << setprecision(3) << galutinis_pazymys_vid(studentai[i]) << setw(15) << left << setprecision(3) << galutinis_pazymys_med(studentai[i]) << endl;
-	// 		}
-	// 	}
-	// }
-
-	// else if (isvedimo_budas == 2)
-	// {
-	// 	ofstream failas("rezultatai.txt");
-	// 	failas << setw(15) << left << "Vardas" << setw(15) << left << "Pavarde";
-	// 	if (skaiciavimo_budas == 1)
-	// 	{
-	// 		failas << setw(15) << left << "Galutinis (Vid.): " << endl;
-	// 	}
-	// 	else if (skaiciavimo_budas == 2)
-	// 	{
-	// 		failas << setw(15) << left << "Galutinis (Med.): " << endl;
-	// 	}
-	// 	else if (skaiciavimo_budas == 3)
-	// 	{
-	// 		failas << setw(20) << left << "Galutinis (Vid.)" << setw(15) << left << "Galutinis (Med.)" << endl;
-	// 	}
-	// 	failas << "--------------------------------------------------------------------------------------\n";
-
-	// 	for (int i = 0; i < studentai.size(); i++)
-	// 	{
-	// 		failas << setw(15) << left << studentai[i].vardas << setw(15) << left << studentai[i].pavarde;
-	// 		if (skaiciavimo_budas == 1)
-	// 		{
-	// 			failas << setw(15) << left << setprecision(3) << galutinis_pazymys_vid(studentai[i]) << endl;
-	// 		}
-	// 		else if (skaiciavimo_budas == 2)
-	// 		{
-	// 			failas << setw(15) << left << setprecision(3) << galutinis_pazymys_med(studentai[i]) << endl;
-	// 		}
-	// 		else if (skaiciavimo_budas == 3)
-	// 		{
-	// 			failas << setw(20) << left << setprecision(3) << galutinis_pazymys_vid(studentai[i]) << setw(15) << left << setprecision(3) << galutinis_pazymys_med(studentai[i]) << endl;
-	// 		}
-	// 	}
-	// 	failas.close();
-	// }
+	for (int i = 0; i < studentai.size(); i++)
+	{
+		out << setw(15) << left << studentai[i].vardas << setw(15) << left << studentai[i].pavarde;
+		switch (skaiciavimo_budas)
+		{
+		case 1:
+			out << setw(15) << left << setprecision(3) << galutinis_pazymys_vid(studentai[i]) << endl;
+			break;
+		case 2:
+			out << setw(15) << left << setprecision(3) << galutinis_pazymys_med(studentai[i]) << endl;
+			break;
+		case 3:
+			out << setw(20) << left << setprecision(3) << galutinis_pazymys_vid(studentai[i]) << setw(15) << left << setprecision(3) << galutinis_pazymys_med(studentai[i]) << endl;
+			break;
+		}
+	}
 }
 
 void rusiavimoIf(vector<Studentas> &studentai, int kaip_surusiuoti, int skaiciavimo_budas)
@@ -473,13 +425,15 @@ void rusiavimoIf(vector<Studentas> &studentai, int kaip_surusiuoti, int skaiciav
 void terminalas(vector<Studentas> &studentai, int kaip_surusiuoti, int skaiciavimo_budas)
 {
 	rusiavimoIf(studentai, kaip_surusiuoti, skaiciavimo_budas);
-	output(studentai, skaiciavimo_budas, 1);
+	output(cout, studentai, skaiciavimo_budas, 1);
 }
 
 void failas(vector<Studentas> &studentai, int kaip_surusiuoti, int skaiciavimo_budas)
 {
 	rusiavimoIf(studentai, kaip_surusiuoti, skaiciavimo_budas);
-	output(studentai, skaiciavimo_budas, 2);
+	ofstream failas("rezultatai.txt");
+	output(failas, studentai, skaiciavimo_budas, 2);
+	failas.close();
 }
 
 int main()
