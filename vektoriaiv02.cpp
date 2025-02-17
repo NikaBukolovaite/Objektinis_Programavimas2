@@ -39,7 +39,7 @@ int Meniu()
 
 void failo_nuskaitymas(vector<Studentas> &studentai)
 {
-	ifstream failas("studentai10000.txt");
+	ifstream failas("kursiokai.txt");
 	stringstream buferis;
 
 	string eilute;
@@ -365,38 +365,51 @@ bool medianosNuoDidRusiavimas(const Studentas &studentas, const Studentas &stude
 
 void output(ostream &out, vector<Studentas> studentai, int skaiciavimo_budas, int isvedimo_budas)
 {
+	stringstream isvestis;
 
-	out << setw(15) << left << "Vardas" << setw(15) << left << "Pavarde";
+	isvestis << setw(15) << left << "Vardas" << setw(15) << left << "Pavarde";
 	switch (skaiciavimo_budas)
 	{
 	case 1:
-		out << setw(15) << left << "Galutinis (Vid.): " << endl;
+		isvestis << setw(15) << left << "Galutinis (Vid.): " << endl;
 		break;
 	case 2:
-		out << setw(15) << left << "Galutinis (Med.): " << endl;
+		isvestis << setw(15) << left << "Galutinis (Med.): " << endl;
 		break;
 	case 3:
-		out << setw(20) << left << "Galutinis (Vid.)" << setw(15) << left << "Galutinis (Med.)" << endl;
+		isvestis << setw(20) << left << "Galutinis (Vid.)" << setw(15) << left << "Galutinis (Med.)" << endl;
 		break;
 	}
-	out << "--------------------------------------------------------------------------------------\n";
 
-	for (int i = 0; i < studentai.size(); i++)
+	isvestis << "--------------------------------------------------------------------------------------\n";
+
+	switch (skaiciavimo_budas)
 	{
-		out << setw(15) << left << studentai[i].vardas << setw(15) << left << studentai[i].pavarde;
-		switch (skaiciavimo_budas)
+	case 1:
+		for (auto &studentas : studentai)
 		{
-		case 1:
-			out << setw(15) << left << setprecision(3) << galutinis_pazymys_vid(studentai[i]) << endl;
-			break;
-		case 2:
-			out << setw(15) << left << setprecision(3) << galutinis_pazymys_med(studentai[i]) << endl;
-			break;
-		case 3:
-			out << setw(20) << left << setprecision(3) << galutinis_pazymys_vid(studentai[i]) << setw(15) << left << setprecision(3) << galutinis_pazymys_med(studentai[i]) << endl;
-			break;
+			isvestis << setw(15) << left << studentas.vardas << " " << setw(15) << left << studentas.pavarde << " "
+					 << setw(15) << left << fixed << setprecision(2) << galutinis_pazymys_vid(studentas) << " "
+					 << "\n";
 		}
+		break;
+	case 2:
+		for (auto &studentas : studentai)
+		{
+			isvestis << setw(15) << left << studentas.vardas << " " << setw(15) << left << studentas.pavarde << " "
+					 << setw(15) << left << fixed << setprecision(2) << galutinis_pazymys_med(studentas) << "\n";
+		}
+		break;
+	case 3:
+		for (auto &studentas : studentai)
+		{
+			isvestis << setw(15) << left << studentas.vardas << " " << setw(15) << left << studentas.pavarde << " "
+					 << setw(15) << left << fixed << setprecision(2) << galutinis_pazymys_vid(studentas) << " "
+					 << setw(15) << left << fixed << setprecision(2) << galutinis_pazymys_med(studentas) << "\n";
+		}
+		break;
 	}
+	out << isvestis.str();
 }
 
 void rusiavimoIf(vector<Studentas> &studentai, int kaip_surusiuoti, int skaiciavimo_budas)
