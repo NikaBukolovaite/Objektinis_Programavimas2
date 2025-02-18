@@ -14,7 +14,6 @@ extern vector<std::chrono::duration<double>> testuLaikai;
 extern int testuSkaicius;
 
 int Meniu();
-void ivedete_netinkama_simboli();
 void failo_nuskaitymas(vector<Studentas> &studentai);
 void pabaiga(vector<std::chrono::duration<double>> testuLaikai, int testuSkaicius, int pasirinkimas);
 void informacijos_ivedimas(vector<Studentas> &studentai, int pasirinkimas);
