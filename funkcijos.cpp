@@ -179,13 +179,13 @@ void informacijos_ivedimas(vector<Studentas> &studentai, int pasirinkimas)
 		{
 			cout << "Klaida: " << e.what() << endl;
 		}
-		try
+		if (pasirinkimas == 1)
 		{
-			if (pasirinkimas == 1)
+			cout << "Iveskite studento namu darbu pazymius (Jei norite baigti pazymiu irasyma irasykite -1.): ";
+			int pazymys = 0;
+			while (pazymys != -1)
 			{
-				cout << "Iveskite studento namu darbu pazymius (Jei norite baigti pazymiu irasyma irasykite -1.): ";
-				int pazymys = 0;
-				while (pazymys != -1)
+				try
 				{
 					cin >> pazymys;
 
@@ -202,282 +202,327 @@ void informacijos_ivedimas(vector<Studentas> &studentai, int pasirinkimas)
 						laikinas.pazymiai.push_back(pazymys);
 					}
 				}
-				cout << "Iveskite egzamino pazymi: ";
-				cin >> laikinas.egzamino_pazymys;
-				while (laikinas.egzamino_pazymys < 1 || laikinas.egzamino_pazymys > 10 || cin.fail())
+				catch (std::exception &e)
+				{
+					cout << e.what() << endl;
+					cin.clear();
+					cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+				}
+			}
+
+			cout << "Iveskite egzamino pazymi: ";
+			cin >> laikinas.egzamino_pazymys;
+			while (laikinas.egzamino_pazymys < 1 || laikinas.egzamino_pazymys > 10 || cin.fail())
+			{
+				throw std::invalid_argument("Ivedete netinkama simboli. Iveskite dar karta: ");
+			}
+		}
+		else if (pasirinkimas == 2 || pasirinkimas == 3)
+		{
+			int pazymiu_kiekis = 0;
+			int pazymys = 0;
+			cout << "Iveskite kiek pazymiu norite sugeneruoti: ";
+			while (pazymiu_kiekis <= 0 || pazymiu_kiekis > 1000)
+			{
+				cin >> pazymiu_kiekis;
+				if (pazymiu_kiekis <= 0 || pazymiu_kiekis > 100 || cin.fail())
 				{
 					throw std::invalid_argument("Ivedete netinkama simboli. Iveskite dar karta: ");
 				}
 			}
-			else if (pasirinkimas == 2 || pasirinkimas == 3)
+			for (int i = 0; i < pazymiu_kiekis; i++)
 			{
-				int pazymiu_kiekis = 0;
-				int pazymys = 0;
-				cout << "Iveskite kiek pazymiu norite sugeneruoti: ";
-				while (pazymiu_kiekis <= 0 || pazymiu_kiekis > 1000)
-				{
-					cin >> pazymiu_kiekis;
-					if (pazymiu_kiekis <= 0 || pazymiu_kiekis > 100 || cin.fail())
-					{
-						throw std::invalid_argument("Ivedete netinkama simboli. Iveskite dar karta: ");
-					}
-				}
-				for (int i = 0; i < pazymiu_kiekis; i++)
-				{
-					int pazymys = rand() % 10 + 1;
-					cout << pazymys << " ";
-					laikinas.pazymiai.push_back(pazymys);
-				}
-				cout << endl;
-				cout << "Egzamino pazymys: ";
-				laikinas.egzamino_pazymys = rand() % 10 + 1;
-				cout << laikinas.egzamino_pazymys << endl;
+				int pazymys = rand() % 10 + 1;
+				cout << pazymys << " ";
+				laikinas.pazymiai.push_back(pazymys);
 			}
-			studentai.push_back(laikinas);
+			cout << endl;
+			cout << "Egzamino pazymys: ";
+			laikinas.egzamino_pazymys = rand() % 10 + 1;
+			cout << laikinas.egzamino_pazymys << endl;
 		}
+
+		studentai.push_back(laikinas);
+	}
+}
+
+double galutinis_pazymys_vid(Studentas studentas)
+{
+	if (studentas.pazymiai.size() == 0)
+	{
+		return studentas.egzamino_pazymys * 0.6;
+	}
+	double vidurkis;
+	double suma = 0;
+	for (int i = 0; i < studentas.pazymiai.size(); i++)
+	{
+		suma += studentas.pazymiai[i];
+	}
+	vidurkis = suma / studentas.pazymiai.size();
+
+	return vidurkis * 0.4 + studentas.egzamino_pazymys * 0.6;
+}
+
+double galutinis_pazymys_med(Studentas studentas)
+{
+	if (studentas.pazymiai.size() == 0)
+	{
+		return studentas.egzamino_pazymys * 0.6;
+	}
+	double mediana;
+	sort(studentas.pazymiai.begin(), studentas.pazymiai.end());
+
+	if (studentas.pazymiai.size() % 2 == 0)
+	{
+		mediana = (studentas.pazymiai[studentas.pazymiai.size() / 2 - 1] + studentas.pazymiai[studentas.pazymiai.size() / 2]) / 2.0;
+	}
+	else
+	{
+		mediana = studentas.pazymiai[studentas.pazymiai.size() / 2];
 	}
 
-	double galutinis_pazymys_vid(Studentas studentas)
+	return mediana * 0.4 + studentas.egzamino_pazymys * 0.6;
+}
+
+int koks_galutinis()
+{
+	int skaiciavimo_budas = 0;
+	cout << "Iveskite kaip norite apskaiciuoti galutini pazymi: \n"
+		 << "1 - Jei norite apskaiciuoti vidurki; \n"
+		 << "2 - Jei norite apskaiciuoti mediana; \n"
+		 << "3 - Jei norite apsaiciuoti abu. \n";
+
+	while (skaiciavimo_budas < 1 || skaiciavimo_budas > 3)
 	{
-		if (studentas.pazymiai.size() == 0)
-		{
-			return studentas.egzamino_pazymys * 0.6;
-		}
-		double vidurkis;
-		double suma = 0;
-		for (int i = 0; i < studentas.pazymiai.size(); i++)
-		{
-			suma += studentas.pazymiai[i];
-		}
-		vidurkis = suma / studentas.pazymiai.size();
-
-		return vidurkis * 0.4 + studentas.egzamino_pazymys * 0.6;
-	}
-
-	double galutinis_pazymys_med(Studentas studentas)
-	{
-		if (studentas.pazymiai.size() == 0)
-		{
-			return studentas.egzamino_pazymys * 0.6;
-		}
-		double mediana;
-		sort(studentas.pazymiai.begin(), studentas.pazymiai.end());
-
-		if (studentas.pazymiai.size() % 2 == 0)
-		{
-			mediana = (studentas.pazymiai[studentas.pazymiai.size() / 2 - 1] + studentas.pazymiai[studentas.pazymiai.size() / 2]) / 2.0;
-		}
-		else
-		{
-			mediana = studentas.pazymiai[studentas.pazymiai.size() / 2];
-		}
-
-		return mediana * 0.4 + studentas.egzamino_pazymys * 0.6;
-	}
-
-	int koks_galutinis()
-	{
-		int skaiciavimo_budas = 0;
-		cout << "Iveskite kaip norite apskaiciuoti galutini pazymi: \n"
-			 << "1 - Jei norite apskaiciuoti vidurki; \n"
-			 << "2 - Jei norite apskaiciuoti mediana; \n"
-			 << "3 - Jei norite apsaiciuoti abu. \n";
-
-		while (skaiciavimo_budas < 1 || skaiciavimo_budas > 3)
+		try
 		{
 			cin >> skaiciavimo_budas;
 			if (skaiciavimo_budas < 1 || skaiciavimo_budas > 3 || cin.fail())
 			{
-				ivedete_netinkama_simboli();
+				throw std::invalid_argument("Ivedete netinkama simboli. Iveskite dar karta: ");
 			}
 		}
-		return skaiciavimo_budas;
+		catch (const std::invalid_argument &e)
+		{
+			cout << e.what() << endl;
+			ivedete_netinkama_simboli();
+		}
+		catch (const std::exception &e)
+		{
+			cout << "Klaida: " << e.what() << endl;
+		}
 	}
+	return skaiciavimo_budas;
+}
 
-	int failas_ar_konsole()
+int failas_ar_konsole()
+{
+	int isvedimo_budas = 0;
+	cout << "Kaip norite isvesti faila: \n"
+		 << "1 - Jei norite isvesti i konsole; \n"
+		 << "2 - Jei norite isvesti i faila. \n";
+	while (isvedimo_budas < 1 || isvedimo_budas > 2)
 	{
-		int isvedimo_budas = 0;
-		cout << "Kaip norite isvesti faila: \n"
-			 << "1 - Jei norite isvesti i konsole; \n"
-			 << "2 - Jei norite isvesti i faila. \n";
-		while (isvedimo_budas < 1 || isvedimo_budas > 2)
+		try
 		{
 			cin >> isvedimo_budas;
 			if (isvedimo_budas < 1 || isvedimo_budas > 2 || cin.fail())
 			{
-				ivedete_netinkama_simboli();
+				throw std::invalid_argument("Ivedete netinkama simboli. Iveskite dar karta: ");
 			}
 		}
-		return isvedimo_budas;
+		catch (const std::invalid_argument &e)
+		{
+			cout << e.what() << endl;
+			ivedete_netinkama_simboli(); // Išvalome srautą
+		}
+		catch (const std::exception &e)
+		{
+			cout << "Klaida: " << e.what() << endl;
+		}
 	}
+	return isvedimo_budas;
+}
 
-	int rusiavimas()
+int rusiavimas()
+{
+	int kaip_surusiuoti = 0;
+	cout << "Kaip norite surusiuoti studentus: \n"
+		 << "1 - Jei norite surusiuoti pagal varda; \n"
+		 << "2 - Jei norite surusiuoti pagal pavarde; \n"
+		 << "3 - Jei norite surusiuoti pagal vidurki (nuo maziausio iki didziausio). \n"
+		 << "4 - Jei norite surusiuoti pagal vidurki (nuo didziausio iki maziausio). \n"
+		 << "5 - Jei norite surusiuoti pagal mediana (nuo maziausio iki didziausio). \n"
+		 << "6 - Jei norite surusiuoti pagal mediana (nuo didziausio iki maziausio). \n";
+	while (kaip_surusiuoti < 1 || kaip_surusiuoti > 6)
 	{
-		int kaip_surusiuoti = 0;
-		cout << "Kaip norite surusiuoti studentus: \n"
-			 << "1 - Jei norite surusiuoti pagal varda; \n"
-			 << "2 - Jei norite surusiuoti pagal pavarde; \n"
-			 << "3 - Jei norite surusiuoti pagal vidurki (nuo maziausio iki didziausio). \n"
-			 << "4 - Jei norite surusiuoti pagal vidurki (nuo didziausio iki maziausio). \n"
-			 << "5 - Jei norite surusiuoti pagal mediana (nuo maziausio iki didziausio). \n"
-			 << "6 - Jei norite surusiuoti pagal mediana (nuo didziausio iki maziausio). \n";
-		while (kaip_surusiuoti < 1 || kaip_surusiuoti > 6)
+		try
 		{
 			cin >> kaip_surusiuoti;
 			if (kaip_surusiuoti < 1 || kaip_surusiuoti > 6 || cin.fail())
 			{
-				ivedete_netinkama_simboli();
+				throw std::invalid_argument("Ivedete netinkama simboli. Iveskite dar karta: ");
 			}
 		}
-		return kaip_surusiuoti;
-	}
-
-	bool vardoRusiavimas(const Studentas &studentas, const Studentas &studentas2)
-	{
-		if (studentas.vardas.find("Vardas") == 0 && studentas2.vardas.find("Vardas") == 0)
+		catch (const std::invalid_argument &e)
 		{
-			try
-			{
-				int num1 = stoi(studentas.vardas.substr(6));
-				int num2 = stoi(studentas2.vardas.substr(6));
-				return num1 < num2;
-			}
-			catch (const std::invalid_argument &)
-			{
-				return studentas.vardas < studentas2.vardas;
-			}
+			cout << e.what() << endl;
+			ivedete_netinkama_simboli(); // Išvalome srautą
 		}
-		else
+		catch (const std::exception &e)
+		{
+			cout << "Klaida: " << e.what() << endl;
+		}
+	}
+	return kaip_surusiuoti;
+}
+
+bool vardoRusiavimas(const Studentas &studentas, const Studentas &studentas2)
+{
+	if (studentas.vardas.find("Vardas") == 0 && studentas2.vardas.find("Vardas") == 0)
+	{
+		try
+		{
+			int num1 = stoi(studentas.vardas.substr(6));
+			int num2 = stoi(studentas2.vardas.substr(6));
+			return num1 < num2;
+		}
+		catch (const std::invalid_argument &)
 		{
 			return studentas.vardas < studentas2.vardas;
 		}
 	}
-
-	bool pavardeRusiavimas(const Studentas &studentas, const Studentas &studentas2)
+	else
 	{
-		if (studentas.pavarde.find("Pavarde") == 0 && studentas2.pavarde.find("Pavarde") == 0)
+		return studentas.vardas < studentas2.vardas;
+	}
+}
+
+bool pavardeRusiavimas(const Studentas &studentas, const Studentas &studentas2)
+{
+	if (studentas.pavarde.find("Pavarde") == 0 && studentas2.pavarde.find("Pavarde") == 0)
+	{
+		try
 		{
-			try
-			{
-				int num1 = stoi(studentas.pavarde.substr(7));
-				int num2 = stoi(studentas2.pavarde.substr(7));
-				return num1 < num2;
-			}
-			catch (const std::invalid_argument &)
-			{
-				return studentas.pavarde < studentas2.pavarde;
-			}
+			int num1 = stoi(studentas.pavarde.substr(7));
+			int num2 = stoi(studentas2.pavarde.substr(7));
+			return num1 < num2;
 		}
-		else
+		catch (const std::invalid_argument &)
 		{
 			return studentas.pavarde < studentas2.pavarde;
 		}
 	}
-
-	bool vidurkioNuoMazRusiavimas(const Studentas &studentas, const Studentas &studentas2)
+	else
 	{
-		return galutinis_pazymys_vid(studentas) < galutinis_pazymys_vid(studentas2);
+		return studentas.pavarde < studentas2.pavarde;
+	}
+}
+
+bool vidurkioNuoMazRusiavimas(const Studentas &studentas, const Studentas &studentas2)
+{
+	return galutinis_pazymys_vid(studentas) < galutinis_pazymys_vid(studentas2);
+}
+
+bool vidurkioNuoDidRusiavimas(const Studentas &studentas, const Studentas &studentas2)
+{
+	return galutinis_pazymys_vid(studentas) > galutinis_pazymys_vid(studentas2);
+}
+
+bool medianosNuoMazRusiavimas(const Studentas &studentas, const Studentas &studentas2)
+{
+	return galutinis_pazymys_med(studentas) < galutinis_pazymys_med(studentas2);
+}
+
+bool medianosNuoDidRusiavimas(const Studentas &studentas, const Studentas &studentas2)
+{
+	return galutinis_pazymys_med(studentas) > galutinis_pazymys_med(studentas2);
+}
+
+void output(ostream &out, vector<Studentas> studentai, int skaiciavimo_budas, int isvedimo_budas)
+{
+	stringstream isvestis;
+
+	isvestis << setw(20) << left << "Vardas" << setw(20) << left << "Pavarde";
+	switch (skaiciavimo_budas)
+	{
+	case 1:
+		isvestis << setw(20) << left << "Galutinis (Vid.): " << endl;
+		break;
+	case 2:
+		isvestis << setw(20) << left << "Galutinis (Med.): " << endl;
+		break;
+	case 3:
+		isvestis << setw(20) << left << "Galutinis (Vid.)" << setw(20) << left << "Galutinis (Med.)" << endl;
+		break;
 	}
 
-	bool vidurkioNuoDidRusiavimas(const Studentas &studentas, const Studentas &studentas2)
-	{
-		return galutinis_pazymys_vid(studentas) > galutinis_pazymys_vid(studentas2);
-	}
+	isvestis << "--------------------------------------------------------------------------------------\n";
 
-	bool medianosNuoMazRusiavimas(const Studentas &studentas, const Studentas &studentas2)
+	switch (skaiciavimo_budas)
 	{
-		return galutinis_pazymys_med(studentas) < galutinis_pazymys_med(studentas2);
-	}
-
-	bool medianosNuoDidRusiavimas(const Studentas &studentas, const Studentas &studentas2)
-	{
-		return galutinis_pazymys_med(studentas) > galutinis_pazymys_med(studentas2);
-	}
-
-	void output(ostream & out, vector<Studentas> studentai, int skaiciavimo_budas, int isvedimo_budas)
-	{
-		stringstream isvestis;
-
-		isvestis << setw(20) << left << "Vardas" << setw(20) << left << "Pavarde";
-		switch (skaiciavimo_budas)
+	case 1:
+		for (auto &studentas : studentai)
 		{
-		case 1:
-			isvestis << setw(20) << left << "Galutinis (Vid.): " << endl;
-			break;
-		case 2:
-			isvestis << setw(20) << left << "Galutinis (Med.): " << endl;
-			break;
-		case 3:
-			isvestis << setw(20) << left << "Galutinis (Vid.)" << setw(20) << left << "Galutinis (Med.)" << endl;
-			break;
+			isvestis << setw(20) << left << studentas.vardas << setw(20) << left << studentas.pavarde
+					 << setw(20) << left << fixed << setprecision(2) << galutinis_pazymys_vid(studentas)
+					 << "\n";
 		}
-
-		isvestis << "--------------------------------------------------------------------------------------\n";
-
-		switch (skaiciavimo_budas)
+		break;
+	case 2:
+		for (auto &studentas : studentai)
 		{
-		case 1:
-			for (auto &studentas : studentai)
-			{
-				isvestis << setw(20) << left << studentas.vardas << setw(20) << left << studentas.pavarde
-						 << setw(20) << left << fixed << setprecision(2) << galutinis_pazymys_vid(studentas)
-						 << "\n";
-			}
-			break;
-		case 2:
-			for (auto &studentas : studentai)
-			{
-				isvestis << setw(20) << left << studentas.vardas << setw(20) << left << studentas.pavarde
-						 << setw(20) << left << fixed << setprecision(2) << galutinis_pazymys_med(studentas) << "\n";
-			}
-			break;
-		case 3:
-			for (auto &studentas : studentai)
-			{
-				isvestis << setw(20) << left << studentas.vardas << setw(20) << left << studentas.pavarde
-						 << setw(20) << left << fixed << setprecision(2) << galutinis_pazymys_vid(studentas)
-						 << setw(20) << left << fixed << setprecision(2) << galutinis_pazymys_med(studentas) << "\n";
-			}
-			break;
+			isvestis << setw(20) << left << studentas.vardas << setw(20) << left << studentas.pavarde
+					 << setw(20) << left << fixed << setprecision(2) << galutinis_pazymys_med(studentas) << "\n";
 		}
-		out << isvestis.str();
-	}
-
-	void rusiavimoIf(vector<Studentas> & studentai, int kaip_surusiuoti, int skaiciavimo_budas)
-	{
-		switch (kaip_surusiuoti)
+		break;
+	case 3:
+		for (auto &studentas : studentai)
 		{
-		case 1:
-			sort(studentai.begin(), studentai.end(), vardoRusiavimas);
-			break;
-		case 2:
-			sort(studentai.begin(), studentai.end(), pavardeRusiavimas);
-			break;
-		case 3:
-			sort(studentai.begin(), studentai.end(), vidurkioNuoMazRusiavimas);
-			break;
-		case 4:
-			sort(studentai.begin(), studentai.end(), vidurkioNuoDidRusiavimas);
-			break;
-		case 5:
-			sort(studentai.begin(), studentai.end(), medianosNuoMazRusiavimas);
-			break;
-		case 6:
-			sort(studentai.begin(), studentai.end(), medianosNuoDidRusiavimas);
-			break;
+			isvestis << setw(20) << left << studentas.vardas << setw(20) << left << studentas.pavarde
+					 << setw(20) << left << fixed << setprecision(2) << galutinis_pazymys_vid(studentas)
+					 << setw(20) << left << fixed << setprecision(2) << galutinis_pazymys_med(studentas) << "\n";
 		}
+		break;
 	}
+	out << isvestis.str();
+}
 
-	void terminalas(vector<Studentas> & studentai, int kaip_surusiuoti, int skaiciavimo_budas)
+void rusiavimoIf(vector<Studentas> &studentai, int kaip_surusiuoti, int skaiciavimo_budas)
+{
+	switch (kaip_surusiuoti)
 	{
-		rusiavimoIf(studentai, kaip_surusiuoti, skaiciavimo_budas);
-		output(cout, studentai, skaiciavimo_budas, 1);
+	case 1:
+		sort(studentai.begin(), studentai.end(), vardoRusiavimas);
+		break;
+	case 2:
+		sort(studentai.begin(), studentai.end(), pavardeRusiavimas);
+		break;
+	case 3:
+		sort(studentai.begin(), studentai.end(), vidurkioNuoMazRusiavimas);
+		break;
+	case 4:
+		sort(studentai.begin(), studentai.end(), vidurkioNuoDidRusiavimas);
+		break;
+	case 5:
+		sort(studentai.begin(), studentai.end(), medianosNuoMazRusiavimas);
+		break;
+	case 6:
+		sort(studentai.begin(), studentai.end(), medianosNuoDidRusiavimas);
+		break;
 	}
+}
 
-	void failas(vector<Studentas> & studentai, int kaip_surusiuoti, int skaiciavimo_budas)
-	{
-		rusiavimoIf(studentai, kaip_surusiuoti, skaiciavimo_budas);
-		ofstream failas("rezultatai.txt");
-		output(failas, studentai, skaiciavimo_budas, 2);
-		failas.close();
-	}
+void terminalas(vector<Studentas> &studentai, int kaip_surusiuoti, int skaiciavimo_budas)
+{
+	rusiavimoIf(studentai, kaip_surusiuoti, skaiciavimo_budas);
+	output(cout, studentai, skaiciavimo_budas, 1);
+}
+
+void failas(vector<Studentas> &studentai, int kaip_surusiuoti, int skaiciavimo_budas)
+{
+	rusiavimoIf(studentai, kaip_surusiuoti, skaiciavimo_budas);
+	ofstream failas("rezultatai.txt");
+	output(failas, studentai, skaiciavimo_budas, 2);
+	failas.close();
+}
