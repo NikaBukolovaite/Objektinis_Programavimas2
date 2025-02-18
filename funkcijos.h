@@ -20,6 +20,7 @@ double galutinis_pazymys_vid(Studentas studentas);
 double galutinis_pazymys_med(Studentas studentas);
 int koks_galutinis();
 int failas_ar_konsole();
+int rusiavimas();
 bool vardoRusiavimas(const Studentas &studentas, const Studentas &studentas2);
 bool pavardeRusiavimas(const Studentas &studentas, const Studentas &studentas2);
 bool vidurkioNuoMazRusiavimas(const Studentas &studentas, const Studentas &studentas2);

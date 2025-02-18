@@ -1,3 +1,5 @@
+#include "funkcijos.h"
+
 void ivedete_netinkama_simboli()
 {
 	cout << "Ivedete netinkama simboli. Iveskite dar karta: ";
