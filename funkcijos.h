@@ -10,6 +10,8 @@ struct Studentas
 	int egzamino_pazymys = 0;
 	double vidurkis;
 };
+extern vector<std::chrono::duration<double>> testuLaikai;
+extern int testuSkaicius;
 
 int Meniu();
 void ivedete_netinkama_simboli();
