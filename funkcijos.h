@@ -1,0 +1,34 @@
+#ifndef FUNCTIONS_H
+#define FUNCTIONS_H
+#include "santrauka.h"
+
+struct Studentas
+{
+	string vardas;
+	string pavarde;
+	vector<int> pazymiai;
+	int egzamino_pazymys = 0;
+	double vidurkis;
+};
+
+int Meniu();
+void ivedete_netinkama_simboli();
+void failo_nuskaitymas(vector<Studentas> &studentai);
+void pabaiga(vector<std::chrono::duration<double>> testuLaikai, int testuSkaicius, int pasirinkimas);
+void informacijos_ivedimas(vector<Studentas> &studentai, int pasirinkimas);
+double galutinis_pazymys_vid(Studentas studentas);
+double galutinis_pazymys_med(Studentas studentas);
+int koks_galutinis();
+int failas_ar_konsole();
+bool vardoRusiavimas(const Studentas &studentas, const Studentas &studentas2);
+bool pavardeRusiavimas(const Studentas &studentas, const Studentas &studentas2);
+bool vidurkioNuoMazRusiavimas(const Studentas &studentas, const Studentas &studentas2);
+bool vidurkioNuoDidRusiavimas(const Studentas &studentas, const Studentas &studentas2);
+bool medianosNuoMazRusiavimas(const Studentas &studentas, const Studentas &studentas2);
+bool medianosNuoDidRusiavimas(const Studentas &studentas, const Studentas &studentas2);
+void output(ostream &out, vector<Studentas> studentai, int skaiciavimo_budas, int isvedimo_budas);
+void rusiavimoIf(vector<Studentas> &studentai, int kaip_surusiuoti, int skaiciavimo_budas);
+void terminalas(vector<Studentas> &studentai, int kaip_surusiuoti, int skaiciavimo_budas);
+void failas(vector<Studentas> &studentai, int kaip_surusiuoti, int skaiciavimo_budas);
+
+#endif
