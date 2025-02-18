@@ -125,33 +125,33 @@ void informacijos_ivedimas(vector<Studentas> &studentai, int pasirinkimas)
 	while (true)
 	{
 		Studentas laikinas;
-		try
+		if (pasirinkimas == 4)
 		{
-			if (pasirinkimas == 4)
+			failo_nuskaitymas(studentai);
+			return;
+		}
+		else if (pasirinkimas == 1 || pasirinkimas == 2)
+		{
+			cout << "Iveskite studento varda ir pavarde (Jei norite baigti irasyma irasykite 'n'.): ";
+			cin >> laikinas.vardas;
+			if (laikinas.vardas == "n")
 			{
-				failo_nuskaitymas(studentai);
 				return;
 			}
-			else if (pasirinkimas == 1 || pasirinkimas == 2)
+			else
 			{
-				cout << "Iveskite studento varda ir pavarde (Jei norite baigti irasyma irasykite 'n'.): ";
-				cin >> laikinas.vardas;
-				if (laikinas.vardas == "n")
-				{
-					return;
-				}
-				else
-				{
-					cin >> laikinas.pavarde;
-				}
+				cin >> laikinas.pavarde;
 			}
-			else if (pasirinkimas == 3)
+		}
+		else if (pasirinkimas == 3)
+		{
+			string random_vardas[10] = {"Marija", "Arnas", "Tomas", "Greta", "Gabija", "Paulius", "Lukas", "Egle", "Rokas", "Ieva"};
+			string random_pavarde[10] = {"Petrauskaite", "Petrauskas", "Tomauskas", "Gretauskaite", "Gabijauskaite", "Paulauskas", "Lukauskaite", "Matuolis", "Rokauskas", "Ievauskaite"};
+			int generavimas = 0;
+			cout << "Jei norite sugeneruoti varda ir pavarde irasykite 1, jei norite uzbaigti programa irasykite 2: ";
+			while (generavimas != 1 && generavimas != 2)
 			{
-				string random_vardas[10] = {"Marija", "Arnas", "Tomas", "Greta", "Gabija", "Paulius", "Lukas", "Egle", "Rokas", "Ieva"};
-				string random_pavarde[10] = {"Petrauskaite", "Petrauskas", "Tomauskas", "Gretauskaite", "Gabijauskaite", "Paulauskas", "Lukauskaite", "Matuolis", "Rokauskas", "Ievauskaite"};
-				int generavimas = 0;
-				cout << "Jei norite sugeneruoti varda ir pavarde irasykite 1, jei norite uzbaigti programa irasykite 2: ";
-				while (generavimas != 1 && generavimas != 2)
+				try
 				{
 					cin >> generavimas;
 					if (generavimas == 2)
@@ -168,16 +168,13 @@ void informacijos_ivedimas(vector<Studentas> &studentai, int pasirinkimas)
 						throw std::invalid_argument("Ivedete netinkama simboli. Iveskite dar karta: ");
 					}
 				}
+				catch (const std::invalid_argument &e)
+				{
+					cout << e.what() << endl;
+					cin.clear();
+					cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+				}
 			}
-		}
-		catch (const std::invalid_argument &e)
-		{
-			cout << e.what() << endl;
-			ivedete_netinkama_simboli();
-		}
-		catch (const std::exception &e)
-		{
-			cout << "Klaida: " << e.what() << endl;
 		}
 		if (pasirinkimas == 1)
 		{
@@ -237,10 +234,19 @@ void informacijos_ivedimas(vector<Studentas> &studentai, int pasirinkimas)
 			cout << "Iveskite kiek pazymiu norite sugeneruoti: ";
 			while (pazymiu_kiekis <= 0 || pazymiu_kiekis > 1000)
 			{
-				cin >> pazymiu_kiekis;
-				if (pazymiu_kiekis <= 0 || pazymiu_kiekis > 100 || cin.fail())
+				try
 				{
-					throw std::invalid_argument("Ivedete netinkama simboli. Iveskite dar karta: ");
+					cin >> pazymiu_kiekis;
+					if (pazymiu_kiekis <= 0 || pazymiu_kiekis > 100 || cin.fail())
+					{
+						throw std::invalid_argument("Ivedete netinkama simboli. Iveskite dar karta: ");
+					}
+				}
+				catch (std::exception &e)
+				{
+					cout << e.what() << endl;
+					cin.clear();
+					cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 				}
 			}
 			for (int i = 0; i < pazymiu_kiekis; i++)
