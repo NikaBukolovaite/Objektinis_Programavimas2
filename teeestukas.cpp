@@ -77,125 +77,144 @@ void failo_nuskaitymas(vector<Studentas> &studentai)
 	failas.close();
 }
 
+void vardoIrPavardesIvedimas(vector<Studentas> &studentai)
+{
+	Studentas laikinas;
+	cout << "Iveskite studento varda ir pavarde (Jei norite baigti irasyma irasykite 'n'.): ";
+	cin >> laikinas.vardas;
+	if (laikinas.vardas == "n")
+	{
+		return;
+	}
+	else
+	{
+		cin >> laikinas.pavarde;
+	}
+}
+
+void vardoIrPavardesGeneravimas(vector<Studentas> &studentai)
+{
+	Studentas laikinas;
+	string random_vardas[10] = {"Marija", "Arnas", "Tomas", "Greta", "Gabija", "Paulius", "Lukas", "Egle", "Rokas", "Ieva"};
+	string random_pavarde[10] = {"Petrauskaite", "Petrauskas", "Tomauskas", "Gretauskaite", "Gabijauskaite", "Paulauskas", "Lukauskaite", "Matuolis", "Rokauskas", "Ievauskaite"};
+	int generavimas = 0;
+	cout << "Jei norite sugeneruoti varda ir pavarde irasykite 1, jei norite uzbaigti programa irasykite 2: ";
+	while (generavimas != 1 && generavimas != 2)
+	{
+		cin >> generavimas;
+		if (generavimas == 2)
+		{
+			return;
+		}
+		else if (generavimas == 1)
+		{
+			laikinas.vardas = random_vardas[rand() % 10];
+			laikinas.pavarde = random_pavarde[rand() % 10];
+		}
+		else if (generavimas != 2 || generavimas != 1 || cin.fail())
+		{
+			cout << "Ivedete netinkama simboli. Iveskite dar karta: ";
+			cin.clear();
+			cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		}
+	}
+}
+
+void pazymiuIvedimas(vector<Studentas> &studentai)
+{
+	Studentas laikinas;
+	cout << "Iveskite studento namu darbu pazymius (Jei norite baigti pazymiu irasyma irasykite -1.): ";
+	int pazymys = 0;
+	while (pazymys != -1)
+	{
+		cin >> pazymys;
+
+		if (pazymys == -1)
+		{
+			break;
+		}
+		else if (pazymys <= 0 || pazymys > 10 || cin.fail())
+		{
+			ivedete_netinkama_simboli();
+		}
+		else
+		{
+			laikinas.pazymiai.push_back(pazymys);
+		}
+	}
+}
+
+void egzaminoPazymioIvedimas(vector<Studentas> &studentai)
+{
+	Studentas laikinas;
+	cout << "Iveskite egzamino pazymi: ";
+	cin >> laikinas.egzamino_pazymys;
+	while (laikinas.egzamino_pazymys < 1 || laikinas.egzamino_pazymys > 10 || cin.fail())
+	{
+		if (laikinas.egzamino_pazymys < 1 || laikinas.egzamino_pazymys > 10 || cin.fail())
+		{
+			cin.clear();
+			cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			cout << "Ivedete netinkama simboli. Iveskite dar karta: ";
+			cin >> laikinas.egzamino_pazymys;
+		}
+		else
+		{
+			cin >> laikinas.egzamino_pazymys;
+		}
+	}
+}
+
+void pazymiuGeneravimas(vector<Studentas> &studentai)
+{
+	Studentas laikinas;
+	int pazymiu_kiekis = 0;
+	int pazymys = 0;
+	cout << "Iveskite kiek pazymiu norite sugeneruoti: ";
+
+	while (pazymiu_kiekis <= 0 || pazymiu_kiekis > 1000)
+	{
+		cin >> pazymiu_kiekis;
+		if (pazymiu_kiekis <= 0 || pazymiu_kiekis > 100 || cin.fail())
+		{
+			ivedete_netinkama_simboli();
+		}
+	}
+	for (int i = 0; i < pazymiu_kiekis; i++)
+	{
+		int pazymys = rand() % 10 + 1;
+		cout << pazymys << " ";
+		laikinas.pazymiai.push_back(pazymys);
+	}
+	cout << endl;
+	cout << "Egzamino pazymys: ";
+	laikinas.egzamino_pazymys = rand() % 10 + 1;
+	cout << laikinas.egzamino_pazymys << endl;
+}
+
 void informacijos_ivedimas(vector<Studentas> &studentai, int pasirinkimas)
 {
 	while (true)
 	{
-		Studentas laikinas;
-
-		if (pasirinkimas == 4)
+		switch (pasirinkimas)
 		{
+		case 1:
+			vardoIrPavardesIvedimas(studentai);
+			pazymiuIvedimas(studentai);
+			egzaminoPazymioIvedimas(studentai);
+			break;
+		case 2:
+			vardoIrPavardesIvedimas(studentai);
+			pazymiuGeneravimas(studentai);
+			break;
+		case 3:
+			vardoIrPavardesGeneravimas(studentai);
+			pazymiuGeneravimas(studentai);
+			break;
+		case 4:
 			failo_nuskaitymas(studentai);
 			return;
 		}
-
-		else if (pasirinkimas == 1 || pasirinkimas == 2)
-		{
-			cout << "Iveskite studento varda ir pavarde (Jei norite baigti irasyma irasykite 'n'.): ";
-			cin >> laikinas.vardas;
-			if (laikinas.vardas == "n")
-			{
-				return;
-			}
-			else
-			{
-				cin >> laikinas.pavarde;
-			}
-		}
-
-		else if (pasirinkimas == 3)
-		{
-			string random_vardas[10] = {"Marija", "Arnas", "Tomas", "Greta", "Gabija", "Paulius", "Lukas", "Egle", "Rokas", "Ieva"};
-			string random_pavarde[10] = {"Petrauskaite", "Petrauskas", "Tomauskas", "Gretauskaite", "Gabijauskaite", "Paulauskas", "Lukauskaite", "Matuolis", "Rokauskas", "Ievauskaite"};
-			int generavimas = 0;
-			cout << "Jei norite sugeneruoti varda ir pavarde irasykite 1, jei norite uzbaigti programa irasykite 2: ";
-			while (generavimas != 1 && generavimas != 2)
-			{
-				cin >> generavimas;
-				if (generavimas == 2)
-				{
-					return;
-				}
-				else if (generavimas == 1)
-				{
-					laikinas.vardas = random_vardas[rand() % 10];
-					laikinas.pavarde = random_pavarde[rand() % 10];
-				}
-				else if (generavimas != 2 || generavimas != 1 || cin.fail())
-				{
-					cout << "Ivedete netinkama simboli. Iveskite dar karta: ";
-					cin.clear();
-					cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-				}
-			}
-		}
-
-		if (pasirinkimas == 1)
-		{
-			cout << "Iveskite studento namu darbu pazymius (Jei norite baigti pazymiu irasyma irasykite -1.): ";
-			int pazymys = 0;
-			while (pazymys != -1)
-			{
-				cin >> pazymys;
-
-				if (pazymys == -1)
-				{
-					break;
-				}
-				else if (pazymys <= 0 || pazymys > 10 || cin.fail())
-				{
-					ivedete_netinkama_simboli();
-				}
-				else
-				{
-					laikinas.pazymiai.push_back(pazymys);
-				}
-			}
-
-			cout << "Iveskite egzamino pazymi: ";
-			cin >> laikinas.egzamino_pazymys;
-			while (laikinas.egzamino_pazymys < 1 || laikinas.egzamino_pazymys > 10 || cin.fail())
-			{
-				if (laikinas.egzamino_pazymys < 1 || laikinas.egzamino_pazymys > 10 || cin.fail())
-				{
-					cin.clear();
-					cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-					cout << "Ivedete netinkama simboli. Iveskite dar karta: ";
-					cin >> laikinas.egzamino_pazymys;
-				}
-				else
-				{
-					cin >> laikinas.egzamino_pazymys;
-				}
-			}
-		}
-
-		else if (pasirinkimas == 2 || pasirinkimas == 3)
-		{
-			int pazymiu_kiekis = 0;
-			int pazymys = 0;
-			cout << "Iveskite kiek pazymiu norite sugeneruoti: ";
-
-			while (pazymiu_kiekis <= 0 || pazymiu_kiekis > 1000)
-			{
-				cin >> pazymiu_kiekis;
-				if (pazymiu_kiekis <= 0 || pazymiu_kiekis > 100 || cin.fail())
-				{
-					ivedete_netinkama_simboli();
-				}
-			}
-			for (int i = 0; i < pazymiu_kiekis; i++)
-			{
-				int pazymys = rand() % 10 + 1;
-				cout << pazymys << " ";
-				laikinas.pazymiai.push_back(pazymys);
-			}
-			cout << endl;
-			cout << "Egzamino pazymys: ";
-			laikinas.egzamino_pazymys = rand() % 10 + 1;
-			cout << laikinas.egzamino_pazymys << endl;
-		}
-		studentai.push_back(laikinas);
 	}
 }
 
@@ -362,17 +381,17 @@ void output(ostream &out, vector<Studentas> studentai, int skaiciavimo_budas, in
 {
 	stringstream isvestis;
 
-	isvestis << setw(20) << left << "Vardas" << setw(20) << left << "Pavarde";
+	isvestis << setw(15) << left << "Vardas" << setw(15) << left << "Pavarde";
 	switch (skaiciavimo_budas)
 	{
 	case 1:
-		isvestis << setw(20) << left << "Galutinis (Vid.): " << endl;
+		isvestis << setw(15) << left << "Galutinis (Vid.): " << endl;
 		break;
 	case 2:
-		isvestis << setw(20) << left << "Galutinis (Med.): " << endl;
+		isvestis << setw(15) << left << "Galutinis (Med.): " << endl;
 		break;
 	case 3:
-		isvestis << setw(20) << left << "Galutinis (Vid.)" << setw(20) << left << "Galutinis (Med.)" << endl;
+		isvestis << setw(20) << left << "Galutinis (Vid.)" << setw(15) << left << "Galutinis (Med.)" << endl;
 		break;
 	}
 
@@ -383,24 +402,24 @@ void output(ostream &out, vector<Studentas> studentai, int skaiciavimo_budas, in
 	case 1:
 		for (auto &studentas : studentai)
 		{
-			isvestis << setw(20) << left << studentas.vardas << setw(20) << left << studentas.pavarde
-					 << setw(20) << left << fixed << setprecision(2) << galutinis_pazymys_vid(studentas)
+			isvestis << setw(15) << left << studentas.vardas << " " << setw(15) << left << studentas.pavarde << " "
+					 << setw(15) << left << fixed << setprecision(2) << galutinis_pazymys_vid(studentas) << " "
 					 << "\n";
 		}
 		break;
 	case 2:
 		for (auto &studentas : studentai)
 		{
-			isvestis << setw(20) << left << studentas.vardas << setw(20) << left << studentas.pavarde
-					 << setw(20) << left << fixed << setprecision(2) << galutinis_pazymys_med(studentas) << "\n";
+			isvestis << setw(15) << left << studentas.vardas << " " << setw(15) << left << studentas.pavarde << " "
+					 << setw(15) << left << fixed << setprecision(2) << galutinis_pazymys_med(studentas) << "\n";
 		}
 		break;
 	case 3:
 		for (auto &studentas : studentai)
 		{
-			isvestis << setw(20) << left << studentas.vardas << setw(20) << left << studentas.pavarde
-					 << setw(20) << left << fixed << setprecision(2) << galutinis_pazymys_vid(studentas)
-					 << setw(20) << left << fixed << setprecision(2) << galutinis_pazymys_med(studentas) << "\n";
+			isvestis << setw(15) << left << studentas.vardas << " " << setw(15) << left << studentas.pavarde << " "
+					 << setw(15) << left << fixed << setprecision(2) << galutinis_pazymys_vid(studentas) << " "
+					 << setw(15) << left << fixed << setprecision(2) << galutinis_pazymys_med(studentas) << "\n";
 		}
 		break;
 	}

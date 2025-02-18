@@ -9,6 +9,9 @@ struct Studentas
 	double vidurkis;
 };
 
+vector<double> testuLaikai;
+int testuSkaicius = 0;
+
 void ivedete_netinkama_simboli()
 {
 	cout << "Ivedete netinkama simboli. Iveskite dar karta: ";
@@ -44,9 +47,9 @@ int Meniu()
 
 void failo_nuskaitymas(vector<Studentas> &studentai)
 {
-	ifstream failas("kursiokai.txt");
+	auto start = std::chrono::high_resolution_clock::now();
+	ifstream failas("studentai100000.txt");
 	stringstream buferis;
-
 	string eilute;
 	if (!failas)
 	{
@@ -75,6 +78,40 @@ void failo_nuskaitymas(vector<Studentas> &studentai)
 		studentai.push_back(laikinas);
 	}
 	failas.close();
+	auto end = std::chrono::high_resolution_clock::now();
+	std::chrono::duration<double> time = end - start;
+	double laikas = time.count();
+	cout << "Faila nuskaityti uztruko: " << laikas << " sek." << endl;
+	testuSkaicius++;
+	testuLaikai.push_back(laikas);
+}
+
+void isvesti_laikai_ir_testai(vector<double> testuLaikai, int testuSkaicius, int pasirinkimas)
+{
+	if (testuSkaicius > 0)
+	{
+		double visasLaikas = 0.0;
+		for (int i = 0; i < testuLaikai.size(); i++)
+		{
+			visasLaikas += testuLaikai[i];
+			cout << "Visas laikas: " << visasLaikas << " sek." << endl;
+		}
+
+		cout << "Testu skaicius: " << testuSkaicius << endl;
+		if (testuSkaicius > 0)
+		{
+			double vidurkis = visasLaikas / testuSkaicius;
+			cout << "Vidutinis laikas: " << vidurkis << " sek." << endl;
+		}
+		else
+		{
+			cout << "Nera testu." << endl;
+		}
+	}
+	else
+	{
+		cout << "Programa baigta." << endl;
+	}
 }
 
 void informacijos_ivedimas(vector<Studentas> &studentai, int pasirinkimas)
@@ -448,24 +485,52 @@ void failas(vector<Studentas> &studentai, int kaip_surusiuoti, int skaiciavimo_b
 
 int main()
 {
-	int pasirinkimas = Meniu();
-	if (pasirinkimas == 5)
-	{
-		return 0;
-	}
-	srand(time(NULL));
+	vector<double> testuLaikai;
 	vector<Studentas> studentai;
-	string read_vardas;
-	informacijos_ivedimas(studentai, pasirinkimas);
-	int skaiciavimo_budas = koks_galutinis();
-	int isvedimo_budas = failas_ar_konsole();
-	int kaip_surusiuoti = rusiavimas();
-	if (isvedimo_budas == 1)
+	int pasirinkimas = 0;
+	while (pasirinkimas >= 0 && pasirinkimas < 5)
 	{
-		terminalas(studentai, kaip_surusiuoti, skaiciavimo_budas);
-	}
-	else if (isvedimo_budas == 2)
-	{
-		failas(studentai, kaip_surusiuoti, skaiciavimo_budas);
+		int pasirinkimas = Meniu();
+		if (pasirinkimas == 5)
+		{
+			isvesti_laikai_ir_testai(testuLaikai, testuSkaicius, pasirinkimas);
+			break;
+		}
+		else if (pasirinkimas == 4)
+		{
+			double visasLaikas = 0.0;
+			int testuSkaicius = 0;
+			srand(time(NULL));
+			informacijos_ivedimas(studentai, pasirinkimas);
+			int skaiciavimo_budas = koks_galutinis();
+			int isvedimo_budas = failas_ar_konsole();
+			int kaip_surusiuoti = rusiavimas();
+			if (isvedimo_budas == 1)
+			{
+				terminalas(studentai, kaip_surusiuoti, skaiciavimo_budas);
+			}
+			else if (isvedimo_budas == 2)
+			{
+				failas(studentai, kaip_surusiuoti, skaiciavimo_budas);
+			}
+		}
+		else
+		{
+			srand(time(NULL));
+			vector<Studentas> studentai;
+			string read_vardas;
+			informacijos_ivedimas(studentai, pasirinkimas);
+			int skaiciavimo_budas = koks_galutinis();
+			int isvedimo_budas = failas_ar_konsole();
+			int kaip_surusiuoti = rusiavimas();
+			if (isvedimo_budas == 1)
+			{
+				terminalas(studentai, kaip_surusiuoti, skaiciavimo_budas);
+			}
+			else if (isvedimo_budas == 2)
+			{
+				failas(studentai, kaip_surusiuoti, skaiciavimo_budas);
+			}
+		}
 	}
 }

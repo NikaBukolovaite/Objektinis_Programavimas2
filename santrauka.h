@@ -10,6 +10,8 @@
 #include <ctime>
 #include <chrono>
 #include <ostream>
+#include <chrono>
+#include <cstdlib>
 
 using std::cin;
 using std::cout;
