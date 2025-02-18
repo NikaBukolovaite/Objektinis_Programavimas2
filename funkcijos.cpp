@@ -1,15 +1,5 @@
 #include "funkcijos.h"
 
-void ivedete_netinkama_simboli()
-{
-	cout << "Ivedete netinkama simboli. Iveskite dar karta: ";
-	if (cin.fail())
-	{
-		cin.clear();
-		cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-	}
-}
-
 int Meniu()
 {
 	int pasirinkimas = 0;
@@ -33,11 +23,9 @@ int Meniu()
 		}
 		catch (const std::invalid_argument &e)
 		{
-			ivedete_netinkama_simboli();
-		}
-		catch (const std::exception &e)
-		{
-			cout << "Ivyko klaida: " << e.what() << endl;
+			cout << e.what() << endl;
+			cin.clear();
+			cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		}
 	}
 	return pasirinkimas;
