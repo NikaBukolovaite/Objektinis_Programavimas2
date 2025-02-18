@@ -92,8 +92,8 @@ void pabaiga(vector<std::chrono::duration<double>> testuLaikai, int testuSkaiciu
 		{
 			visasLaikas += testuLaikai[i];
 		}
-		cout << "Visas laikas: " << visasLaikas.count() << " sek." << endl;
-		cout << "Testu skaicius: " << testuSkaicius << endl;
+		cout << "Bendras nuskaitymo laikas: " << visasLaikas.count() << " sek." << endl;
+		cout << "Viso failas buvo nuskaitytas " << testuSkaicius << " kartus." << endl;
 		if (testuSkaicius > 0)
 		{
 			double vidurkis = visasLaikas.count() / testuSkaicius;
