@@ -23,10 +23,21 @@ int Meniu()
 		 << "5 - Jei norite baigti programa.\n";
 	while (pasirinkimas < 1 || pasirinkimas > 5)
 	{
-		cin >> pasirinkimas;
-		if (pasirinkimas < 1 || pasirinkimas > 5 || cin.fail())
+		try
+		{
+			cin >> pasirinkimas;
+			if (pasirinkimas < 1 || pasirinkimas > 5 || cin.fail())
+			{
+				throw std::invalid_argument("Ivedete netinkama simboli. Iveskite dar karta: ");
+			}
+		}
+		catch (const std::invalid_argument &e)
 		{
 			ivedete_netinkama_simboli();
+		}
+		catch (const std::exception &e)
+		{
+			cout << "Ivyko klaida: " << e.what() << endl;
 		}
 	}
 	return pasirinkimas;
@@ -34,42 +45,52 @@ int Meniu()
 
 void failo_nuskaitymas(vector<Studentas> &studentai)
 {
-	auto start = std::chrono::high_resolution_clock::now();
-	ifstream failas("kursiokai.txt");
-	stringstream buferis;
-	string eilute;
-	if (!failas)
+	try
 	{
-		std::cerr << "Klaida: nepavyko atidaryti failo!" << endl;
-		return;
+		auto start = std::chrono::high_resolution_clock::now();
+		ifstream failas("kursiokai.txt");
+		stringstream buferis;
+		string eilute;
+		if (!failas)
+		{
+			throw std::ios_base::failure("Klaida: nepavyko atidaryti failo!");
+		}
+		buferis << failas.rdbuf();
+		failas.close();
+		getline(buferis, eilute);
+		while (getline(buferis, eilute))
+		{
+			istringstream iss(eilute);
+			Studentas laikinas;
+			iss >> laikinas.vardas >> laikinas.pavarde;
+			int pazymys;
+			while (iss >> pazymys)
+			{
+				laikinas.pazymiai.push_back(pazymys);
+			}
+			if (!laikinas.pazymiai.empty())
+			{
+				laikinas.egzamino_pazymys = laikinas.pazymiai.back();
+				laikinas.pazymiai.pop_back();
+			}
+			studentai.push_back(laikinas);
+		}
+		failas.close();
+		auto end = std::chrono::high_resolution_clock::now();
+		std::chrono::duration<double> time = end - start;
+		double laikas = time.count();
+		cout << "Faila nuskaityti uztruko: " << laikas << " sek." << endl;
+		testuSkaicius++;
+		testuLaikai.push_back(time);
 	}
-	buferis << failas.rdbuf();
-	failas.close();
-	getline(buferis, eilute);
-	while (getline(buferis, eilute))
+	catch (const std::ios_base::failure &e)
 	{
-		istringstream iss(eilute);
-		Studentas laikinas;
-		iss >> laikinas.vardas >> laikinas.pavarde;
-		int pazymys;
-		while (iss >> pazymys)
-		{
-			laikinas.pazymiai.push_back(pazymys);
-		}
-		if (!laikinas.pazymiai.empty())
-		{
-			laikinas.egzamino_pazymys = laikinas.pazymiai.back();
-			laikinas.pazymiai.pop_back();
-		}
-		studentai.push_back(laikinas);
+		std::cerr << e.what() << std::endl;
 	}
-	failas.close();
-	auto end = std::chrono::high_resolution_clock::now();
-	std::chrono::duration<double> time = end - start;
-	double laikas = time.count();
-	cout << "Faila nuskaityti uztruko: " << laikas << " sek." << endl;
-	testuSkaicius++;
-	testuLaikai.push_back(time);
+	catch (const std::exception &e)
+	{
+		std::cerr << "Ivyko klaida: " << e.what() << std::endl;
+	}
 }
 
 void pabaiga(vector<std::chrono::duration<double>> testuLaikai, int testuSkaicius, int pasirinkimas)
@@ -104,49 +125,59 @@ void informacijos_ivedimas(vector<Studentas> &studentai, int pasirinkimas)
 	while (true)
 	{
 		Studentas laikinas;
-		if (pasirinkimas == 4)
+		try
 		{
-			failo_nuskaitymas(studentai);
-			return;
-		}
-		else if (pasirinkimas == 1 || pasirinkimas == 2)
-		{
-			cout << "Iveskite studento varda ir pavarde (Jei norite baigti irasyma irasykite 'n'.): ";
-			cin >> laikinas.vardas;
-			if (laikinas.vardas == "n")
+			if (pasirinkimas == 4)
 			{
+				failo_nuskaitymas(studentai);
 				return;
 			}
-			else
+			else if (pasirinkimas == 1 || pasirinkimas == 2)
 			{
-				cin >> laikinas.pavarde;
-			}
-		}
-		else if (pasirinkimas == 3)
-		{
-			string random_vardas[10] = {"Marija", "Arnas", "Tomas", "Greta", "Gabija", "Paulius", "Lukas", "Egle", "Rokas", "Ieva"};
-			string random_pavarde[10] = {"Petrauskaite", "Petrauskas", "Tomauskas", "Gretauskaite", "Gabijauskaite", "Paulauskas", "Lukauskaite", "Matuolis", "Rokauskas", "Ievauskaite"};
-			int generavimas = 0;
-			cout << "Jei norite sugeneruoti varda ir pavarde irasykite 1, jei norite uzbaigti programa irasykite 2: ";
-			while (generavimas != 1 && generavimas != 2)
-			{
-				cin >> generavimas;
-				if (generavimas == 2)
+				cout << "Iveskite studento varda ir pavarde (Jei norite baigti irasyma irasykite 'n'.): ";
+				cin >> laikinas.vardas;
+				if (laikinas.vardas == "n")
 				{
 					return;
 				}
-				else if (generavimas == 1)
+				else
 				{
-					laikinas.vardas = random_vardas[rand() % 10];
-					laikinas.pavarde = random_pavarde[rand() % 10];
-				}
-				else if (generavimas != 2 || generavimas != 1 || cin.fail())
-				{
-					cout << "Ivedete netinkama simboli. Iveskite dar karta: ";
-					cin.clear();
-					cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+					cin >> laikinas.pavarde;
 				}
 			}
+			else if (pasirinkimas == 3)
+			{
+				string random_vardas[10] = {"Marija", "Arnas", "Tomas", "Greta", "Gabija", "Paulius", "Lukas", "Egle", "Rokas", "Ieva"};
+				string random_pavarde[10] = {"Petrauskaite", "Petrauskas", "Tomauskas", "Gretauskaite", "Gabijauskaite", "Paulauskas", "Lukauskaite", "Matuolis", "Rokauskas", "Ievauskaite"};
+				int generavimas = 0;
+				cout << "Jei norite sugeneruoti varda ir pavarde irasykite 1, jei norite uzbaigti programa irasykite 2: ";
+				while (generavimas != 1 && generavimas != 2)
+				{
+					cin >> generavimas;
+					if (generavimas == 2)
+					{
+						return;
+					}
+					else if (generavimas == 1)
+					{
+						laikinas.vardas = random_vardas[rand() % 10];
+						laikinas.pavarde = random_pavarde[rand() % 10];
+					}
+					else
+					{
+						throw std::invalid_argument("Ivedete netinkama simboli. Iveskite dar karta: ");
+					}
+				}
+			}
+		}
+		catch (const std::invalid_argument &e)
+		{
+			cout << e.what() << endl;
+			ivedete_netinkama_simboli();
+		}
+		catch (const std::exception &e)
+		{
+			cout << "Klaida: " << e.what() << endl;
 		}
 		if (pasirinkimas == 1)
 		{
