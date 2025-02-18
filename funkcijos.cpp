@@ -211,10 +211,23 @@ void informacijos_ivedimas(vector<Studentas> &studentai, int pasirinkimas)
 			}
 
 			cout << "Iveskite egzamino pazymi: ";
-			cin >> laikinas.egzamino_pazymys;
+			laikinas.egzamino_pazymys = 0;
 			while (laikinas.egzamino_pazymys < 1 || laikinas.egzamino_pazymys > 10 || cin.fail())
 			{
-				throw std::invalid_argument("Ivedete netinkama simboli. Iveskite dar karta: ");
+				try
+				{
+					cin >> laikinas.egzamino_pazymys;
+					if (laikinas.egzamino_pazymys < 1 || laikinas.egzamino_pazymys > 10 || cin.fail())
+					{
+						throw std::invalid_argument("Ivedete netinkama simboli. Iveskite dar karta: ");
+					}
+				}
+				catch (std::exception &e)
+				{
+					cout << e.what() << endl;
+					cin.clear();
+					cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+				}
 			}
 		}
 		else if (pasirinkimas == 2 || pasirinkimas == 3)
@@ -305,7 +318,8 @@ int koks_galutinis()
 		catch (const std::invalid_argument &e)
 		{
 			cout << e.what() << endl;
-			ivedete_netinkama_simboli();
+			cin.clear();
+			cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		}
 		catch (const std::exception &e)
 		{
@@ -334,11 +348,8 @@ int failas_ar_konsole()
 		catch (const std::invalid_argument &e)
 		{
 			cout << e.what() << endl;
-			ivedete_netinkama_simboli(); // Išvalome srautą
-		}
-		catch (const std::exception &e)
-		{
-			cout << "Klaida: " << e.what() << endl;
+			cin.clear();
+			cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		}
 	}
 	return isvedimo_budas;
@@ -367,11 +378,8 @@ int rusiavimas()
 		catch (const std::invalid_argument &e)
 		{
 			cout << e.what() << endl;
-			ivedete_netinkama_simboli(); // Išvalome srautą
-		}
-		catch (const std::exception &e)
-		{
-			cout << "Klaida: " << e.what() << endl;
+			cin.clear();
+			cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		}
 	}
 	return kaip_surusiuoti;
