@@ -6,9 +6,12 @@ int testuSkaicius = 0;
 
 int main()
 {
-	string pas_failas = koki_faila_nuskaityti();
 	vector<Studentas> studentai;
+	vector<string> sugeneruoti_failai;
 	int pasirinkimas = 0;
+	failo_generavimo_pasirinkimas(sugeneruoti_failai);
+	string pas_failas = koki_faila_nuskaityti();
+	srand(time(NULL));
 	while (pasirinkimas >= 0 && pasirinkimas < 5)
 	{
 		int pasirinkimas = Meniu();
@@ -19,9 +22,10 @@ int main()
 		}
 		else
 		{
-			srand(time(NULL));
+			studentai.clear();
 			vector<Studentas> studentai;
 			string read_vardas;
+			string pas_failas = "";
 			informacijos_ivedimas(studentai, pasirinkimas, pas_failas);
 			int skaiciavimo_budas = koks_galutinis();
 			int isvedimo_budas = failas_ar_konsole();

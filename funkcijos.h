@@ -12,7 +12,11 @@ struct Studentas
 };
 extern vector<std::chrono::duration<double>> testuLaikai;
 extern int testuSkaicius;
-
+void failo_generavimo_pasirinkimas(vector<string> &failai);
+void failo_generavimas(const string &failo_pavadinimas, long long studentu_skaicius);
+void archyvuotiFailus();
+void isarchyvuotiFailus();
+void parodytiEsamusFailus();
 string koki_faila_nuskaityti();
 int Meniu();
 void failo_nuskaitymas(vector<Studentas> &studentai, string failo_pasirinkimas);
