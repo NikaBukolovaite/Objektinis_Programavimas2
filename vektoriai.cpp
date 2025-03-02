@@ -29,6 +29,11 @@ int main()
 			int skaiciavimo_budas = koks_galutinis();
 			int isvedimo_budas = failas_ar_konsole();
 			int kaip_surusiuoti = rusiavimas(skaiciavimo_budas);
+			int pap_rusiavimas = papildomas_rusiavimas();
+			if (pap_rusiavimas == 1)
+			{
+				studentu_rusiavimas(studentai, skaiciavimo_budas);
+			}
 			if (isvedimo_budas == 1)
 			{
 				terminalas(studentai, kaip_surusiuoti, skaiciavimo_budas);

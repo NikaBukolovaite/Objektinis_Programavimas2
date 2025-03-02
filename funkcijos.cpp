@@ -16,17 +16,17 @@ void aplankalas()
 void failo_generavimo_pasirinkimas(vector<string> &failai)
 {
 	int generuoti;
+	cout << "Ar norite sugeneruoti naujus failus?\n"
+		 << "1 - Taip\n"
+		 << "2 - Ne\n"
+		 << "Pasirinkite: ";
 	while (true)
 	{
 		try
 		{
-			cout << "Ar norite sugeneruoti naujus failus?\n"
-				 << "1 - Taip\n"
-				 << "2 - Ne\n"
-				 << "Pasirinkite: ";
 			cin >> generuoti;
 
-			if ((generuoti != 1 && generuoti != 2) || cin.fail())
+			if ((generuoti != 1 && generuoti != 2) || cin.fail() || cin.peek() != '\n')
 			{
 				throw std::invalid_argument("Ivedete netinkama pasirinkima. Iveskite dar karta.");
 			}
@@ -50,7 +50,7 @@ void failo_generavimo_pasirinkimas(vector<string> &failai)
 				cout << "Kiek failu norite sugeneruoti? ";
 				cin >> failu_kiekis;
 
-				if (failu_kiekis <= 0 || cin.fail())
+				if (failu_kiekis <= 0 || cin.fail() || cin.peek() != '\n')
 				{
 					throw std::invalid_argument("Ivedete netinkama skaiciu. Bandykite dar karta.");
 				}
@@ -74,7 +74,7 @@ void failo_generavimo_pasirinkimas(vector<string> &failai)
 					cout << "Iveskite studentu skaiciu " << i + 1 << "-ajam failui: ";
 					cin >> studentu_skaicius;
 
-					if (studentu_skaicius <= 0 || cin.fail())
+					if (studentu_skaicius <= 0 || cin.fail() || cin.peek() != '\n')
 					{
 						throw std::invalid_argument("Ivedete netinkama skaiciu. Bandykite dar karta.");
 					}
@@ -169,19 +169,18 @@ void parodytiEsamusFailus()
 string koki_faila_nuskaityti()
 {
 	string failo_pavadinimas;
-
+	cout << "Galimi failai aplanke '" << aplankalo_pavadinimas << "':\n";
+	for (const auto &entry : std::filesystem::directory_iterator(aplankalo_pavadinimas))
+	{
+		if (entry.path().extension() == ".txt")
+		{
+			cout << "- " << entry.path().filename().string() << endl;
+		}
+	}
 	while (true)
 	{
 		try
 		{
-			cout << "Galimi failai aplanke '" << aplankalo_pavadinimas << "':\n";
-			for (const auto &entry : std::filesystem::directory_iterator(aplankalo_pavadinimas))
-			{
-				if (entry.path().extension() == ".txt")
-				{
-					cout << "- " << entry.path().filename().string() << endl;
-				}
-			}
 			cout << "Iveskite failo pavadinima: ";
 			cin >> failo_pavadinimas;
 
@@ -269,7 +268,7 @@ int Meniu()
 		try
 		{
 			cin >> pasirinkimas;
-			if (pasirinkimas < 1 || pasirinkimas > 5 || cin.fail())
+			if (pasirinkimas < 1 || pasirinkimas > 5 || cin.fail() || cin.peek() != '\n')
 			{
 				throw std::invalid_argument("Ivedete netinkama simboli. Iveskite dar karta: ");
 			}
@@ -333,7 +332,7 @@ void ivestiPazymius(Studentas &laikinas)
 			cin >> pazymys;
 			if (pazymys == -1)
 				break;
-			if (pazymys < 1 || pazymys > 10 || cin.fail())
+			if (pazymys < 1 || pazymys > 10 || cin.fail() || cin.peek() != '\n')
 			{
 				throw std::invalid_argument("Ivedete netinkama simboli. Iveskite dar karta: ");
 			}
@@ -375,7 +374,7 @@ void generuotiPazymius(Studentas &laikinas)
 		try
 		{
 			cin >> pazymiu_kiekis;
-			if (pazymiu_kiekis <= 0 || pazymiu_kiekis > 1000 || cin.fail())
+			if (pazymiu_kiekis <= 0 || pazymiu_kiekis > 1000 || cin.fail() || cin.peek() != '\n')
 			{
 				throw std::invalid_argument("Ivedete netinkama simboli. Iveskite dar karta: ");
 			}
@@ -518,7 +517,7 @@ int koks_galutinis()
 		try
 		{
 			cin >> skaiciavimo_budas;
-			if (skaiciavimo_budas < 1 || skaiciavimo_budas > 3 || cin.fail())
+			if (skaiciavimo_budas < 1 || skaiciavimo_budas > 3 || cin.fail() || cin.peek() != '\n')
 			{
 				throw std::invalid_argument("Ivedete netinkama simboli. Iveskite dar karta: ");
 			}
@@ -528,10 +527,6 @@ int koks_galutinis()
 			cout << e.what() << endl;
 			cin.clear();
 			cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-		}
-		catch (const std::exception &e)
-		{
-			cout << "Klaida: " << e.what() << endl;
 		}
 	}
 	return skaiciavimo_budas;
@@ -548,7 +543,7 @@ int failas_ar_konsole()
 		try
 		{
 			cin >> isvedimo_budas;
-			if (isvedimo_budas < 1 || isvedimo_budas > 2 || cin.fail())
+			if (isvedimo_budas < 1 || isvedimo_budas > 2 || cin.fail() || cin.peek() != '\n')
 			{
 				throw std::invalid_argument("Ivedete netinkama simboli. Iveskite dar karta: ");
 			}
@@ -567,9 +562,8 @@ int rusiavimas(int skaiciavimo_budas)
 {
 	int kaip_surusiuoti = 0;
 
-	cout << "Kaip norite surusiuoti studentus: \n";
+	cout << "Kaip norite surikkiuoti studentus faile: \n";
 
-	// Show allowed sorting options based on `skaiciavimo_budas`
 	if (skaiciavimo_budas == 1)
 	{
 		cout << "1 - Pagal varda\n"
@@ -600,15 +594,14 @@ int rusiavimas(int skaiciavimo_budas)
 		{
 			cin >> kaip_surusiuoti;
 
-			// Check valid sorting range based on `skaiciavimo_budas`
 			if ((skaiciavimo_budas == 1 && (kaip_surusiuoti < 1 || kaip_surusiuoti > 4)) ||
 				(skaiciavimo_budas == 2 && (kaip_surusiuoti < 1 || kaip_surusiuoti > 2 && kaip_surusiuoti < 5)) ||
 				(skaiciavimo_budas == 3 && (kaip_surusiuoti < 1 || kaip_surusiuoti > 6)) ||
-				cin.fail())
+				cin.fail() || cin.peek() != '\n')
 			{
 				throw std::invalid_argument("Ivedete netinkama pasirinkima. Bandykite dar karta.");
 			}
-			break; // Exit loop if input is valid
+			break;
 		}
 		catch (const std::invalid_argument &e)
 		{
@@ -680,6 +673,87 @@ bool medianosNuoMazRusiavimas(const Studentas &studentas, const Studentas &stude
 bool medianosNuoDidRusiavimas(const Studentas &studentas, const Studentas &studentas2)
 {
 	return galutinis_pazymys_med(studentas) > galutinis_pazymys_med(studentas2);
+}
+
+int papildomas_rusiavimas()
+{
+	int pasirinkimas_rusiavimui = 0;
+	cout << "Ar norite surusiuoti studentus i du atskirus failus (kietekai ir vargsiukai)?\n"
+		 << "1 - Taip\n"
+		 << "2 - Ne\n";
+	while (pasirinkimas_rusiavimui < 1 || pasirinkimas_rusiavimui > 2)
+	{
+
+		try
+		{
+			cin >> pasirinkimas_rusiavimui;
+			if (pasirinkimas_rusiavimui < 1 || pasirinkimas_rusiavimui > 2 || cin.fail() || cin.peek() != '\n')
+			{
+				throw std::invalid_argument("Ivedete netinkama simboli. Iveskite dar karta: ");
+			}
+		}
+		catch (const std::invalid_argument &e)
+		{
+			cout << e.what() << endl;
+			cin.clear();
+			cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		}
+	}
+	return pasirinkimas_rusiavimui;
+}
+
+void studentu_rusiavimas(vector<Studentas> &studentai, int skaiciavimo_budas)
+{
+	std::vector<Studentas> kietekai, vargsiukai;
+	int rusiavimo_budas = 0;
+	if (skaiciavimo_budas == 3)
+	{
+		cout << "Kaip norite surusiuoti studentus: \n"
+			 << "1 - Pagal vidurki; \n"
+			 << "2 - Pagal mediana. \n";
+		while (rusiavimo_budas < 1 || rusiavimo_budas > 2)
+		{
+			try
+			{
+				cin >> rusiavimo_budas;
+				if (rusiavimo_budas < 1 || rusiavimo_budas > 2 || cin.fail() || cin.peek() != '\n')
+				{
+					throw std::invalid_argument("Ivedete netinkama simboli. Iveskite dar karta: ");
+				}
+			}
+			catch (const std::invalid_argument &e)
+			{
+				cout << e.what() << endl;
+				cin.clear();
+				cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			}
+		}
+	}
+	for (const auto &studentas : studentai)
+	{
+		double galutinis_balas = 0;
+		if (skaiciavimo_budas == 1 || (skaiciavimo_budas == 3 && rusiavimo_budas == 1))
+		{
+			galutinis_balas = galutinis_pazymys_vid(studentas);
+		}
+		else if (skaiciavimo_budas == 2 || (skaiciavimo_budas == 3 && rusiavimo_budas == 2))
+		{
+			galutinis_balas = galutinis_pazymys_med(studentas);
+		}
+		if (galutinis_balas < 5.0)
+		{
+			vargsiukai.push_back(studentas);
+		}
+		else
+		{
+			kietekai.push_back(studentas);
+		}
+	}
+	std::ofstream kietekaifailas("kietekai.txt"), vargsiukaifailas("vargsiukai.txt");
+	output(kietekaifailas, kietekai, skaiciavimo_budas, 1);
+	output(vargsiukaifailas, vargsiukai, skaiciavimo_budas, 1);
+	kietekaifailas.close();
+	vargsiukaifailas.close();
 }
 
 void output(ostream &out, vector<Studentas> studentai, int skaiciavimo_budas, int isvedimo_budas)
