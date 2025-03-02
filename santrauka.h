@@ -17,6 +17,7 @@
 #include <numeric>
 #include <iterator>
 #include <ios>
+#include <filesystem>
 
 using std::cerr;
 using std::cin;

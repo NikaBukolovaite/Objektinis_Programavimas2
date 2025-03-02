@@ -1,5 +1,18 @@
 #include "funkcijos.h"
 
+void aplankalas()
+{
+	if (!std::filesystem::exists(aplankalo_pavadinimas))
+	{
+		std::filesystem::create_directory(aplankalo_pavadinimas);
+		cout << "Sukurtas aplankalas: " << aplankalo_pavadinimas << endl;
+	}
+	else
+	{
+		cout << "Aplankalas '" << aplankalo_pavadinimas << "' jau egzistuoja.\n";
+	}
+}
+
 void failo_generavimo_pasirinkimas(vector<string> &failai)
 {
 	int generuoti;
@@ -87,55 +100,28 @@ void failo_generavimo_pasirinkimas(vector<string> &failai)
 				cout << "Nepavyko sugeneruoti failo: " << failo_pavadinimas << ". Klaida: " << e.what() << endl;
 			}
 		}
-
-		archyvuotiFailus();
 		cout << "Failai sekmingai sugeneruoti!\n";
 	}
 	else
 	{
-		int isarchyvuoti;
-		while (true)
-		{
-			try
-			{
-				cout << "Ar norite isarchyvuoti ir naudoti failus?\n"
-					 << "1 - Taip\n"
-					 << "2 - Ne\n"
-					 << "Pasirinkite: ";
-				cin >> isarchyvuoti;
-
-				if ((isarchyvuoti != 1 && isarchyvuoti != 2) || cin.fail())
-				{
-					throw std::invalid_argument("Ivedete netinkama pasirinkima. Iveskite dar karta.");
-				}
-				break;
-			}
-			catch (const std::invalid_argument &e)
-			{
-				cout << e.what() << endl;
-				cin.clear();
-				cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-			}
-		}
-
-		if (isarchyvuoti == 1)
-		{
-			isarchyvuotiFailus();
-		}
+		cout << "Failai nebuvo sugeneruoti.\n";
 	}
 }
 
 void failo_generavimas(const string &failo_pavadinimas, long long studentu_skaicius)
 {
-	ofstream failas(failo_pavadinimas);
+	aplankalas();
+	string sukurti_faila_aplankale = aplankalo_pavadinimas + "/" + failo_pavadinimas;
+
+	ofstream failas(sukurti_faila_aplankale);
 	if (!failas)
 	{
-		throw std::runtime_error("Klaida kuriant faila: " + failo_pavadinimas);
+		throw std::runtime_error("Klaida kuriant faila: " + sukurti_faila_aplankale);
 	}
 
-	int pazymiu_kiekis = rand() % 100 + 2;
+	int pazymiu_kiekis = rand() % 25 + 2;
 
-	cout << "Generuojamas failas: " << failo_pavadinimas
+	cout << "Generuojamas failas: " << sukurti_faila_aplankale
 		 << " su " << studentu_skaicius << " studentais ir "
 		 << pazymiu_kiekis << " ND.\n";
 
@@ -160,76 +146,53 @@ void failo_generavimas(const string &failo_pavadinimas, long long studentu_skaic
 	}
 
 	failas.close();
-	cout << "Failas sukurtas: " << failo_pavadinimas << endl;
-}
-
-void archyvuotiFailus()
-{
-	cout << "Perkeliami sugeneruoti failai i archyva..." << endl;
-	system("zip -r studentu_failai.zip studentai_*.txt");
-	cout << "Failai buvo perkelti i ZIP archyva!" << endl;
-}
-
-void isarchyvuotiFailus()
-{
-	cout << "Isarchyvuojami failai is ZIP archyvo..." << endl;
-	system("unzip studentu_failai.zip");
-	cout << "Failai sekmingai isarchyvuoti!" << endl;
+	cout << "Failas sukurtas: " << sukurti_faila_aplankale << endl;
 }
 
 void parodytiEsamusFailus()
 {
-	system("dir /b *.txt > failu_sarasas.txt");
+	cout << "Esami .txt failai aplanke '" << aplankalo_pavadinimas << "':\n";
 
-	ifstream failas("failu_sarasas.txt");
-	string failo_pavadinimas;
-	vector<string> failai;
-
-	while (getline(failas, failo_pavadinimas))
+	for (const auto &entry : std::filesystem::directory_iterator(aplankalo_pavadinimas))
 	{
-		if (failo_pavadinimas != "rezultatai.txt" && failo_pavadinimas != "failu_sarasas.txt")
+		if (entry.path().extension() == ".txt")
 		{
-			failai.push_back(failo_pavadinimas);
-		}
-	}
-
-	failas.close();
-	remove("failu_sarasas.txt");
-
-	if (failai.empty())
-	{
-		cout << "Kataloge nera tinkamu failu.\n";
-	}
-	else
-	{
-		cout << "Esami .txt failai kataloge:\n";
-		for (const auto &failas : failai)
-		{
-			cout << "- " << failas << endl;
+			string failo_vardas = entry.path().filename().string();
+			if (failo_vardas != "rezultatai.txt")
+			{
+				cout << "- " << failo_vardas << endl;
+			}
 		}
 	}
 }
 
 string koki_faila_nuskaityti()
 {
-	cout << "Pasirinkite faila ivede jo pavadinima:\n";
-	parodytiEsamusFailus();
-
 	string failo_pavadinimas;
+
 	while (true)
 	{
 		try
 		{
+			cout << "Galimi failai aplanke '" << aplankalo_pavadinimas << "':\n";
+			for (const auto &entry : std::filesystem::directory_iterator(aplankalo_pavadinimas))
+			{
+				if (entry.path().extension() == ".txt")
+				{
+					cout << "- " << entry.path().filename().string() << endl;
+				}
+			}
 			cout << "Iveskite failo pavadinima: ";
 			cin >> failo_pavadinimas;
 
-			ifstream failas(failo_pavadinimas);
-			if (!failas)
+			string sukurti_faila_aplankale = aplankalo_pavadinimas + "/" + failo_pavadinimas;
+
+			if (!std::filesystem::exists(sukurti_faila_aplankale))
 			{
 				throw std::invalid_argument("Tokio failo nera. Bandykite dar karta.");
 			}
-			failas.close();
-			break;
+
+			return sukurti_faila_aplankale;
 		}
 		catch (const std::invalid_argument &e)
 		{
@@ -238,42 +201,9 @@ string koki_faila_nuskaityti()
 			cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		}
 	}
-
-	return failo_pavadinimas;
 }
 
-int Meniu()
-{
-	int pasirinkimas = 0;
-	cout << "Meniu\n"
-		 << "--------------------------------------------------------------------------------------\n"
-		 << "Pasirinkite veiksma ivesdami: \n"
-		 << "1 - Jei norite ivesti visa informacija rankiniu budu.\n"
-		 << "2 - Jei norite sugeneruoti atsitiktinius pazymius.\n"
-		 << "3 - Jei norite atsitiktinai sugeneruoti pazymius ir studentu vardus, pavardes.\n"
-		 << "4 - Jei norite nuskaityti informacija is failo.\n"
-		 << "5 - Jei norite baigti programa.\n";
-	while (pasirinkimas < 1 || pasirinkimas > 5)
-	{
-		try
-		{
-			cin >> pasirinkimas;
-			if (pasirinkimas < 1 || pasirinkimas > 5 || cin.fail())
-			{
-				throw std::invalid_argument("Ivedete netinkama simboli. Iveskite dar karta: ");
-			}
-		}
-		catch (const std::invalid_argument &e)
-		{
-			cout << e.what() << endl;
-			cin.clear();
-			cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-		}
-	}
-	return pasirinkimas;
-}
-
-void failo_nuskaitymas(vector<Studentas> &studentai, string failo_pavadinimas)
+void failo_nuskaitymas(vector<Studentas> &studentai, const string &failo_pavadinimas)
 {
 	try
 	{
@@ -321,6 +251,37 @@ void failo_nuskaitymas(vector<Studentas> &studentai, string failo_pavadinimas)
 	{
 		std::cerr << "Ivyko klaida: " << e.what() << std::endl;
 	}
+}
+
+int Meniu()
+{
+	int pasirinkimas = 0;
+	cout << "Meniu\n"
+		 << "--------------------------------------------------------------------------------------\n"
+		 << "Pasirinkite veiksma ivesdami: \n"
+		 << "1 - Jei norite ivesti visa informacija rankiniu budu.\n"
+		 << "2 - Jei norite sugeneruoti atsitiktinius pazymius.\n"
+		 << "3 - Jei norite atsitiktinai sugeneruoti pazymius ir studentu vardus, pavardes.\n"
+		 << "4 - Jei norite nuskaityti informacija is failo.\n"
+		 << "5 - Jei norite baigti programa.\n";
+	while (pasirinkimas < 1 || pasirinkimas > 5)
+	{
+		try
+		{
+			cin >> pasirinkimas;
+			if (pasirinkimas < 1 || pasirinkimas > 5 || cin.fail())
+			{
+				throw std::invalid_argument("Ivedete netinkama simboli. Iveskite dar karta: ");
+			}
+		}
+		catch (const std::invalid_argument &e)
+		{
+			cout << e.what() << endl;
+			cin.clear();
+			cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		}
+	}
+	return pasirinkimas;
 }
 
 void pabaiga(vector<std::chrono::duration<double>> testuLaikai, int testuSkaicius, int pasirinkimas)
