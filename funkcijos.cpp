@@ -1,5 +1,46 @@
 #include "funkcijos.h"
 
+string koki_faila_nuskaityti()
+{
+	cout << "Pasirinkite faila, kuri noretumete nuskaityti:\n"
+		 << "1 - kursiokai.txt\n"
+		 << "2 - studentai10000.txt\n"
+		 << "3 - studentai100000.txt\n"
+		 << "4 - studentai1000000.txt\n";
+
+	string failo_pasirinkimas = "0";
+	while (failo_pasirinkimas != "1" && failo_pasirinkimas != "2" && failo_pasirinkimas != "3" && failo_pasirinkimas != "4")
+	{
+		try
+		{
+			cout << "Iveskite pasirinkima (1-4): ";
+			cin >> failo_pasirinkimas;
+
+			if (failo_pasirinkimas != "1" && failo_pasirinkimas != "2" &&
+				failo_pasirinkimas != "3" && failo_pasirinkimas != "4")
+			{
+				throw std::invalid_argument("Ivedete netinkama skaiciu. Bandykite dar karta.");
+			}
+		}
+		catch (const std::invalid_argument &e)
+		{
+			cout << e.what() << endl;
+			cin.clear();
+			cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		}
+	}
+	if (failo_pasirinkimas == "1")
+		return "kursiokai.txt";
+	else if (failo_pasirinkimas == "2")
+		return "studentai10000.txt";
+	else if (failo_pasirinkimas == "3")
+		return "studentai100000.txt";
+	else if (failo_pasirinkimas == "4")
+		return "studentai1000000.txt";
+	else
+		return "Nera tokio failo.";
+}
+
 int Meniu()
 {
 	int pasirinkimas = 0;
@@ -31,12 +72,12 @@ int Meniu()
 	return pasirinkimas;
 }
 
-void failo_nuskaitymas(vector<Studentas> &studentai)
+void failo_nuskaitymas(vector<Studentas> &studentai, string failo_pasirinkimas)
 {
 	try
 	{
 		auto start = std::chrono::high_resolution_clock::now();
-		ifstream failas("kursiokai.txt");
+		ifstream failas(failo_pasirinkimas);
 		stringstream buferis;
 		string eilute;
 		if (!failas)
@@ -108,14 +149,14 @@ void pabaiga(vector<std::chrono::duration<double>> testuLaikai, int testuSkaiciu
 	}
 }
 
-void informacijos_ivedimas(vector<Studentas> &studentai, int pasirinkimas)
+void informacijos_ivedimas(vector<Studentas> &studentai, int pasirinkimas, string failo_pasirinkimas)
 {
 	while (true)
 	{
 		Studentas laikinas;
 		if (pasirinkimas == 4)
 		{
-			failo_nuskaitymas(studentai);
+			failo_nuskaitymas(studentai, failo_pasirinkimas);
 			return;
 		}
 		else if (pasirinkimas == 1 || pasirinkimas == 2)
@@ -349,25 +390,52 @@ int failas_ar_konsole()
 	return isvedimo_budas;
 }
 
-int rusiavimas()
+int rusiavimas(int skaiciavimo_budas)
 {
 	int kaip_surusiuoti = 0;
-	cout << "Kaip norite surusiuoti studentus: \n"
-		 << "1 - Jei norite surusiuoti pagal varda; \n"
-		 << "2 - Jei norite surusiuoti pagal pavarde; \n"
-		 << "3 - Jei norite surusiuoti pagal vidurki (nuo maziausio iki didziausio). \n"
-		 << "4 - Jei norite surusiuoti pagal vidurki (nuo didziausio iki maziausio). \n"
-		 << "5 - Jei norite surusiuoti pagal mediana (nuo maziausio iki didziausio). \n"
-		 << "6 - Jei norite surusiuoti pagal mediana (nuo didziausio iki maziausio). \n";
-	while (kaip_surusiuoti < 1 || kaip_surusiuoti > 6)
+
+	cout << "Kaip norite surusiuoti studentus: \n";
+
+	// Show allowed sorting options based on `skaiciavimo_budas`
+	if (skaiciavimo_budas == 1)
+	{
+		cout << "1 - Pagal varda\n"
+			 << "2 - Pagal pavarde\n"
+			 << "3 - Pagal vidurki (nuo maziausio iki didziausio)\n"
+			 << "4 - Pagal vidurki (nuo didziausio iki maziausio)\n";
+	}
+	else if (skaiciavimo_budas == 2)
+	{
+		cout << "1 - Pagal varda\n"
+			 << "2 - Pagal pavarde\n"
+			 << "5 - Pagal mediana (nuo maziausio iki didziausio)\n"
+			 << "6 - Pagal mediana (nuo didziausio iki maziausio)\n";
+	}
+	else if (skaiciavimo_budas == 3)
+	{
+		cout << "1 - Pagal varda\n"
+			 << "2 - Pagal pavarde\n"
+			 << "3 - Pagal vidurki (nuo maziausio iki didziausio)\n"
+			 << "4 - Pagal vidurki (nuo didziausio iki maziausio)\n"
+			 << "5 - Pagal mediana (nuo maziausio iki didziausio)\n"
+			 << "6 - Pagal mediana (nuo didziausio iki maziausio)\n";
+	}
+
+	while (true)
 	{
 		try
 		{
 			cin >> kaip_surusiuoti;
-			if (kaip_surusiuoti < 1 || kaip_surusiuoti > 6 || cin.fail())
+
+			// Check valid sorting range based on `skaiciavimo_budas`
+			if ((skaiciavimo_budas == 1 && (kaip_surusiuoti < 1 || kaip_surusiuoti > 4)) ||
+				(skaiciavimo_budas == 2 && (kaip_surusiuoti < 1 || kaip_surusiuoti > 2 && kaip_surusiuoti < 5)) ||
+				(skaiciavimo_budas == 3 && (kaip_surusiuoti < 1 || kaip_surusiuoti > 6)) ||
+				cin.fail())
 			{
-				throw std::invalid_argument("Ivedete netinkama simboli. Iveskite dar karta: ");
+				throw std::invalid_argument("Ivedete netinkama pasirinkima. Bandykite dar karta.");
 			}
+			break; // Exit loop if input is valid
 		}
 		catch (const std::invalid_argument &e)
 		{

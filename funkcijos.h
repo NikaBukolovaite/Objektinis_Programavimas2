@@ -13,15 +13,16 @@ struct Studentas
 extern vector<std::chrono::duration<double>> testuLaikai;
 extern int testuSkaicius;
 
+string koki_faila_nuskaityti();
 int Meniu();
-void failo_nuskaitymas(vector<Studentas> &studentai);
+void failo_nuskaitymas(vector<Studentas> &studentai, string failo_pasirinkimas);
 void pabaiga(vector<std::chrono::duration<double>> testuLaikai, int testuSkaicius, int pasirinkimas);
-void informacijos_ivedimas(vector<Studentas> &studentai, int pasirinkimas);
+void informacijos_ivedimas(vector<Studentas> &studentai, int pasirinkimas, string failo_pasirinkimas);
 double galutinis_pazymys_vid(Studentas studentas);
 double galutinis_pazymys_med(Studentas studentas);
 int koks_galutinis();
 int failas_ar_konsole();
-int rusiavimas();
+int rusiavimas(int skaiciavimo_budas);
 bool vardoRusiavimas(const Studentas &studentas, const Studentas &studentas2);
 bool pavardeRusiavimas(const Studentas &studentas, const Studentas &studentas2);
 bool vidurkioNuoMazRusiavimas(const Studentas &studentas, const Studentas &studentas2);

@@ -12,6 +12,11 @@
 #include <ostream>
 #include <chrono>
 #include <cstdlib>
+#include <stdexcept>
+#include <exception>
+#include <numeric>
+#include <iterator>
+#include <ios>
 
 using std::cin;
 using std::cout;
