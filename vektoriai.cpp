@@ -25,7 +25,6 @@ int main()
 			studentai.clear();
 			vector<Studentas> studentai;
 			string read_vardas;
-			string pas_failas = "";
 			informacijos_ivedimas(studentai, pasirinkimas, pas_failas);
 			int skaiciavimo_budas = koks_galutinis();
 			int isvedimo_budas = failas_ar_konsole();

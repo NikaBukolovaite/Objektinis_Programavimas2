@@ -122,8 +122,6 @@ void failo_generavimo_pasirinkimas(vector<string> &failai)
 		{
 			isarchyvuotiFailus();
 		}
-
-		parodytiEsamusFailus();
 	}
 }
 
@@ -181,8 +179,35 @@ void isarchyvuotiFailus()
 
 void parodytiEsamusFailus()
 {
-	cout << "Esami .txt failai kataloge:\n";
-	system("dir /b *.txt");
+	system("dir /b *.txt > failu_sarasas.txt");
+
+	ifstream failas("failu_sarasas.txt");
+	string failo_pavadinimas;
+	vector<string> failai;
+
+	while (getline(failas, failo_pavadinimas))
+	{
+		if (failo_pavadinimas != "rezultatai.txt" && failo_pavadinimas != "failu_sarasas.txt")
+		{
+			failai.push_back(failo_pavadinimas);
+		}
+	}
+
+	failas.close();
+	remove("failu_sarasas.txt");
+
+	if (failai.empty())
+	{
+		cout << "Kataloge nera tinkamu failu.\n";
+	}
+	else
+	{
+		cout << "Esami .txt failai kataloge:\n";
+		for (const auto &failas : failai)
+		{
+			cout << "- " << failas << endl;
+		}
+	}
 }
 
 string koki_faila_nuskaityti()
@@ -248,12 +273,12 @@ int Meniu()
 	return pasirinkimas;
 }
 
-void failo_nuskaitymas(vector<Studentas> &studentai, string failo_pasirinkimas)
+void failo_nuskaitymas(vector<Studentas> &studentai, string failo_pavadinimas)
 {
 	try
 	{
 		auto start = std::chrono::high_resolution_clock::now();
-		ifstream failas(failo_pasirinkimas);
+		ifstream failas(failo_pavadinimas);
 		stringstream buferis;
 		string eilute;
 		if (!failas)
@@ -415,7 +440,7 @@ void generuotiPazymius(Studentas &laikinas)
 	cout << "Egzamino pazymys: " << laikinas.egzamino_pazymys << endl;
 }
 
-void informacijos_ivedimas(vector<Studentas> &studentai, int pasirinkimas, string failo_pasirinkimas)
+void informacijos_ivedimas(vector<Studentas> &studentai, int pasirinkimas, string failo_pavadinimas)
 {
 	while (true)
 	{
@@ -469,7 +494,7 @@ void informacijos_ivedimas(vector<Studentas> &studentai, int pasirinkimas, strin
 			break;
 
 		case 4:
-			failo_nuskaitymas(studentai, failo_pasirinkimas);
+			failo_nuskaitymas(studentai, failo_pavadinimas);
 			return;
 
 		default:
