@@ -14,7 +14,8 @@ const string aplankalo_pavadinimas = "NuskaitymoFailai";
 extern vector<std::chrono::duration<double>> testuLaikai;
 extern vector<std::chrono::duration<double>> kurimoLaikai;
 extern vector<std::chrono::duration<double>> rusiavimoLaikai;
-extern vector<std::chrono::duration<double>> kietekuIrVargsiukuLaikai;
+extern vector<std::chrono::duration<double>> kietekuLaikai;
+extern vector<std::chrono::duration<double>> vargsiukuLaikai;
 extern int testuSkaicius;
 extern int kurimuSkaicius;
 extern int rusiavimoSkaicius;
@@ -44,7 +45,7 @@ bool vidurkioNuoDidRusiavimas(const Studentas &studentas, const Studentas &stude
 bool medianosNuoMazRusiavimas(const Studentas &studentas, const Studentas &studentas2);
 bool medianosNuoDidRusiavimas(const Studentas &studentas, const Studentas &studentas2);
 int papildomas_rusiavimas();
-void studentu_rusiavimas(vector<Studentas> &studentai, int skaiciavimo_budas);
+void studentu_rusiavimas(vector<Studentas> &studentai, int skaiciavimo_budas, int kaip_surusiuoti);
 void output(ostream &out, vector<Studentas> studentai, int skaiciavimo_budas, int isvedimo_budas);
 void rusiavimoIf(vector<Studentas> &studentai, int kaip_surusiuoti, int skaiciavimo_budas);
 void terminalas(vector<Studentas> &studentai, int kaip_surusiuoti, int skaiciavimo_budas);

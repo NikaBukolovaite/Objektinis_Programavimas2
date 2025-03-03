@@ -2,7 +2,8 @@
 vector<std::chrono::duration<double>> testuLaikai;
 vector<std::chrono::duration<double>> kurimoLaikai;
 vector<std::chrono::duration<double>> rusiavimoLaikai;
-vector<std::chrono::duration<double>> kietekuIrVargsiukuLaikai;
+vector<std::chrono::duration<double>> kietekuLaikai;
+vector<std::chrono::duration<double>> vargsiukuLaikai;
 int testuSkaicius = 0;
 int kurimuSkaicius = 0;
 int rusiavimoSkaicius = 0;
@@ -307,11 +308,11 @@ void pabaiga(int pasirinkimas, int generuoti, int pasirinkimas_rusiavimui)
 			visasLaikas += kurimoLaikai[i];
 		}
 		cout << "Bendras failu kurimo laikas: " << visasLaikas.count() << " sek." << endl;
-		cout << "Viso buvo sukurta " << kurimuSkaicius << "failai(u)." << endl;
+		// cout << "Viso buvo sukurta " << kurimuSkaicius << " failai(u)." << endl;
 		if (kurimuSkaicius > 0)
 		{
 			double vidurkis = visasLaikas.count() / kurimuSkaicius;
-			cout << "Vidutinis laikas: " << vidurkis << " sek." << endl;
+			cout << "Vidutinis failu kurimo laikas: " << vidurkis << " sek." << endl;
 		}
 		else
 		{
@@ -325,12 +326,12 @@ void pabaiga(int pasirinkimas, int generuoti, int pasirinkimas_rusiavimui)
 		{
 			visasLaikas += rusiavimoLaikai[i];
 		}
-		cout << "Bendras rusiavimo laikas: " << visasLaikas.count() << " sek." << endl;
-		cout << "Viso failai buvo surusiuoti " << rusiavimoSkaicius << " kartus." << endl;
+		cout << "Bendras rusiavimo i kietekus ir vargsiukus laikas: " << visasLaikas.count() << " sek." << endl;
+		// cout << "Viso failai buvo surusiuoti " << rusiavimoSkaicius << " kartus." << endl;
 		if (rusiavimoSkaicius > 0)
 		{
 			double vidurkis = visasLaikas.count() / rusiavimoSkaicius;
-			cout << "Vidutinis laikas: " << vidurkis << " sek." << endl;
+			cout << "Vidutinis rusiavimo i kietekus ir vargsiukus laikas: " << vidurkis << " sek." << endl;
 		}
 		else
 		{
@@ -340,16 +341,35 @@ void pabaiga(int pasirinkimas, int generuoti, int pasirinkimas_rusiavimui)
 	if (pasirinkimas_rusiavimui == 1)
 	{
 		std::chrono::duration<double> visasLaikas{};
-		for (int i = 0; i < kietekuIrVargsiukuLaikai.size(); i++)
+		for (int i = 0; i < kietekuLaikai.size(); i++)
 		{
-			visasLaikas += kietekuIrVargsiukuLaikai[i];
+			visasLaikas += kietekuLaikai[i];
 		}
-		cout << "Bendras failu isvedimo laikas: " << visasLaikas.count() << " sek." << endl;
-		cout << "Viso failai buvo isvesti " << rusiavimoSkaicius << " kartus." << endl;
+		cout << "Bendras kieteku isvedimo laikas: " << visasLaikas.count() << " sek." << endl;
+		// cout << "Viso failai buvo isvesti " << rusiavimoSkaicius << " kartus." << endl;
 		if (rusiavimoSkaicius > 0)
 		{
 			double vidurkis = visasLaikas.count() / rusiavimoSkaicius;
-			cout << "Vidutinis laikas: " << vidurkis << " sek." << endl;
+			cout << "Vidutinis kieteku isvedimo laikas: " << vidurkis << " sek." << endl;
+		}
+		else
+		{
+			cout << "Nebuvo isvesti failai." << endl;
+		}
+	}
+	if (pasirinkimas_rusiavimui == 1)
+	{
+		std::chrono::duration<double> visasLaikas{};
+		for (int i = 0; i < vargsiukuLaikai.size(); i++)
+		{
+			visasLaikas += vargsiukuLaikai[i];
+		}
+		cout << "Bendras vargsiuku isvedimo laikas: " << visasLaikas.count() << " sek." << endl;
+		// cout << "Viso failai buvo isvesti " << rusiavimoSkaicius << " kartus." << endl;
+		if (rusiavimoSkaicius > 0)
+		{
+			double vidurkis = visasLaikas.count() / rusiavimoSkaicius;
+			cout << "Vidutinis vargsiuku isvedimo laikas: " << vidurkis << " sek." << endl;
 		}
 		else
 		{
@@ -363,12 +383,12 @@ void pabaiga(int pasirinkimas, int generuoti, int pasirinkimas_rusiavimui)
 		{
 			visasLaikas += testuLaikai[i];
 		}
-		cout << "Bendras nuskaitymo laikas: " << visasLaikas.count() << " sek." << endl;
-		cout << "Viso failas buvo nuskaitytas " << testuSkaicius << " kartus." << endl;
+		cout << "Bendras failo nuskaitymo laikas: " << visasLaikas.count() << " sek." << endl;
+		// cout << "Viso failas buvo nuskaitytas " << testuSkaicius << " kartus." << endl;
 		if (testuSkaicius > 0)
 		{
 			double vidurkis = visasLaikas.count() / testuSkaicius;
-			cout << "Vidutinis laikas: " << vidurkis << " sek." << endl;
+			cout << "Vidutinis failo nuskaitymo laikas: " << vidurkis << " sek." << endl;
 		}
 		else
 		{
@@ -773,7 +793,7 @@ int papildomas_rusiavimas()
 	return pasirinkimas_rusiavimui;
 }
 
-void studentu_rusiavimas(vector<Studentas> &studentai, int skaiciavimo_budas)
+void studentu_rusiavimas(vector<Studentas> &studentai, int skaiciavimo_budas, int kaip_surusiuoti)
 {
 	std::vector<Studentas> kietekai, vargsiukai;
 	int rusiavimo_budas = 0;
@@ -823,19 +843,27 @@ void studentu_rusiavimas(vector<Studentas> &studentai, int skaiciavimo_budas)
 	}
 	auto end = std::chrono::high_resolution_clock::now();
 	std::chrono::duration<double> time = end - start;
-	cout << "Studentu rusiavimas uztruko: " << time.count() << " sek." << endl;
+	// cout << "Studentu rusiavimas uztruko: " << time.count() << " sek." << endl;
 	rusiavimoLaikai.push_back(time);
 	rusiavimoSkaicius++;
 	start = std::chrono::high_resolution_clock::now();
-	std::ofstream kietekaifailas("kietekai.txt"), vargsiukaifailas("vargsiukai.txt");
+	rusiavimoIf(kietekai, kaip_surusiuoti, skaiciavimo_budas);
+	std::ofstream kietekaifailas("kietekai.txt");
 	output(kietekaifailas, kietekai, skaiciavimo_budas, 1);
-	output(vargsiukaifailas, vargsiukai, skaiciavimo_budas, 1);
 	kietekaifailas.close();
+	end = std::chrono::high_resolution_clock::now();
+	time = end - start;
+	// cout << "Failus sukurti uztruko: " << time.count() << " sek." << endl;
+	kietekuLaikai.push_back(time);
+	start = std::chrono::high_resolution_clock::now();
+	rusiavimoIf(vargsiukai, kaip_surusiuoti, skaiciavimo_budas);
+	std::ofstream vargsiukaifailas("vargsiukai.txt");
+	output(vargsiukaifailas, vargsiukai, skaiciavimo_budas, 1);
 	vargsiukaifailas.close();
 	end = std::chrono::high_resolution_clock::now();
 	time = end - start;
-	cout << "Failus sukurti uztruko: " << time.count() << " sek." << endl;
-	kietekuIrVargsiukuLaikai.push_back(time);
+	// cout << "Failus sukurti uztruko: " << time.count() << " sek." << endl;
+	vargsiukuLaikai.push_back(time);
 }
 
 void output(ostream &out, vector<Studentas> studentai, int skaiciavimo_budas, int isvedimo_budas)
