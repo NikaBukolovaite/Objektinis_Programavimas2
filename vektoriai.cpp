@@ -3,7 +3,6 @@
 
 int main()
 {
-	double sum = 0;
 	vector<Studentas> studentai;
 	vector<string> sugeneruoti_failai;
 	int pasirinkimas = 0;
@@ -13,7 +12,7 @@ int main()
 	srand(time(NULL));
 	while (pasirinkimas >= 0 && pasirinkimas < 5)
 	{
-		int pasirinkimas = Meniu();
+		pasirinkimas = Meniu();
 		if (pasirinkimas == 5)
 		{
 			pabaiga(pasirinkimas, generuoti, pap_rusiavimas);
@@ -41,16 +40,71 @@ int main()
 			{
 				failas(studentai, kaip_surusiuoti, skaiciavimo_budas);
 			}
-			cout << "Failo su " << studentai.size() << " studentu duomenimis nuskaitymas uztruko: " << testuLaikai.back().count() << " sek.\n"
-				 << studentai.size() << " studentu failo rusiavimas i kietekus ir vargsiukus laikas uztruko: " << rusiavimoLaikai.back().count() << " sek.\n"
-				 << studentai.size() << " studentu su vidurkiu >=5 isvedimas i faila uztruko: " << kietekuLaikai.back().count() << " sek.\n"
-				 << studentai.size() << " studentu su vidurkiu <5 isvedimas i faila uztruko: " << vargsiukuLaikai.back().count() << " sek.\n";
-			sum += testuLaikai.back().count() +
-				   rusiavimoLaikai.back().count() +
-				   kietekuLaikai.back().count() +
-				   vargsiukuLaikai.back().count();
-			cout << studentai.size() << " studentu failo bendras testavimo laikas uztruko: "
-				 << sum << " sek.\n";
+			double sum = 0;
+
+			if (pasirinkimas == 4 && pap_rusiavimas == 1)
+			{
+				if (!testuLaikai.empty() && !rusiavimoLaikai.empty() && !kietekuLaikai.empty() && !vargsiukuLaikai.empty())
+				{
+					cout << "Failo su " << studentai.size() << " studentu duomenimis nuskaitymas uztruko: "
+						 << testuLaikai.back().count() << " sek.\n"
+						 << studentai.size() << " studentu failo rusiavimas i kietekus ir vargsiukus laikas uztruko: "
+						 << rusiavimoLaikai.back().count() << " sek.\n"
+						 << studentai.size() << " studentu su vidurkiu >=5 isvedimas i faila uztruko: "
+						 << kietekuLaikai.back().count() << " sek.\n"
+						 << studentai.size() << " studentu su vidurkiu <5 isvedimas i faila uztruko: "
+						 << vargsiukuLaikai.back().count() << " sek.\n";
+
+					sum = testuLaikai.back().count() + rusiavimoLaikai.back().count() +
+						  kietekuLaikai.back().count() + vargsiukuLaikai.back().count();
+
+					cout << studentai.size() << " studentu failo bendras testavimo laikas uztruko: "
+						 << sum << " sek.\n";
+				}
+				else
+				{
+					cout << "Klaida: trūksta laiko matavimų duomenų!\n";
+				}
+			}
+			else if (pasirinkimas == 4 && pap_rusiavimas == 2)
+			{
+				if (!testuLaikai.empty())
+				{
+					cout << "Failo su " << studentai.size() << " studentu duomenimis nuskaitymas uztruko: "
+						 << testuLaikai.back().count() << " sek.\n";
+					cout << studentai.size() << " studentu failo bendras testavimo laikas uztruko: "
+						 << testuLaikai.back().count() << " sek.\n";
+				}
+				else
+				{
+					cout << "Klaida: trūksta laiko matavimų duomenų!\n";
+				}
+			}
+			else if (pasirinkimas != 4 && pap_rusiavimas == 1)
+			{
+				if (!rusiavimoLaikai.empty() && !kietekuLaikai.empty() && !vargsiukuLaikai.empty())
+				{
+					cout << studentai.size() << " studentu failo rusiavimas i kietekus ir vargsiukus laikas uztruko: "
+						 << rusiavimoLaikai.back().count() << " sek.\n";
+					cout << studentai.size() << " studentu su vidurkiu >=5 isvedimas i faila uztruko: "
+						 << kietekuLaikai.back().count() << " sek.\n"
+						 << studentai.size() << " studentu su vidurkiu <5 isvedimas i faila uztruko: "
+						 << vargsiukuLaikai.back().count() << " sek.\n";
+
+					sum = rusiavimoLaikai.back().count() + kietekuLaikai.back().count() + vargsiukuLaikai.back().count();
+
+					cout << studentai.size() << " studentu failo bendras testavimo laikas uztruko: "
+						 << sum << " sek.\n";
+				}
+				else
+				{
+					cout << "Klaida: trūksta laiko matavimų duomenų!\n";
+				}
+			}
+			else
+			{
+				cout << "Testu nebuvo.\n";
+			}
 		}
 	}
 }

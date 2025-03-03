@@ -797,6 +797,7 @@ void studentu_rusiavimas(vector<Studentas> &studentai, int skaiciavimo_budas, in
 {
 	std::vector<Studentas> kietekai, vargsiukai;
 	int rusiavimo_budas = 0;
+
 	if (skaiciavimo_budas == 3)
 	{
 		cout << "Kaip norite surusiuoti studentus: \n"
@@ -820,6 +821,7 @@ void studentu_rusiavimas(vector<Studentas> &studentai, int skaiciavimo_budas, in
 			}
 		}
 	}
+
 	auto start = std::chrono::high_resolution_clock::now();
 	for (const auto &studentas : studentai)
 	{
@@ -843,9 +845,9 @@ void studentu_rusiavimas(vector<Studentas> &studentai, int skaiciavimo_budas, in
 	}
 	auto end = std::chrono::high_resolution_clock::now();
 	std::chrono::duration<double> time = end - start;
-	// cout << "Studentu rusiavimas uztruko: " << time.count() << " sek." << endl;
 	rusiavimoLaikai.push_back(time);
 	rusiavimoSkaicius++;
+
 	start = std::chrono::high_resolution_clock::now();
 	rusiavimoIf(kietekai, kaip_surusiuoti, skaiciavimo_budas);
 	std::ofstream kietekaifailas("kietekai.txt");
@@ -853,8 +855,8 @@ void studentu_rusiavimas(vector<Studentas> &studentai, int skaiciavimo_budas, in
 	kietekaifailas.close();
 	end = std::chrono::high_resolution_clock::now();
 	time = end - start;
-	// cout << "Failus sukurti uztruko: " << time.count() << " sek." << endl;
 	kietekuLaikai.push_back(time);
+
 	start = std::chrono::high_resolution_clock::now();
 	rusiavimoIf(vargsiukai, kaip_surusiuoti, skaiciavimo_budas);
 	std::ofstream vargsiukaifailas("vargsiukai.txt");
@@ -862,7 +864,6 @@ void studentu_rusiavimas(vector<Studentas> &studentai, int skaiciavimo_budas, in
 	vargsiukaifailas.close();
 	end = std::chrono::high_resolution_clock::now();
 	time = end - start;
-	// cout << "Failus sukurti uztruko: " << time.count() << " sek." << endl;
 	vargsiukuLaikai.push_back(time);
 }
 
