@@ -1,5 +1,6 @@
 # 1000 Studentų analizė
 Viso faile yra 18 namų darbų pažymių
+
 Visų trijų testų laikas: 0.0701443 sek.
 
 ![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/05fd227c92f5edd9384d60c43458102dd8aa280e/1000/Screenshot%202025-03-04%20154934.png)
@@ -9,6 +10,7 @@ Visų trijų testų laikas: 0.0701443 sek.
 
 # 10000 Studentu analize
 Viso faile yra 18 namų darbų pažymių
+
 Visų trijų testų laikas: 0.999915 sek.
 
 ![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/05fd227c92f5edd9384d60c43458102dd8aa280e/10000/Screenshot%202025-03-04%20155337.png)
@@ -18,6 +20,7 @@ Visų trijų testų laikas: 0.999915 sek.
 
 # 100000 Studentu analize
 Viso faile yra 14 namų darbų pažymių
+
 Visų trijų testų laikas: 3.79794 sek.
 
 ![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/fd6b88880e66ddeed0b1c5a282dedd91e41413a9/100000/Screenshot%202025-03-04%20155721.png)
@@ -27,6 +30,7 @@ Visų trijų testų laikas: 3.79794 sek.
 
 # 1000000 Studentu analize
 Viso faile yra 19 namų darbų pažymių
+
 Visų trijų testų laikas: 44.1386 sek.
 
 ![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/fd6b88880e66ddeed0b1c5a282dedd91e41413a9/1000000/Screenshot%202025-03-04%20160132.png)
@@ -36,6 +40,7 @@ Visų trijų testų laikas: 44.1386 sek.
 
 # 10000000 Studentu analize
 Viso faile yra 19 namų darbų pažymių
+
 Visų trijų testų laikas: 466.759 sek.
 
 ![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/fd6b88880e66ddeed0b1c5a282dedd91e41413a9/10000000/Screenshot%202025-03-04%20161144.png)
