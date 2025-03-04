@@ -1,18 +1,18 @@
 # 1000 Studentu analize
 18 namu darbu pazymiu
 
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/05fd227c92f5edd9384d60c43458102dd8aa280e/1000/Screenshot%202025-03-04%20154934.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/05fd227c92f5edd9384d60c43458102dd8aa280e/1000/Screenshot%202025-03-04%20155106.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/05fd227c92f5edd9384d60c43458102dd8aa280e/1000/Screenshot%202025-03-04%20155144.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/05fd227c92f5edd9384d60c43458102dd8aa280e/1000/Screenshot%202025-03-04%20155216.png)
 
 # 10000 Studentu analize
 18 namu darbu pazymiu
 
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/05fd227c92f5edd9384d60c43458102dd8aa280e/10000/Screenshot%202025-03-04%20155337.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/05fd227c92f5edd9384d60c43458102dd8aa280e/10000/Screenshot%202025-03-04%20155337.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/05fd227c92f5edd9384d60c43458102dd8aa280e/10000/Screenshot%202025-03-04%20155415.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/05fd227c92f5edd9384d60c43458102dd8aa280e/10000/Screenshot%202025-03-04%20155505.png)
 
 # 100000 Studentu analize
 14 namu darbu pazymiu
@@ -20,7 +20,7 @@
 ![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/fd6b88880e66ddeed0b1c5a282dedd91e41413a9/100000/Screenshot%202025-03-04%20155721.png)
 ![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/fd6b88880e66ddeed0b1c5a282dedd91e41413a9/100000/Screenshot%202025-03-04%20155753.png)
 ![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/fd6b88880e66ddeed0b1c5a282dedd91e41413a9/100000/Screenshot%202025-03-04%20155828.png)
-![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/fd6b88880e66ddeed0b1c5a282dedd91e41413a9/1000000/Screenshot%202025-03-04%20160132.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/05fd227c92f5edd9384d60c43458102dd8aa280e/100000/Screenshot%202025-03-04%20155843.png)
 
 # 1000000 Studentu analize
 19 namu darbu pazymiu
