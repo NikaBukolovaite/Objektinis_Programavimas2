@@ -319,7 +319,7 @@ void pabaiga(int pasirinkimas, int generuoti, int pasirinkimas_rusiavimui)
 			cout << "Nebuvo sukurti failai." << endl;
 		}
 	}
-	if (pasirinkimas_rusiavimui == 1)
+	if (pasirinkimas_rusiavimui > 0)
 	{
 		std::chrono::duration<double> visasLaikas{};
 
