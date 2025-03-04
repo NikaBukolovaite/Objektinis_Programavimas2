@@ -34,4 +34,4 @@
 ![imagine alt](image_url)
 
 5 failu kurimas
-![imagine alt]([image_url](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/a4013df6d9d8fbc7987f3f46eff7fbc55adf39d2/Kurimo%20laikas.png))
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/a4013df6d9d8fbc7987f3f46eff7fbc55adf39d2/Kurimo%20laikas.png)
