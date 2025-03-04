@@ -4,3 +4,7 @@
 generated/
 *.exe
 */
+*.png
+*.jpg
+*.jpeg
+*.exe
