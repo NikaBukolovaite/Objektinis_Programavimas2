@@ -8,3 +8,4 @@ generated/
 *.jpg
 *.jpeg
 *.exe
+echo "rezultatai.txt" >> .gitignore
