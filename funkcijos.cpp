@@ -322,54 +322,51 @@ void pabaiga(int pasirinkimas, int generuoti, int pasirinkimas_rusiavimui)
 	if (pasirinkimas_rusiavimui == 1)
 	{
 		std::chrono::duration<double> visasLaikas{};
+
+		// Bendras rusiavimo i kietekus ir vargsiukus laikas
 		for (int i = 0; i < rusiavimoLaikai.size(); i++)
 		{
 			visasLaikas += rusiavimoLaikai[i];
 		}
-		cout << "Bendras rusiavimo i kietekus ir vargsiukus laikas: " << visasLaikas.count() << " sek." << endl;
-		// cout << "Viso failai buvo surusiuoti " << rusiavimoSkaicius << " kartus." << endl;
+		cout << "Bendras rusiavimo i kietekus ir vargsiukus laikas: " << std::fixed << std::setprecision(6) << visasLaikas.count() << " sek." << endl;
 		if (rusiavimoSkaicius > 0)
 		{
 			double vidurkis = visasLaikas.count() / rusiavimoSkaicius;
-			cout << "Vidutinis rusiavimo i kietekus ir vargsiukus laikas: " << vidurkis << " sek." << endl;
+			cout << "Vidutinis rusiavimo i kietekus ir vargsiukus laikas: " << std::fixed << std::setprecision(6) << vidurkis << " sek." << endl;
 		}
 		else
 		{
 			cout << "Nebuvo surusiuota." << endl;
 		}
-	}
-	if (pasirinkimas_rusiavimui == 1)
-	{
-		std::chrono::duration<double> visasLaikas{};
+
+		// Bendras kieteku isvedimo laikas
+		visasLaikas = std::chrono::duration<double>{};
 		for (int i = 0; i < kietekuLaikai.size(); i++)
 		{
 			visasLaikas += kietekuLaikai[i];
 		}
-		cout << "Bendras kieteku isvedimo laikas: " << visasLaikas.count() << " sek." << endl;
-		// cout << "Viso failai buvo isvesti " << rusiavimoSkaicius << " kartus." << endl;
+		cout << "Bendras kieteku isvedimo laikas: " << std::fixed << std::setprecision(6) << visasLaikas.count() << " sek." << endl;
 		if (rusiavimoSkaicius > 0)
 		{
 			double vidurkis = visasLaikas.count() / rusiavimoSkaicius;
-			cout << "Vidutinis kieteku isvedimo laikas: " << vidurkis << " sek." << endl;
+			cout << "Vidutinis kieteku isvedimo laikas: " << std::fixed << std::setprecision(6) << vidurkis << " sek." << endl;
 		}
 		else
 		{
 			cout << "Nebuvo isvesti failai." << endl;
 		}
-	}
-	if (pasirinkimas_rusiavimui == 1)
-	{
-		std::chrono::duration<double> visasLaikas{};
+
+		// Bendras vargsiuku isvedimo laikas
+		visasLaikas = std::chrono::duration<double>{};
 		for (int i = 0; i < vargsiukuLaikai.size(); i++)
 		{
 			visasLaikas += vargsiukuLaikai[i];
 		}
-		cout << "Bendras vargsiuku isvedimo laikas: " << visasLaikas.count() << " sek." << endl;
-		// cout << "Viso failai buvo isvesti " << rusiavimoSkaicius << " kartus." << endl;
+		cout << "Bendras vargsiuku isvedimo laikas: " << std::fixed << std::setprecision(6) << visasLaikas.count() << " sek." << endl;
 		if (rusiavimoSkaicius > 0)
 		{
 			double vidurkis = visasLaikas.count() / rusiavimoSkaicius;
-			cout << "Vidutinis vargsiuku isvedimo laikas: " << vidurkis << " sek." << endl;
+			cout << "Vidutinis vargsiuku isvedimo laikas: " << std::fixed << std::setprecision(6) << vidurkis << " sek." << endl;
 		}
 		else
 		{
