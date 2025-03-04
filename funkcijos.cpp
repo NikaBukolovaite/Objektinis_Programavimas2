@@ -308,7 +308,7 @@ void pabaiga(int pasirinkimas, int generuoti, int pasirinkimas_rusiavimui)
 			visasLaikas += kurimoLaikai[i];
 		}
 		cout << "Bendras failu kurimo laikas: " << visasLaikas.count() << " sek." << endl;
-		// cout << "Viso buvo sukurta " << kurimuSkaicius << " failai(u)." << endl;
+
 		if (kurimuSkaicius > 0)
 		{
 			double vidurkis = visasLaikas.count() / kurimuSkaicius;
@@ -323,7 +323,6 @@ void pabaiga(int pasirinkimas, int generuoti, int pasirinkimas_rusiavimui)
 	{
 		std::chrono::duration<double> visasLaikas{};
 
-		// Bendras rusiavimo i kietekus ir vargsiukus laikas
 		for (int i = 0; i < rusiavimoLaikai.size(); i++)
 		{
 			visasLaikas += rusiavimoLaikai[i];
@@ -339,7 +338,6 @@ void pabaiga(int pasirinkimas, int generuoti, int pasirinkimas_rusiavimui)
 			cout << "Nebuvo surusiuota." << endl;
 		}
 
-		// Bendras kieteku isvedimo laikas
 		visasLaikas = std::chrono::duration<double>{};
 		for (int i = 0; i < kietekuLaikai.size(); i++)
 		{
@@ -356,7 +354,6 @@ void pabaiga(int pasirinkimas, int generuoti, int pasirinkimas_rusiavimui)
 			cout << "Nebuvo isvesti failai." << endl;
 		}
 
-		// Bendras vargsiuku isvedimo laikas
 		visasLaikas = std::chrono::duration<double>{};
 		for (int i = 0; i < vargsiukuLaikai.size(); i++)
 		{
@@ -381,7 +378,6 @@ void pabaiga(int pasirinkimas, int generuoti, int pasirinkimas_rusiavimui)
 			visasLaikas += testuLaikai[i];
 		}
 		cout << "Bendras failo nuskaitymo laikas: " << visasLaikas.count() << " sek." << endl;
-		// cout << "Viso failas buvo nuskaitytas " << testuSkaicius << " kartus." << endl;
 		if (testuSkaicius > 0)
 		{
 			double vidurkis = visasLaikas.count() / testuSkaicius;
