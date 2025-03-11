@@ -1,9 +1,9 @@
-#include "funkcijos.h"
-deque<std::chrono::duration<double>> testuLaikai;
-deque<std::chrono::duration<double>> kurimoLaikai;
-deque<std::chrono::duration<double>> rusiavimoLaikai;
-deque<std::chrono::duration<double>> kietekuLaikai;
-deque<std::chrono::duration<double>> vargsiukuLaikai;
+#include "deque_funkcijos.h"
+vector<std::chrono::duration<double>> testuLaikai;
+vector<std::chrono::duration<double>> kurimoLaikai;
+vector<std::chrono::duration<double>> rusiavimoLaikai;
+vector<std::chrono::duration<double>> kietekuLaikai;
+vector<std::chrono::duration<double>> vargsiukuLaikai;
 int testuSkaicius = 0;
 int kurimuSkaicius = 0;
 int rusiavimoSkaicius = 0;
@@ -21,7 +21,7 @@ void aplankalas()
 	}
 }
 
-int failo_generavimo_pasirinkimas(deque<string> &failai)
+int failo_generavimo_pasirinkimas(vector<string> &failai)
 {
 	int generuoti;
 	cout << "Ar norite sugeneruoti naujus failus?\n"
@@ -836,8 +836,6 @@ void studentu_rusiavimas(deque<Studentas> &studentai, int skaiciavimo_budas, int
 			kietekai.push_back(studentas);
 		}
 	}
-	kietekai.shrink_to_fit();
-	vargsiukai.shrink_to_fit();
 	auto end = std::chrono::high_resolution_clock::now();
 	std::chrono::duration<double> time = end - start;
 	rusiavimoLaikai.push_back(time);

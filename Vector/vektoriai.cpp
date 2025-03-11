@@ -1,4 +1,4 @@
-#include "santrauka.h"
+#include "../santrauka.h"
 #include "funkcijos.h"
 
 int main()

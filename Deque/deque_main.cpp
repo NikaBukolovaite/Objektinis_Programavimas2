@@ -1,10 +1,10 @@
-#include "santrauka.h"
-#include "funkcijos.h"
+#include "../santrauka.h"
+#include "deque_funkcijos.h"
 
 int main()
 {
 	deque<Studentas> studentai;
-	deque<string> sugeneruoti_failai;
+	vector<string> sugeneruoti_failai;
 	int pasirinkimas = 0;
 	int generuoti = failo_generavimo_pasirinkimas(sugeneruoti_failai);
 	int pap_rusiavimas = 0;
