@@ -3,7 +3,7 @@ start: vektoriai.o funkcijos.o
 	rm -f vektoriai.o funkcijos.o
 
 vektoriai.o: vektoriai.cpp
-	g++ -c vektoriai.cpp -o vektoriai.o
+	g++ -O3 -c vektoriai.cpp -o vektoriai.o
 
 funkcijos.o: funkcijos.cpp
 	g++ -c funkcijos.cpp -o funkcijos.o

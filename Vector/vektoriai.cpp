@@ -8,6 +8,7 @@ int main()
 	int pasirinkimas = 0;
 	int generuoti = failo_generavimo_pasirinkimas(sugeneruoti_failai);
 	int pap_rusiavimas = 0;
+	int kaip_surusiuoti = 0;
 	string pas_failas = koki_faila_nuskaityti();
 	srand(time(NULL));
 	while (pasirinkimas >= 0 && pasirinkimas < 5)
@@ -15,7 +16,7 @@ int main()
 		pasirinkimas = Meniu();
 		if (pasirinkimas == 5)
 		{
-			pabaiga(pasirinkimas, generuoti, pap_rusiavimas);
+			pabaiga(pasirinkimas, generuoti, pap_rusiavimas, kaip_surusiuoti);
 			break;
 		}
 		else
@@ -26,7 +27,7 @@ int main()
 			informacijos_ivedimas(studentai, pasirinkimas, pas_failas);
 			int skaiciavimo_budas = koks_galutinis();
 			int isvedimo_budas = failas_ar_konsole();
-			int kaip_surusiuoti = rusiavimas(skaiciavimo_budas);
+			kaip_surusiuoti = rusiavimas(skaiciavimo_budas);
 			pap_rusiavimas = papildomas_rusiavimas();
 			if (pap_rusiavimas == 1)
 			{
@@ -54,13 +55,15 @@ int main()
 						 << testuLaikai.back().count() << " sek.\n"
 						 << studentai.size() << " studentu failo rusiavimas i kietekus ir vargsiukus laikas uztruko: "
 						 << rusiavimoLaikai.back().count() << " sek.\n"
-						 << studentai.size() << " studentu su vidurkiu >=5 isvedimas i faila uztruko: "
-						 << kietekuLaikai.back().count() << " sek.\n"
-						 << studentai.size() << " studentu su vidurkiu <5 isvedimas i faila uztruko: "
-						 << vargsiukuLaikai.back().count() << " sek.\n";
+						 //  << studentai.size() << " studentu su vidurkiu >=5 isvedimas i faila uztruko: "
+						 //  << kietekuLaikai.back().count() << " sek.\n"
+						 //  << studentai.size() << " studentu su vidurkiu <5 isvedimas i faila uztruko: "
+						 //  << vargsiukuLaikai.back().count() << " sek.\n"
+						 << studentai.size() << " studentu rusiavimas faile uztruko: " << vienoIsSesiuRusiavimoLaikai.back().count() << " sek.\n";
 
-					sum = testuLaikai.back().count() + rusiavimoLaikai.back().count() +
-						  kietekuLaikai.back().count() + vargsiukuLaikai.back().count();
+					// sum = testuLaikai.back().count() + rusiavimoLaikai.back().count() +
+					// 	  kietekuLaikai.back().count() + vargsiukuLaikai.back().count();
+					sum = testuLaikai.back().count() + rusiavimoLaikai.back().count() + vienoIsSesiuRusiavimoLaikai.back().count();
 
 					cout << studentai.size() << " studentu failo bendras testavimo laikas uztruko: "
 						 << sum << " sek.\n";
@@ -75,9 +78,12 @@ int main()
 				if (!testuLaikai.empty())
 				{
 					cout << "Failo su " << studentai.size() << " studentu duomenimis nuskaitymas uztruko: "
-						 << testuLaikai.back().count() << " sek.\n";
+						 << testuLaikai.back().count() << " sek.\n"
+						 << studentai.size() << " studentu rusiavimas faile uztruko: " << vienoIsSesiuRusiavimoLaikai.back().count() << " sek.\n";
+
+					sum = testuLaikai.back().count() + vienoIsSesiuRusiavimoLaikai.back().count();
 					cout << studentai.size() << " studentu failo bendras testavimo laikas uztruko: "
-						 << testuLaikai.back().count() << " sek.\n";
+						 << sum << " sek.\n";
 				}
 				else
 				{
@@ -89,13 +95,15 @@ int main()
 				if (!rusiavimoLaikai.empty() && !kietekuLaikai.empty() && !vargsiukuLaikai.empty())
 				{
 					cout << studentai.size() << " studentu failo rusiavimas i kietekus ir vargsiukus laikas uztruko: "
-						 << rusiavimoLaikai.back().count() << " sek.\n";
-					cout << studentai.size() << " studentu su vidurkiu >=5 isvedimas i faila uztruko: "
-						 << kietekuLaikai.back().count() << " sek.\n"
-						 << studentai.size() << " studentu su vidurkiu <5 isvedimas i faila uztruko: "
-						 << vargsiukuLaikai.back().count() << " sek.\n";
+						 << rusiavimoLaikai.back().count() << " sek.\n"
+						 //  << studentai.size() << " studentu su vidurkiu >=5 isvedimas i faila uztruko: "
+						 //  << kietekuLaikai.back().count() << " sek.\n"
+						 //  << studentai.size() << " studentu su vidurkiu <5 isvedimas i faila uztruko: "
+						 //  << vargsiukuLaikai.back().count() << " sek.\n"
+						 << studentai.size() << " studentu rusiavimas faile uztruko: " << vienoIsSesiuRusiavimoLaikai.back().count() << " sek.\n";
 
-					sum = rusiavimoLaikai.back().count() + kietekuLaikai.back().count() + vargsiukuLaikai.back().count();
+					// sum = rusiavimoLaikai.back().count() + kietekuLaikai.back().count() + vargsiukuLaikai.back().count();
+					sum = rusiavimoLaikai.back().count() + vienoIsSesiuRusiavimoLaikai.back().count();
 
 					cout << studentai.size() << " studentu failo bendras testavimo laikas uztruko: "
 						 << sum << " sek.\n";

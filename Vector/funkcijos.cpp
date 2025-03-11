@@ -340,37 +340,37 @@ void pabaiga(int pasirinkimas, int generuoti, int pasirinkimas_rusiavimui, int k
 			cout << "Nebuvo surusiuota." << endl;
 		}
 
-		visasLaikas = std::chrono::duration<double>{};
-		for (int i = 0; i < kietekuLaikai.size(); i++)
-		{
-			visasLaikas += kietekuLaikai[i];
-		}
-		cout << "Bendras kieteku isvedimo laikas: " << std::fixed << std::setprecision(6) << visasLaikas.count() << " sek." << endl;
-		if (rusiavimoSkaicius > 0)
-		{
-			double vidurkis = visasLaikas.count() / rusiavimoSkaicius;
-			cout << "Vidutinis kieteku isvedimo laikas: " << std::fixed << std::setprecision(6) << vidurkis << " sek." << endl;
-		}
-		else
-		{
-			cout << "Nebuvo isvesti failai." << endl;
-		}
+		// visasLaikas = std::chrono::duration<double>{};
+		// for (int i = 0; i < kietekuLaikai.size(); i++)
+		// {
+		// 	visasLaikas += kietekuLaikai[i];
+		// }
+		// cout << "Bendras kieteku isvedimo laikas: " << std::fixed << std::setprecision(6) << visasLaikas.count() << " sek." << endl;
+		// if (rusiavimoSkaicius > 0)
+		// {
+		// 	double vidurkis = visasLaikas.count() / rusiavimoSkaicius;
+		// 	cout << "Vidutinis kieteku isvedimo laikas: " << std::fixed << std::setprecision(6) << vidurkis << " sek." << endl;
+		// }
+		// else
+		// {
+		// 	cout << "Nebuvo isvesti failai." << endl;
+		// }
 
-		visasLaikas = std::chrono::duration<double>{};
-		for (int i = 0; i < vargsiukuLaikai.size(); i++)
-		{
-			visasLaikas += vargsiukuLaikai[i];
-		}
-		cout << "Bendras vargsiuku isvedimo laikas: " << std::fixed << std::setprecision(6) << visasLaikas.count() << " sek." << endl;
-		if (rusiavimoSkaicius > 0)
-		{
-			double vidurkis = visasLaikas.count() / rusiavimoSkaicius;
-			cout << "Vidutinis vargsiuku isvedimo laikas: " << std::fixed << std::setprecision(6) << vidurkis << " sek." << endl;
-		}
-		else
-		{
-			cout << "Nebuvo isvesti failai." << endl;
-		}
+		// visasLaikas = std::chrono::duration<double>{};
+		// for (int i = 0; i < vargsiukuLaikai.size(); i++)
+		// {
+		// 	visasLaikas += vargsiukuLaikai[i];
+		// }
+		// cout << "Bendras vargsiuku isvedimo laikas: " << std::fixed << std::setprecision(6) << visasLaikas.count() << " sek." << endl;
+		// if (rusiavimoSkaicius > 0)
+		// {
+		// 	double vidurkis = visasLaikas.count() / rusiavimoSkaicius;
+		// 	cout << "Vidutinis vargsiuku isvedimo laikas: " << std::fixed << std::setprecision(6) << vidurkis << " sek." << endl;
+		// }
+		// else
+		// {
+		// 	cout << "Nebuvo isvesti failai." << endl;
+		// }
 	}
 	if (kaip_surusiuoti > 0)
 	{
@@ -379,11 +379,11 @@ void pabaiga(int pasirinkimas, int generuoti, int pasirinkimas_rusiavimui, int k
 		{
 			visasLaikas += vienoIsSesiuRusiavimoLaikai[i];
 		}
-		cout << "Bendras vieno is sesiu rusiavimo laikas: " << std::fixed << std::setprecision(6) << visasLaikas.count() << " sek." << endl;
+		cout << "Bendras rusiavimo laikas: " << std::fixed << std::setprecision(6) << visasLaikas.count() << " sek." << endl;
 		if (vienoIsSesiuRusiavimoSkaicius > 0)
 		{
 			double vidurkis = visasLaikas.count() / vienoIsSesiuRusiavimoSkaicius;
-			cout << "Vidutinis vieno is sesiu rusiavimo laikas: " << std::fixed << std::setprecision(6) << vidurkis << " sek." << endl;
+			cout << "Vidutinis rusiavimo laikas: " << std::fixed << std::setprecision(6) << vidurkis << " sek." << endl;
 		}
 		else
 		{
@@ -864,8 +864,8 @@ void studentu_rusiavimas(vector<Studentas> &studentai, int skaiciavimo_budas, in
 	rusiavimoLaikai.push_back(time);
 	rusiavimoSkaicius++;
 
-	start = std::chrono::high_resolution_clock::now();
 	rusiavimoIf(kietekai, kaip_surusiuoti, skaiciavimo_budas);
+	start = std::chrono::high_resolution_clock::now();
 	std::ofstream kietekaifailas("kietekai.txt");
 	output(kietekaifailas, kietekai, skaiciavimo_budas, 1);
 	kietekaifailas.close();
@@ -873,8 +873,8 @@ void studentu_rusiavimas(vector<Studentas> &studentai, int skaiciavimo_budas, in
 	time = end - start;
 	kietekuLaikai.push_back(time);
 
-	start = std::chrono::high_resolution_clock::now();
 	rusiavimoIf(vargsiukai, kaip_surusiuoti, skaiciavimo_budas);
+	start = std::chrono::high_resolution_clock::now();
 	std::ofstream vargsiukaifailas("vargsiukai.txt");
 	output(vargsiukaifailas, vargsiukai, skaiciavimo_budas, 1);
 	vargsiukaifailas.close();
@@ -938,7 +938,6 @@ void rusiavimoIf(vector<Studentas> &studentai, int kaip_surusiuoti, int skaiciav
 	switch (kaip_surusiuoti)
 	{
 	case 1:
-
 		sort(studentai.begin(), studentai.end(), vardoRusiavimas);
 		break;
 	case 2:
@@ -960,7 +959,6 @@ void rusiavimoIf(vector<Studentas> &studentai, int kaip_surusiuoti, int skaiciav
 	auto end = std::chrono::high_resolution_clock::now();
 	std::chrono::duration<double> time = end - start;
 	double laikas = time.count();
-	cout << "Rusiavimas uztruko: " << laikas << " sek." << endl;
 	vienoIsSesiuRusiavimoSkaicius++;
 	vienoIsSesiuRusiavimoLaikai.push_back(time);
 }

@@ -10,7 +10,7 @@ struct Studentas
 	int egzamino_pazymys = 0;
 	double vidurkis;
 };
-const string aplankalo_pavadinimas = "../NuskaitymoFailai";
+const string aplankalo_pavadinimas = "../NuskaitymoFailai/";
 extern vector<std::chrono::duration<double>> testuLaikai;
 extern vector<std::chrono::duration<double>> kurimoLaikai;
 extern vector<std::chrono::duration<double>> rusiavimoLaikai;
@@ -28,7 +28,7 @@ void parodytiEsamusFailus();
 string koki_faila_nuskaityti();
 int Meniu();
 void failo_nuskaitymas(vector<Studentas> &studentai, const string &failo_pavadinimas);
-void pabaiga(int pasirinkimas, int generuoti, int pasirinkimas_rusiavimui);
+void pabaiga(int pasirinkimas, int generuoti, int pasirinkimas_rusiavimui, int kaip_surusiuoti);
 void nuskaitytiIsFailo(vector<Studentas> &studentai, string failo_pasirinkimas);
 bool ivestiStudenta(Studentas &laikinas);
 void generuotiVardaPavarde(Studentas &laikinas);
