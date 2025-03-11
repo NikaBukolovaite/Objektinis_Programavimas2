@@ -18,3 +18,11 @@ echo "rezultatai.txt" >> .gitignore
 !100000/**
 !1000000/**
 !10000000/**
+!Deque/
+!Deque/**
+!List/
+!List/**
+!Vector/
+!Vector/**
+!Nuotraukos/
+!Nuotraukos/**
