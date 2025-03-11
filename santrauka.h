@@ -18,15 +18,19 @@
 #include <iterator>
 #include <ios>
 #include <filesystem>
+#include <list>
+#include <deque>
 
 using std::cerr;
 using std::cin;
 using std::cout;
+using std::deque;
 using std::endl;
 using std::fixed;
 using std::ifstream;
 using std::istringstream;
 using std::left;
+using std::list;
 using std::max;
 using std::ofstream;
 using std::ostream;
