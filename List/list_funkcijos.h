@@ -6,21 +6,21 @@ struct Studentas
 {
 	string vardas;
 	string pavarde;
-	list<int> pazymiai;
+	vector<int> pazymiai;
 	int egzamino_pazymys = 0;
 	double vidurkis;
 };
 const string aplankalo_pavadinimas = "../NuskaitymoFailai";
-extern list<std::chrono::duration<double>> testuLaikai;
-extern list<std::chrono::duration<double>> kurimoLaikai;
-extern list<std::chrono::duration<double>> rusiavimoLaikai;
-extern list<std::chrono::duration<double>> kietekuLaikai;
-extern list<std::chrono::duration<double>> vargsiukuLaikai;
+extern vector<std::chrono::duration<double>> testuLaikai;
+extern vector<std::chrono::duration<double>> kurimoLaikai;
+extern vector<std::chrono::duration<double>> rusiavimoLaikai;
+extern vector<std::chrono::duration<double>> kietekuLaikai;
+extern vector<std::chrono::duration<double>> vargsiukuLaikai;
 extern int testuSkaicius;
 extern int kurimuSkaicius;
 extern int rusiavimoSkaicius;
 void aplankalas();
-int failo_generavimo_pasirinkimas(list<string> &failai);
+int failo_generavimo_pasirinkimas(vector<string> &failai);
 void failo_generavimas(const string &failo_pavadinimas, long long studentu_skaicius);
 void parodytiEsamusFailus();
 string koki_faila_nuskaityti();

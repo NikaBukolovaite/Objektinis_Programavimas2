@@ -1,9 +1,9 @@
-#include "funkcijos.h"
-list<std::chrono::duration<double>> testuLaikai;
-list<std::chrono::duration<double>> kurimoLaikai;
-list<std::chrono::duration<double>> rusiavimoLaikai;
-list<std::chrono::duration<double>> kietekuLaikai;
-list<std::chrono::duration<double>> vargsiukuLaikai;
+#include "list_funkcijos.h"
+vector<std::chrono::duration<double>> testuLaikai;
+vector<std::chrono::duration<double>> kurimoLaikai;
+vector<std::chrono::duration<double>> rusiavimoLaikai;
+vector<std::chrono::duration<double>> kietekuLaikai;
+vector<std::chrono::duration<double>> vargsiukuLaikai;
 int testuSkaicius = 0;
 int kurimuSkaicius = 0;
 int rusiavimoSkaicius = 0;
@@ -21,7 +21,7 @@ void aplankalas()
 	}
 }
 
-int failo_generavimo_pasirinkimas(list<string> &failai)
+int failo_generavimo_pasirinkimas(vector<string> &failai)
 {
 	int generuoti;
 	cout << "Ar norite sugeneruoti naujus failus?\n"
@@ -836,8 +836,6 @@ void studentu_rusiavimas(list<Studentas> &studentai, int skaiciavimo_budas, int 
 			kietekai.push_back(studentas);
 		}
 	}
-	kietekai.shrink_to_fit();
-	vargsiukai.shrink_to_fit();
 	auto end = std::chrono::high_resolution_clock::now();
 	std::chrono::duration<double> time = end - start;
 	rusiavimoLaikai.push_back(time);
@@ -916,22 +914,28 @@ void rusiavimoIf(list<Studentas> &studentai, int kaip_surusiuoti, int skaiciavim
 	switch (kaip_surusiuoti)
 	{
 	case 1:
-		sort(studentai.begin(), studentai.end(), vardoRusiavimas);
+		studentai.sort([](Studentas a, Studentas b)
+					   { return vardoRusiavimas; });
 		break;
 	case 2:
-		sort(studentai.begin(), studentai.end(), pavardeRusiavimas);
+		studentai.sort([](Studentas a, Studentas b)
+					   { return pavardeRusiavimas; });
 		break;
 	case 3:
-		sort(studentai.begin(), studentai.end(), vidurkioNuoMazRusiavimas);
+		studentai.sort([](Studentas a, Studentas b)
+					   { return vidurkioNuoMazRusiavimas; });
 		break;
 	case 4:
-		sort(studentai.begin(), studentai.end(), vidurkioNuoDidRusiavimas);
+		studentai.sort([](Studentas &a, Studentas &b)
+					   { return vidurkioNuoDidRusiavimas; });
 		break;
 	case 5:
-		sort(studentai.begin(), studentai.end(), medianosNuoMazRusiavimas);
+		studentai.sort([](Studentas &a, Studentas &b)
+					   { return medianosNuoMazRusiavimas; });
 		break;
 	case 6:
-		sort(studentai.begin(), studentai.end(), medianosNuoDidRusiavimas);
+		studentai.sort([](Studentas &a, Studentas &b)
+					   { return medianosNuoDidRusiavimas; });
 		break;
 	}
 }
