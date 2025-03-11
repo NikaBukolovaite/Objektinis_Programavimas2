@@ -40,6 +40,10 @@ int main()
 			{
 				failas(studentai, kaip_surusiuoti, skaiciavimo_budas);
 			}
+			else if (isvedimo_budas == 3)
+			{
+				cout << "Buvo pasirinta neisvesti visu duomenu konsoleje/viename faile.\n";
+			}
 			double sum = 0;
 
 			if (pasirinkimas == 4 && pap_rusiavimas == 1)

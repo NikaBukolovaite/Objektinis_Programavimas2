@@ -621,7 +621,8 @@ int failas_ar_konsole()
 	int isvedimo_budas = 0;
 	cout << "Kaip norite isvesti faila: \n"
 		 << "1 - Jei norite isvesti i konsole; \n"
-		 << "2 - Jei norite isvesti i faila. \n";
+		 << "2 - Jei norite isvesti i faila. \n"
+		 << "3 - Jei nenorite isvesti visos informacijos viename faile/konsoleje. \n";
 	while (isvedimo_budas < 1 || isvedimo_budas > 2)
 	{
 		try

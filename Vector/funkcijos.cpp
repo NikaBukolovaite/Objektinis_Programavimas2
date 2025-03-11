@@ -621,13 +621,14 @@ int failas_ar_konsole()
 	int isvedimo_budas = 0;
 	cout << "Kaip norite isvesti faila: \n"
 		 << "1 - Jei norite isvesti i konsole; \n"
-		 << "2 - Jei norite isvesti i faila. \n";
-	while (isvedimo_budas < 1 || isvedimo_budas > 2)
+		 << "2 - Jei norite isvesti i faila. \n"
+		 << "3 - Jei nenorite isvesti visos informacijos viename faile/konsoleje. \n";
+	while (isvedimo_budas < 1 || isvedimo_budas > 3)
 	{
 		try
 		{
 			cin >> isvedimo_budas;
-			if (isvedimo_budas < 1 || isvedimo_budas > 2 || cin.fail() || cin.peek() != '\n')
+			if (isvedimo_budas < 1 || isvedimo_budas > 3 || cin.fail() || cin.peek() != '\n')
 			{
 				throw std::invalid_argument("Ivedete netinkama simboli. Iveskite dar karta: ");
 			}
@@ -646,7 +647,7 @@ int rusiavimas(int skaiciavimo_budas)
 {
 	int kaip_surusiuoti = 0;
 
-	cout << "Kaip norite surikkiuoti studentus faile: \n";
+	cout << "Kaip norite surikiuoti studentus faile: \n";
 
 	if (skaiciavimo_budas == 1)
 	{
