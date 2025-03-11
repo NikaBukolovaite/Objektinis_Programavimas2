@@ -836,6 +836,8 @@ void studentu_rusiavimas(vector<Studentas> &studentai, int skaiciavimo_budas, in
 			kietekai.push_back(studentas);
 		}
 	}
+	kietekai.shrink_to_fit();
+	vargsiukai.shrink_to_fit();
 	auto end = std::chrono::high_resolution_clock::now();
 	std::chrono::duration<double> time = end - start;
 	rusiavimoLaikai.push_back(time);
