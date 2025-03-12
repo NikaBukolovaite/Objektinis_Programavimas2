@@ -865,6 +865,8 @@ void studentu_rusiavimas(vector<Studentas> &studentai, int skaiciavimo_budas, in
 	rusiavimoSkaicius++;
 
 	rusiavimoIf(kietekai, kaip_surusiuoti, skaiciavimo_budas);
+	rusiavimoIf(vargsiukai, kaip_surusiuoti, skaiciavimo_budas);
+
 	start = std::chrono::high_resolution_clock::now();
 	std::ofstream kietekaifailas("kietekai.txt");
 	output(kietekaifailas, kietekai, skaiciavimo_budas, 1);
@@ -873,7 +875,6 @@ void studentu_rusiavimas(vector<Studentas> &studentai, int skaiciavimo_budas, in
 	time = end - start;
 	kietekuLaikai.push_back(time);
 
-	rusiavimoIf(vargsiukai, kaip_surusiuoti, skaiciavimo_budas);
 	start = std::chrono::high_resolution_clock::now();
 	std::ofstream vargsiukaifailas("vargsiukai.txt");
 	output(vargsiukaifailas, vargsiukai, skaiciavimo_budas, 1);

@@ -61,7 +61,8 @@
     "xutility": "cpp",
     "filesystem": "cpp",
     "numeric": "cpp",
-    "list": "cpp"
+    "list": "cpp",
+    "deque": "cpp"
   },
   "C_Cpp.errorSquiggles": "disabled"
 }

@@ -59,11 +59,11 @@ int main()
 						 //  << kietekuLaikai.back().count() << " sek.\n"
 						 //  << studentai.size() << " studentu su vidurkiu <5 isvedimas i faila uztruko: "
 						 //  << vargsiukuLaikai.back().count() << " sek.\n"
-						 << studentai.size() << " studentu rusiavimas faile uztruko: " << vienoIsSesiuRusiavimoLaikai.back().count() << " sek.\n";
+						 << studentai.size() << " studentu rusiavimas faile uztruko: " << (vienoIsSesiuRusiavimoLaikai.back() + vienoIsSesiuRusiavimoLaikai[vienoIsSesiuRusiavimoLaikai.size() - 2]).count() << " sek.\n";
 
 					// sum = testuLaikai.back().count() + rusiavimoLaikai.back().count() +
 					// 	  kietekuLaikai.back().count() + vargsiukuLaikai.back().count();
-					sum = testuLaikai.back().count() + rusiavimoLaikai.back().count() + vienoIsSesiuRusiavimoLaikai.back().count();
+					sum = testuLaikai.back().count() + rusiavimoLaikai.back().count() + (vienoIsSesiuRusiavimoLaikai.back() + vienoIsSesiuRusiavimoLaikai[vienoIsSesiuRusiavimoLaikai.size() - 2]).count();
 
 					cout << studentai.size() << " studentu failo bendras testavimo laikas uztruko: "
 						 << sum << " sek.\n";
@@ -79,9 +79,9 @@ int main()
 				{
 					cout << "Failo su " << studentai.size() << " studentu duomenimis nuskaitymas uztruko: "
 						 << testuLaikai.back().count() << " sek.\n"
-						 << studentai.size() << " studentu rusiavimas faile uztruko: " << vienoIsSesiuRusiavimoLaikai.back().count() << " sek.\n";
+						 << studentai.size() << " studentu rusiavimas faile uztruko: " << (vienoIsSesiuRusiavimoLaikai.back() + vienoIsSesiuRusiavimoLaikai[vienoIsSesiuRusiavimoLaikai.size() - 2]).count() << " sek.\n";
 
-					sum = testuLaikai.back().count() + vienoIsSesiuRusiavimoLaikai.back().count();
+					sum = testuLaikai.back().count() + (vienoIsSesiuRusiavimoLaikai.back() + vienoIsSesiuRusiavimoLaikai[vienoIsSesiuRusiavimoLaikai.size() - 2]).count();
 					cout << studentai.size() << " studentu failo bendras testavimo laikas uztruko: "
 						 << sum << " sek.\n";
 				}
@@ -100,10 +100,10 @@ int main()
 						 //  << kietekuLaikai.back().count() << " sek.\n"
 						 //  << studentai.size() << " studentu su vidurkiu <5 isvedimas i faila uztruko: "
 						 //  << vargsiukuLaikai.back().count() << " sek.\n"
-						 << studentai.size() << " studentu rusiavimas faile uztruko: " << vienoIsSesiuRusiavimoLaikai.back().count() << " sek.\n";
+						 << studentai.size() << " studentu rusiavimas faile uztruko: " << (vienoIsSesiuRusiavimoLaikai.back() + vienoIsSesiuRusiavimoLaikai[vienoIsSesiuRusiavimoLaikai.size() - 2]).count() << " sek.\n";
 
 					// sum = rusiavimoLaikai.back().count() + kietekuLaikai.back().count() + vargsiukuLaikai.back().count();
-					sum = rusiavimoLaikai.back().count() + vienoIsSesiuRusiavimoLaikai.back().count();
+					sum = rusiavimoLaikai.back().count() + (vienoIsSesiuRusiavimoLaikai.back() + vienoIsSesiuRusiavimoLaikai[vienoIsSesiuRusiavimoLaikai.size() - 2]).count();
 
 					cout << studentai.size() << " studentu failo bendras testavimo laikas uztruko: "
 						 << sum << " sek.\n";

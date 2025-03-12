@@ -10,7 +10,7 @@ struct Studentas
 	int egzamino_pazymys = 0;
 	double vidurkis;
 };
-const string aplankalo_pavadinimas = "../NuskaitymoFailai/";
+const string aplankalo_pavadinimas = "NuskaitymoFailai";
 extern vector<std::chrono::duration<double>> testuLaikai;
 extern vector<std::chrono::duration<double>> kurimoLaikai;
 extern vector<std::chrono::duration<double>> rusiavimoLaikai;
