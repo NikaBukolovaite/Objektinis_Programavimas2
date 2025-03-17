@@ -4,35 +4,35 @@ Viso faile yra 18 namų darbų pažymių
 Nuskaitymas (sek.):
 |      | Vector| List| Deque|
 |:-------|------:|----:|-----:|
-|1 testas|0.0072475|0.054789|0.1234|
-|2 testas|0.0044263|0.054789|0.1234|
-|3 testas|0.0046425|0.054789|0.1234|
+|1 testas|0.0072475|0.0082808|0.1234|
+|2 testas|0.0044263|0.0043628|0.1234|
+|3 testas|0.0046425|0.0046128|0.1234|
 
 Rusiavimas faile (sek.):
 |      | Vector| List| Deque|
 |:-------|------:|----:|-----:|
-|1 testas|0.004638|0.054789|0.1234|
-|2 testas|0.0045471|0.054789|0.1234|
-|3 testas|0.0045742|0.054789|0.1234|
+|1 testas|0.004638|0.0032458|0.1234|
+|2 testas|0.0045471|0.0035307|0.1234|
+|3 testas|0.0045742|0.0031883|0.1234|
 
 Rusiavimas i kietekus ir vargsiukus (sek.):
 |      | Vector| List| Deque|
 |:-------|------:|----:|-----:|
-|1 testas|0.0006764|0.054789|0.1234|
-|2 testas|0.0006803|0.054789|0.1234|
-|3 testas|0.0006776|0.054789|0.1234|
+|1 testas|0.0006764|0.0004916|0.1234|
+|2 testas|0.0006803|0.00069|0.1234|
+|3 testas|0.0006776|0.0004679|0.1234|
 
 Vidurkiai (sek.):
 |      | Vector| List| Deque|
 |:-------|------:|----:|-----:|
-|Bendras failo nuskaitymo laikas|0.016316|0.054789|0.1234|
-|Vidutinis failo nuskaitymo laikas|0.005439|0.054789|0.1234|
-|Bendras failo rusiavimo laikas|0.013759|0.054789|0.1234|
-|Vidutinis failo rusiavimo laikas|0.002293|0.054789|0.1234|
-|Bendras failo rusiavimo i kietekus ir vargsiukus laikas|0.002034|0.054789|0.1234|
-|Vidutinis failo rusiavimo i kietekus ir vargsiukus laikas|0.000678|0.054789|0.1234|
-|Bendras programos veikimo laikas|0.032109|0.054789|0.1234|
-|Vidutinis programos veikimo laikas|0.010703|0.054789|0.1234|
+|Bendras failo nuskaitymo laikas|0.016316|0.017256|0.1234|
+|Vidutinis failo nuskaitymo laikas|0.005439|0.005752|0.1234|
+|Bendras failo rusiavimo laikas|0.013759|0.009965|0.1234|
+|Vidutinis failo rusiavimo laikas|0.002293|0.001661|0.1234|
+|Bendras failo rusiavimo i kietekus ir vargsiukus laikas|0.002034|0.001650|0.1234|
+|Vidutinis failo rusiavimo i kietekus ir vargsiukus laikas|0.000678|0.000550|0.1234|
+|Bendras programos veikimo laikas|0.032109|0.028871|0.1234|
+|Vidutinis programos veikimo laikas|0.010703|0.0096236667|0.1234|
 
 # 10000 Studentu analize
 Viso faile yra 18 namų darbų pažymių
