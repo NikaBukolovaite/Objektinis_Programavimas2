@@ -1048,29 +1048,25 @@ void studentu_rusiavimas_3strategija(deque<Studentas> &studentai, int skaiciavim
 		}
 	}
 
-	auto start = std::chrono::high_resolution_clock::now();
-	for (const auto &studentas : studentai)
-	{
-		double galutinis_balas = 0;
-		if (skaiciavimo_budas == 1 || (skaiciavimo_budas == 3 && rusiavimo_budas == 1))
-		{
-			galutinis_balas = galutinis_pazymys_vid(studentas);
-		}
-		else if (skaiciavimo_budas == 2 || (skaiciavimo_budas == 3 && rusiavimo_budas == 2))
-		{
-			galutinis_balas = galutinis_pazymys_med(studentas);
-		}
-		if (galutinis_balas < 5.0)
-		{
-			vargsiukai.push_back(studentas);
-		}
-		else
-		{
-			kietekai.push_back(studentas);
-		}
-	}
+	auto it = std::stable_partition(studentai.begin(), studentai.end(), [&](const Studentas &s)
+									{
+        double galutinis_balas = 0;
+        if (skaiciavimo_budas == 1 || (skaiciavimo_budas == 3 && rusiavimo_budas == 1))
+        {
+            galutinis_balas = galutinis_pazymys_vid(s);
+        }
+        else if (skaiciavimo_budas == 2 || (skaiciavimo_budas == 3 && rusiavimo_budas == 2))
+        {
+            galutinis_balas = galutinis_pazymys_med(s);
+        }
+        return galutinis_balas < 5.0; });
+
+	std::deque<Studentas> vargsiukai(studentai.begin(), it);
+	std::deque<Studentas> kietekai(it, studentai.end());
+
 	kietekai.shrink_to_fit();
 	vargsiukai.shrink_to_fit();
+
 	auto end = std::chrono::high_resolution_clock::now();
 	std::chrono::duration<double> time = end - start;
 	rusiavimoLaikai.push_back(time);

@@ -1045,26 +1045,23 @@ void studentu_rusiavimas_3strategija(list<Studentas> &studentai, int skaiciavimo
 	}
 
 	auto start = std::chrono::high_resolution_clock::now();
-	for (const auto &studentas : studentai)
-	{
+
+	auto it = std::stable_partition(studentai.begin(), studentai.end(), [&](const Studentas &s)
+									{
 		double galutinis_balas = 0;
 		if (skaiciavimo_budas == 1 || (skaiciavimo_budas == 3 && rusiavimo_budas == 1))
 		{
-			galutinis_balas = galutinis_pazymys_vid(studentas);
+			galutinis_balas = galutinis_pazymys_vid(s);
 		}
 		else if (skaiciavimo_budas == 2 || (skaiciavimo_budas == 3 && rusiavimo_budas == 2))
 		{
-			galutinis_balas = galutinis_pazymys_med(studentas);
+			galutinis_balas = galutinis_pazymys_med(s);
 		}
-		if (galutinis_balas < 5.0)
-		{
-			vargsiukai.push_back(studentas);
-		}
-		else
-		{
-			kietekai.push_back(studentas);
-		}
-	}
+		return galutinis_balas < 5.0; });
+
+	vargsiukai.assign(studentai.begin(), it);
+	kietekai.assign(it, studentai.end());
+
 	auto end = std::chrono::high_resolution_clock::now();
 	std::chrono::duration<double> time = end - start;
 	rusiavimoLaikai.push_back(time);
