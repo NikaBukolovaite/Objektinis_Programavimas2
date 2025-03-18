@@ -1,5 +1,11 @@
 # 🛠️ Kompiliavimo instrukcijos
 
+1. [Atsisiusti g++](https://sourceforge.net/projects/mingw-w64/)
+2. [Atsisiusti Make](https://gnuwin32.sourceforge.net/packages/make.htm)
+3. Kopijuoti projekto direktorija `git clone https://github.com/NikaBukolovaite/Objektinis_Programavimas.git` (arba Download zip)
+4. Atsidaryti komandine eilute projekto direktorijoje ir irasyti: `make -C Vector ; make -C List ; make -C Deque`
+5. Paleisti norima programos versija: `./Vector/vektoriai.exe`, `./List/list_main.exe` arba `./Deque/deque_main.exe`
+
 # 📃 Programos naudojimosi instrukcijos
 
 # Kompiuterio charakteristikos
