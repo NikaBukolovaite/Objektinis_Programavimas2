@@ -1,5 +1,5 @@
 start: vektoriai.o funkcijos.o
-	g++ vektoriai.o funkcijos.o -o vektoriai
+	g++ vektoriai.o funkcijos.o -o vektoriai -O3
 	rm -f vektoriai.o funkcijos.o
 
 vektoriai.o: vektoriai.cpp

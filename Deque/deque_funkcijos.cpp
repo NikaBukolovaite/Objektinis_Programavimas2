@@ -643,12 +643,12 @@ int failas_ar_konsole()
 		 << "1 - Jei norite isvesti i konsole; \n"
 		 << "2 - Jei norite isvesti i faila. \n"
 		 << "3 - Jei nenorite isvesti visos informacijos viename faile/konsoleje. \n";
-	while (isvedimo_budas < 1 || isvedimo_budas > 2)
+	while (isvedimo_budas < 1 || isvedimo_budas > 3)
 	{
 		try
 		{
 			cin >> isvedimo_budas;
-			if (isvedimo_budas < 1 || isvedimo_budas > 2 || cin.fail() || cin.peek() != '\n')
+			if (isvedimo_budas < 1 || isvedimo_budas > 3 || cin.fail() || cin.peek() != '\n')
 			{
 				throw std::invalid_argument("Ivedete netinkama simboli. Iveskite dar karta: ");
 			}
@@ -862,8 +862,10 @@ void studentu_rusiavimas(deque<Studentas> &studentai, int skaiciavimo_budas, int
 	rusiavimoLaikai.push_back(time);
 	rusiavimoSkaicius++;
 
-	start = std::chrono::high_resolution_clock::now();
 	rusiavimoIf(kietekai, kaip_surusiuoti, skaiciavimo_budas);
+	rusiavimoIf(vargsiukai, kaip_surusiuoti, skaiciavimo_budas);
+
+	start = std::chrono::high_resolution_clock::now();
 	std::ofstream kietekaifailas("kietekai.txt");
 	output(kietekaifailas, kietekai, skaiciavimo_budas, 1);
 	kietekaifailas.close();
@@ -872,7 +874,6 @@ void studentu_rusiavimas(deque<Studentas> &studentai, int skaiciavimo_budas, int
 	kietekuLaikai.push_back(time);
 
 	start = std::chrono::high_resolution_clock::now();
-	rusiavimoIf(vargsiukai, kaip_surusiuoti, skaiciavimo_budas);
 	std::ofstream vargsiukaifailas("vargsiukai.txt");
 	output(vargsiukaifailas, vargsiukai, skaiciavimo_budas, 1);
 	vargsiukaifailas.close();

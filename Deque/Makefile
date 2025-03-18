@@ -1,5 +1,5 @@
 deque: deque_main.o deque_funkcijos.o
-	g++ deque_main.o deque_funkcijos.o -o deque_main
+	g++ deque_main.o deque_funkcijos.o -o deque_main -O3
 	rm -f deque_main.o deque_funkcijos.o
 
 deque_main.o: deque_main.cpp
