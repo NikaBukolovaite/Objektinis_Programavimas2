@@ -9,6 +9,7 @@ int testuSkaicius = 0;
 int kurimuSkaicius = 0;
 int rusiavimoSkaicius = 0;
 int vienoIsSesiuRusiavimoSkaicius = 0;
+int kiekYraStudentuFaile;
 
 void aplankalas()
 {
@@ -267,6 +268,7 @@ void failo_nuskaitymas(list<Studentas> &studentai, const string &failo_pavadinim
 	{
 		std::cerr << "Ivyko klaida: " << e.what() << std::endl;
 	}
+	kiekYraStudentuFaile = studentai.size();
 }
 
 int Meniu()
@@ -807,7 +809,213 @@ int papildomas_rusiavimas()
 	return pasirinkimas_rusiavimui;
 }
 
-void studentu_rusiavimas(list<Studentas> &studentai, int skaiciavimo_budas, int kaip_surusiuoti)
+int pagal_ka_rusiuoti_studentus_i_failus(list<Studentas> &studentai, int skaiciavimo_budas)
+{
+	std::list<Studentas> vargsiukai;
+	int rusiavimo_budas = 0;
+
+	if (skaiciavimo_budas == 3)
+	{
+		cout << "Kaip norite surusiuoti studentus: \n"
+			 << "1 - Pagal vidurki; \n"
+			 << "2 - Pagal mediana. \n";
+		while (rusiavimo_budas < 1 || rusiavimo_budas > 2)
+		{
+			try
+			{
+				cin >> rusiavimo_budas;
+				if (rusiavimo_budas < 1 || rusiavimo_budas > 2 || cin.fail() || cin.peek() != '\n')
+				{
+					throw std::invalid_argument("Ivedete netinkama simboli. Iveskite dar karta: ");
+				}
+			}
+			catch (const std::invalid_argument &e)
+			{
+				cout << e.what() << endl;
+				cin.clear();
+				cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			}
+		}
+	}
+	return rusiavimo_budas;
+}
+
+int strategijos_pasirinkimas()
+{
+	int strategija = 0;
+	cout << "Pasirinite kuria strategija norite rusiuoti studentus i kietekus ir vargsiukus \n"
+		 << "1 - 1 strategija; \n"
+		 << "2 - 2 strategija; \n"
+		 << "3 - 3 strategija. \n";
+	while (true)
+	{
+		try
+		{
+			cin >> strategija;
+			if ((strategija < 1 || strategija > 3) || cin.fail() || cin.peek() != '\n')
+			{
+				throw std::invalid_argument("Ivedete netinkama simboli. Iveskite dar karta: ");
+			}
+			break;
+		}
+		catch (const std::invalid_argument &e)
+		{
+			cout << e.what() << endl;
+			cin.clear();
+			cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		}
+	}
+	return strategija;
+}
+
+void studentu_rusiavimas_1strategija(list<Studentas> &studentai, int skaiciavimo_budas, int kaip_surusiuoti)
+{
+	std::list<Studentas> kietekai, vargsiukai;
+	int rusiavimo_budas = 0;
+
+	if (skaiciavimo_budas == 3)
+	{
+		cout << "Kaip norite surusiuoti studentus: \n"
+			 << "1 - Pagal vidurki; \n"
+			 << "2 - Pagal mediana. \n";
+		while (rusiavimo_budas < 1 || rusiavimo_budas > 2)
+		{
+			try
+			{
+				cin >> rusiavimo_budas;
+				if (rusiavimo_budas < 1 || rusiavimo_budas > 2 || cin.fail() || cin.peek() != '\n')
+				{
+					throw std::invalid_argument("Ivedete netinkama simboli. Iveskite dar karta: ");
+				}
+			}
+			catch (const std::invalid_argument &e)
+			{
+				cout << e.what() << endl;
+				cin.clear();
+				cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			}
+		}
+	}
+
+	auto start = std::chrono::high_resolution_clock::now();
+	for (const auto &studentas : studentai)
+	{
+		double galutinis_balas = 0;
+		if (skaiciavimo_budas == 1 || (skaiciavimo_budas == 3 && rusiavimo_budas == 1))
+		{
+			galutinis_balas = galutinis_pazymys_vid(studentas);
+		}
+		else if (skaiciavimo_budas == 2 || (skaiciavimo_budas == 3 && rusiavimo_budas == 2))
+		{
+			galutinis_balas = galutinis_pazymys_med(studentas);
+		}
+		if (galutinis_balas < 5.0)
+		{
+			vargsiukai.push_back(studentas);
+		}
+		else
+		{
+			kietekai.push_back(studentas);
+		}
+	}
+	auto end = std::chrono::high_resolution_clock::now();
+	std::chrono::duration<double> time = end - start;
+	rusiavimoLaikai.push_back(time);
+	rusiavimoSkaicius++;
+
+	rusiavimoIf(kietekai, kaip_surusiuoti, skaiciavimo_budas);
+	rusiavimoIf(vargsiukai, kaip_surusiuoti, skaiciavimo_budas);
+
+	start = std::chrono::high_resolution_clock::now();
+	std::ofstream kietekaifailas("kietekai.txt");
+	output(kietekaifailas, kietekai, skaiciavimo_budas, 1);
+	kietekaifailas.close();
+	end = std::chrono::high_resolution_clock::now();
+	time = end - start;
+	kietekuLaikai.push_back(time);
+
+	start = std::chrono::high_resolution_clock::now();
+	std::ofstream vargsiukaifailas("vargsiukai.txt");
+	output(vargsiukaifailas, vargsiukai, skaiciavimo_budas, 1);
+	vargsiukaifailas.close();
+	end = std::chrono::high_resolution_clock::now();
+	time = end - start;
+	vargsiukuLaikai.push_back(time);
+}
+
+void studentu_rusiavimas_2strategija(list<Studentas> &studentai, int skaiciavimo_budas, int kaip_surusiuoti, int rusiavimo_budas)
+{
+	std::list<Studentas> vargsiukai;
+	auto start = std::chrono::high_resolution_clock::now();
+
+	if (skaiciavimo_budas == 1)
+	{
+		for (auto &studentas : studentai)
+		{
+			studentas.galutinis_pazymys_vid = galutinis_pazymys_vid(studentas);
+		}
+	}
+	else if (skaiciavimo_budas == 2)
+	{
+		for (auto &studentas : studentai)
+		{
+			studentas.galutinis_pazymys_med = galutinis_pazymys_med(studentas);
+		}
+	}
+	else if (skaiciavimo_budas == 3)
+	{
+		for (auto &studentas : studentai)
+		{
+			studentas.galutinis_pazymys_vid = galutinis_pazymys_vid(studentas);
+			studentas.galutinis_pazymys_med = galutinis_pazymys_med(studentas);
+		}
+	}
+
+	if (skaiciavimo_budas == 1 || (skaiciavimo_budas == 3 && rusiavimo_budas == 1))
+	{
+		studentai.sort(vidurkioNuoDidRusiavimas);
+		while (studentai.back().galutinis_pazymys_vid < 5.0)
+		{
+			vargsiukai.push_back(studentai.back());
+			studentai.pop_back();
+		}
+	}
+	else if (skaiciavimo_budas == 2 || (skaiciavimo_budas == 3 && rusiavimo_budas == 2))
+	{
+		studentai.sort(medianosNuoDidRusiavimas);
+		while (studentai.back().galutinis_pazymys_med < 5.0)
+		{
+			vargsiukai.push_back(studentai.back());
+			studentai.pop_back();
+		}
+	}
+
+	auto end = std::chrono::high_resolution_clock::now();
+	std::chrono::duration<double> time = end - start;
+	rusiavimoLaikai.push_back(time);
+	rusiavimoSkaicius++;
+
+	rusiavimoIf(studentai, kaip_surusiuoti, skaiciavimo_budas);
+	rusiavimoIf(vargsiukai, kaip_surusiuoti, skaiciavimo_budas);
+
+	start = std::chrono::high_resolution_clock::now();
+	std::ofstream kietekaifailas("kietekai.txt");
+	output(kietekaifailas, studentai, skaiciavimo_budas, 1);
+	kietekaifailas.close();
+	end = std::chrono::high_resolution_clock::now();
+	time = end - start;
+	kietekuLaikai.push_back(time);
+
+	start = std::chrono::high_resolution_clock::now();
+	std::ofstream vargsiukaifailas("vargsiukai.txt");
+	output(vargsiukaifailas, vargsiukai, skaiciavimo_budas, 1);
+	vargsiukaifailas.close();
+	end = std::chrono::high_resolution_clock::now();
+	time = end - start;
+	vargsiukuLaikai.push_back(time);
+}
+
+void studentu_rusiavimas_3strategija(list<Studentas> &studentai, int skaiciavimo_budas, int kaip_surusiuoti)
 {
 	std::list<Studentas> kietekai, vargsiukai;
 	int rusiavimo_budas = 0;
