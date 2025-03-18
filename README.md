@@ -1,34 +1,36 @@
 # Kompiuterio charakteristikos
-CPU: AMD Ryzen 5 4600H
-RAM: 8GB DDR4
-DISK: SSD (NVMe)
+
+CPU: AMD Ryzen 5 4600H </br>
+RAM: 8GB DDR4 </br>
+DISK: SSD (NVMe) </br>
 
 # 1000 Studentų analizė
+
 Viso faile yra 18 namų darbų pažymių
 
 Nuskaitymas (sek.):
-|      | Vector| List| Deque|
+| | Vector| List| Deque|
 |:-------|------:|----:|-----:|
 |1 testas|0.0072475|0.0082808|0.0145365|
 |2 testas|0.0044263|0.0043628|0.007807|
 |3 testas|0.0046425|0.0046128|0.0067956|
 
 Rusiavimas faile (sek.):
-|      | Vector| List| Deque|
+| | Vector| List| Deque|
 |:-------|------:|----:|-----:|
 |1 testas|0.004638|0.0032458|0.0077588|
 |2 testas|0.0045471|0.0035307|0.0096666|
 |3 testas|0.0045742|0.0031883|0.0076848|
 
 Rusiavimas i kietekus ir vargsiukus (sek.):
-|      | Vector| List| Deque|
+| | Vector| List| Deque|
 |:-------|------:|----:|-----:|
 |1 testas|0.0006764|0.0004916|0.0007002|
 |2 testas|0.0006803|0.00069|0.0008425|
 |3 testas|0.0006776|0.0004679|0.0008806|
 
 Vidurkiai (sek.):
-|      | Vector| List| Deque|
+| | Vector| List| Deque|
 |:-------|------:|----:|-----:|
 |Bendras failo nuskaitymo laikas|0.016316|0.017256|0.029139|
 |Vidutinis failo nuskaitymo laikas|0.005439|0.005752|0.009713|
@@ -40,31 +42,32 @@ Vidurkiai (sek.):
 |Vidutinis programos veikimo laikas|0.010703|0.0096236667|0.09422066|
 
 # 10000 Studentu analize
+
 Viso faile yra 18 namų darbų pažymių
 
 Nuskaitymas (sek.):
-|      | Vector| List| Deque|
+| | Vector| List| Deque|
 |:-------|------:|----:|-----:|
 |1 testas|0.0452272|0.0787392|0.0722085|
 |2 testas|0.0491618|0.0706549|0.0647305|
 |3 testas|0.0396006|0.0719151|0.0690108|
 
 Rusiavimas faile (sek.):
-|      | Vector| List| Deque|
+| | Vector| List| Deque|
 |:-------|------:|----:|-----:|
 |1 testas|0.0064087|0.0836519|0.102892|
 |2 testas|0.0054171|0.083851|0.10707|
 |3 testas|0.006708|0.0902805|0.0987082|
 
 Rusiavimas i kietekus ir vargsiukus (sek.):
-|      | Vector| List| Deque|
+| | Vector| List| Deque|
 |:-------|------:|----:|-----:|
 |1 testas|0.0550808|0.0103057|0.0074288|
 |2 testas|0.0555215|0.0094287|0.0124954|
 |3 testas|0.0573123|0.0122553|0.007408|
 
 Vidurkiai (sek.):
-|      | Vector| List| Deque|
+| | Vector| List| Deque|
 |:-------|------:|----:|-----:|
 |Bendras failo nuskaitymo laikas|0.133990|0.221309|0.205950|
 |Vidutinis failo nuskaitymo laikas|0.044663|0.073770|0.068650|
@@ -76,31 +79,32 @@ Vidurkiai (sek.):
 |Vidutinis programos veikimo laikas|0.106813|0.1703606667|0.18065066|
 
 # 100000 Studentu analize
+
 Viso faile yra 14 namų darbų pažymių
 
 Nuskaitymas (sek.):
-|      | Vector| List| Deque|
+| | Vector| List| Deque|
 |:-------|------:|----:|-----:|
 |1 testas|0.333077|0.577193|0.530389|
 |2 testas|0.321548|0.613278|0.533229|
 |3 testas|0.325427|0.586978|0.537504|
 
 Rusiavimas faile (sek.):
-|      | Vector| List| Deque|
+| | Vector| List| Deque|
 |:-------|------:|----:|-----:|
 |1 testas|0.673029|1.0759|1.31066|
 |2 testas|0.680436|1.07855|1.26595|
 |3 testas|0.678414|1.08067|1.28526|
 
 Rusiavimas i kietekus ir vargsiukus (sek.):
-|      | Vector| List| Deque|
+| | Vector| List| Deque|
 |:-------|------:|----:|-----:|
 |1 testas|0.0569962|0.0931008|0.0756288|
 |2 testas|0.0575559|0.10202|0.0733271|
 |3 testas|0.0557648|0.0904348|0.0774862|
 
 Vidurkiai (sek.):
-|      | Vector| List| Deque|
+| | Vector| List| Deque|
 |:-------|------:|----:|-----:|
 |Bendras failo nuskaitymo laikas|0.980052|1.777449|1.601122|
 |Vidutinis failo nuskaitymo laikas|0.326684|0.592483|0.533707|
@@ -112,31 +116,32 @@ Vidurkiai (sek.):
 |Vidutinis programos veikimo laikas|1.060749|1.7660436|1.8967466|
 
 # 1000000 Studentu analize
+
 Viso faile yra 19 namų darbų pažymių
 
 Nuskaitymas (sek.):
-|      | Vector| List| Deque|
+| | Vector| List| Deque|
 |:-------|------:|----:|-----:|
 |1 testas|3.95492|7.15517|6.40691|
 |2 testas|3.87019|6.7632|6.42821|
 |3 testas|3.84463|6.80788|6.49617|
 
 Rusiavimas faile (sek.):
-|      | Vector| List| Deque|
+| | Vector| List| Deque|
 |:-------|------:|----:|-----:|
 |1 testas|9.88418|13.6062|14.4732|
 |2 testas|9.8109|12.9613|14.8146|
 |3 testas|9.82957|12.8813|14.3128|
 
 Rusiavimas i kietekus ir vargsiukus (sek.):
-|      | Vector| List| Deque|
+| | Vector| List| Deque|
 |:-------|------:|----:|-----:|
 |1 testas|0.574952|0.919172|0.90257|
 |2 testas|0.574212|0.953543|0.921527|
 |3 testas|0.574577|1.02545|0.940349|
 
 Vidurkiai (sek.):
-|      | Vector| List| Deque|
+| | Vector| List| Deque|
 |:-------|------:|----:|-----:|
 |Bendras failo nuskaitymo laikas|11.669734|20.726261|19.331293|
 |Vidutinis failo nuskaitymo laikas|3.889911|6.908754|6.443764|
@@ -148,31 +153,32 @@ Vidurkiai (sek.):
 |Vidutinis programos veikimo laikas|14.3060423333|21.02440166|21.89879733|
 
 # 10000000 Studentu analize
+
 Viso faile yra 19 namų darbų pažymių
 
 Nuskaitymas (sek.):
-|      | Vector| List| Deque|
+| | Vector| List| Deque|
 |:-------|------:|----:|-----:|
 |1 testas|44.5152|55.7881|45.5688|
 |2 testas|43.9039|45.815|45.0055|
 |3 testas|41.9285|46.5904|50.5224|
 
 Rusiavimas faile (sek.):
-|      | Vector| List| Deque|
+| | Vector| List| Deque|
 |:-------|------:|----:|-----:|
 |1 testas|119.483|115.353|130.304|
 |2 testas|119.413|115.038|128.954|
 |3 testas|119.039|115.01|129.462|
 
 Rusiavimas i kietekus ir vargsiukus (sek.):
-|      | Vector| List| Deque|
+| | Vector| List| Deque|
 |:-------|------:|----:|-----:|
 |1 testas|6.28305|11.1458|8.20431|
 |2 testas|6.71133|10.1772|8.78032|
 |3 testas|6.47369|9.98839|8.81014|
 
 Vidurkiai (sek.):
-|      | Vector| List| Deque|
+| | Vector| List| Deque|
 |:-------|------:|----:|-----:|
 |Bendras failo nuskaitymo laikas|130.347577|148.193507|141.096647|
 |Vidutinis failo nuskaitymo laikas|43.449192|49.397836|47.032216|
@@ -182,6 +188,7 @@ Vidurkiai (sek.):
 |Vidutinis failo rusiavimo i kietekus ir vargsiukus laikas|6.489358|10.437140|8.598256|
 |Bendras programos veikimo laikas|507.751032|524.906214|555.610282|
 |Vidutinis programos veikimo laikas|169.250344|174.968738|185.20342733|
+
 # 5 failų kūrimas
 
 ![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/a4013df6d9d8fbc7987f3f46eff7fbc55adf39d2/Kurimo%20laikas.png)
