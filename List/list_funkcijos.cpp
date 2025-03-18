@@ -898,6 +898,30 @@ void studentu_rusiavimas_1strategija(list<Studentas> &studentai, int skaiciavimo
 	}
 
 	auto start = std::chrono::high_resolution_clock::now();
+
+	if (skaiciavimo_budas == 1)
+	{
+		for (auto &studentas : studentai)
+		{
+			studentas.galutinis_pazymys_vid = galutinis_pazymys_vid(studentas);
+		}
+	}
+	else if (skaiciavimo_budas == 2)
+	{
+		for (auto &studentas : studentai)
+		{
+			studentas.galutinis_pazymys_med = galutinis_pazymys_med(studentas);
+		}
+	}
+	else if (skaiciavimo_budas == 3)
+	{
+		for (auto &studentas : studentai)
+		{
+			studentas.galutinis_pazymys_vid = galutinis_pazymys_vid(studentas);
+			studentas.galutinis_pazymys_med = galutinis_pazymys_med(studentas);
+		}
+	}
+
 	for (const auto &studentas : studentai)
 	{
 		double galutinis_balas = 0;
@@ -1045,6 +1069,29 @@ void studentu_rusiavimas_3strategija(list<Studentas> &studentai, int skaiciavimo
 	}
 
 	auto start = std::chrono::high_resolution_clock::now();
+
+	if (skaiciavimo_budas == 1)
+	{
+		for (auto &studentas : studentai)
+		{
+			studentas.galutinis_pazymys_vid = galutinis_pazymys_vid(studentas);
+		}
+	}
+	else if (skaiciavimo_budas == 2)
+	{
+		for (auto &studentas : studentai)
+		{
+			studentas.galutinis_pazymys_med = galutinis_pazymys_med(studentas);
+		}
+	}
+	else if (skaiciavimo_budas == 3)
+	{
+		for (auto &studentas : studentai)
+		{
+			studentas.galutinis_pazymys_vid = galutinis_pazymys_vid(studentas);
+			studentas.galutinis_pazymys_med = galutinis_pazymys_med(studentas);
+		}
+	}
 
 	auto it = std::stable_partition(studentai.begin(), studentai.end(), [&](const Studentas &s)
 									{

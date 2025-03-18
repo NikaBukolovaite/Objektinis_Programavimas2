@@ -43,6 +43,7 @@ int main()
 				}
 				else if (kokia_strategija == 3)
 				{
+					int koks_rusiavimas_failuose = pagal_ka_rusiuoti_studentus_i_failus(studentai, skaiciavimo_budas);
 					studentu_rusiavimas_3strategija(studentai, skaiciavimo_budas, kaip_surusiuoti);
 				}
 			}

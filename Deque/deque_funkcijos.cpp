@@ -898,6 +898,30 @@ void studentu_rusiavimas_1strategija(deque<Studentas> &studentai, int skaiciavim
 	}
 
 	auto start = std::chrono::high_resolution_clock::now();
+
+	if (skaiciavimo_budas == 1)
+	{
+		for (auto &studentas : studentai)
+		{
+			studentas.galutinis_pazymys_vid = galutinis_pazymys_vid(studentas);
+		}
+	}
+	else if (skaiciavimo_budas == 2)
+	{
+		for (auto &studentas : studentai)
+		{
+			studentas.galutinis_pazymys_med = galutinis_pazymys_med(studentas);
+		}
+	}
+	else if (skaiciavimo_budas == 3)
+	{
+		for (auto &studentas : studentai)
+		{
+			studentas.galutinis_pazymys_vid = galutinis_pazymys_vid(studentas);
+			studentas.galutinis_pazymys_med = galutinis_pazymys_med(studentas);
+		}
+	}
+
 	for (const auto &studentas : studentai)
 	{
 		double galutinis_balas = 0;
@@ -1024,27 +1048,27 @@ void studentu_rusiavimas_3strategija(deque<Studentas> &studentai, int skaiciavim
 	std::deque<Studentas> kietekai, vargsiukai;
 	int rusiavimo_budas = 0;
 
-	if (skaiciavimo_budas == 3)
+	auto start = std::chrono::high_resolution_clock::now();
+	if (skaiciavimo_budas == 1)
 	{
-		cout << "Kaip norite surusiuoti studentus: \n"
-			 << "1 - Pagal vidurki; \n"
-			 << "2 - Pagal mediana. \n";
-		while (rusiavimo_budas < 1 || rusiavimo_budas > 2)
+		for (auto &studentas : studentai)
 		{
-			try
-			{
-				cin >> rusiavimo_budas;
-				if (rusiavimo_budas < 1 || rusiavimo_budas > 2 || cin.fail() || cin.peek() != '\n')
-				{
-					throw std::invalid_argument("Ivedete netinkama simboli. Iveskite dar karta: ");
-				}
-			}
-			catch (const std::invalid_argument &e)
-			{
-				cout << e.what() << endl;
-				cin.clear();
-				cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-			}
+			studentas.galutinis_pazymys_vid = galutinis_pazymys_vid(studentas);
+		}
+	}
+	else if (skaiciavimo_budas == 2)
+	{
+		for (auto &studentas : studentai)
+		{
+			studentas.galutinis_pazymys_med = galutinis_pazymys_med(studentas);
+		}
+	}
+	else if (skaiciavimo_budas == 3)
+	{
+		for (auto &studentas : studentai)
+		{
+			studentas.galutinis_pazymys_vid = galutinis_pazymys_vid(studentas);
+			studentas.galutinis_pazymys_med = galutinis_pazymys_med(studentas);
 		}
 	}
 
@@ -1061,20 +1085,17 @@ void studentu_rusiavimas_3strategija(deque<Studentas> &studentai, int skaiciavim
         }
         return galutinis_balas < 5.0; });
 
-	std::deque<Studentas> vargsiukai(studentai.begin(), it);
-	std::deque<Studentas> kietekai(it, studentai.end());
-
+	vargsiukai.assign(studentai.begin(), it);
+	kietekai.assign(it, studentai.end());
+	studentai.clear();
 	kietekai.shrink_to_fit();
 	vargsiukai.shrink_to_fit();
-
 	auto end = std::chrono::high_resolution_clock::now();
 	std::chrono::duration<double> time = end - start;
 	rusiavimoLaikai.push_back(time);
 	rusiavimoSkaicius++;
-
 	rusiavimoIf(kietekai, kaip_surusiuoti, skaiciavimo_budas);
 	rusiavimoIf(vargsiukai, kaip_surusiuoti, skaiciavimo_budas);
-
 	start = std::chrono::high_resolution_clock::now();
 	std::ofstream kietekaifailas("kietekai.txt");
 	output(kietekaifailas, kietekai, skaiciavimo_budas, 1);
@@ -1082,7 +1103,6 @@ void studentu_rusiavimas_3strategija(deque<Studentas> &studentai, int skaiciavim
 	end = std::chrono::high_resolution_clock::now();
 	time = end - start;
 	kietekuLaikai.push_back(time);
-
 	start = std::chrono::high_resolution_clock::now();
 	std::ofstream vargsiukaifailas("vargsiukai.txt");
 	output(vargsiukaifailas, vargsiukai, skaiciavimo_budas, 1);
