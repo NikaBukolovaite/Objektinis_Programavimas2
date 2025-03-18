@@ -1,8 +1,10 @@
 # Kompiuterio charakteristikos
 
-CPU: AMD Ryzen 5 4600H </br>
-RAM: 8GB DDR4 </br>
-DISK: SSD (NVMe) </br>
+| Komponentas |      Specifikacija      |
+| :---------- | :---------------------: |
+| CPU         | AMD Ryzen 5 4600H </br> |
+| RAM         |     8GB DDR4 </br>      |
+| DISK        |    SSD (NVMe) </br>     |
 
 # 1000 Studentų analizė
 
