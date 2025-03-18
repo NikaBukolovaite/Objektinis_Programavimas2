@@ -764,22 +764,22 @@ bool pavardeRusiavimas(const Studentas &studentas, const Studentas &studentas2)
 
 bool vidurkioNuoMazRusiavimas(const Studentas &studentas, const Studentas &studentas2)
 {
-	return galutinis_pazymys_vid(studentas) < galutinis_pazymys_vid(studentas2);
+	return studentas.galutinis_pazymys_vid < studentas2.galutinis_pazymys_vid;
 }
 
 bool vidurkioNuoDidRusiavimas(const Studentas &studentas, const Studentas &studentas2)
 {
-	return galutinis_pazymys_vid(studentas) > galutinis_pazymys_vid(studentas2);
+	return studentas.galutinis_pazymys_vid > studentas2.galutinis_pazymys_vid;
 }
 
 bool medianosNuoMazRusiavimas(const Studentas &studentas, const Studentas &studentas2)
 {
-	return galutinis_pazymys_med(studentas) < galutinis_pazymys_med(studentas2);
+	return studentas.galutinis_pazymys_med < studentas2.galutinis_pazymys_med;
 }
 
 bool medianosNuoDidRusiavimas(const Studentas &studentas, const Studentas &studentas2)
 {
-	return galutinis_pazymys_med(studentas) > galutinis_pazymys_med(studentas2);
+	return studentas.galutinis_pazymys_med > studentas2.galutinis_pazymys_med;
 }
 
 int papildomas_rusiavimas()
