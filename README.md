@@ -8,15 +8,85 @@
 
 # 📃 Programos naudojimosi instrukcijos
 
-# Kompiuterio charakteristikos
+Si programa skirta studentu duomenu valdymui ir analizei, suteikiant ivairias galimybes ivesti, generuoti, rusiuoti ir analizuoti studentu informacija. Programos meniu siulo siuos pasirinkimus:
 
-| Komponentas |      Specifikacija      |
-| :---------- | :---------------------: |
-| CPU         | AMD Ryzen 5 4600H </br> |
-| RAM         |     8GB DDR4 </br>      |
-| DISK        |    SSD (NVMe) </br>     |
+### Pagrindinio meniu pasirinkimai:
 
-# Programos testavimo rezultatai pradiniam release
+1. Studentus ir pazymius ivesti ranka
+   Leidzia vartotojui rankiniu budu ivesti studentu vardus ir ju pazymius.
+
+2. Generuoti pazymius, bet studentus ivesti ranka
+   Vartotojas iveda studentu vardus ir kiek viso studentas turi pazymiu, o programa automatiskai sugeneruoja atsitiktinius pazymius tiems studentams.
+
+3. Generuoti pazymius ir studentus
+   Programa automatiskai sugeneruoja studentus su atsitiktiniais vardais, pavardem ir pazymiais.
+
+4. Nuskaitymas is failo
+   Leidzia nuskaityti studentu duomenis is pasirinkto failo, esancio "NuskaitymoFailai" aplankale.
+
+5. Baigti programa
+   Uzbaigius programa bus pateikta programos veikimo suvestine.
+
+### Pasirinkus 4 punkta meniu:
+
+1. Generuoti faila
+   Vartotojas turi galimybe sugeneruoti pasirinkta failu kieki su vartotojo pasirinktu studentu kiekiu. Pazymius ir ju kieki programa automatiskai generuoja atsitiktinai.
+
+2. Pasirinkti ivesties faila
+   Leidzia vartotojui pasirinkti konkrecia ivesties faila is "NuskaitymoFailai" aplankalo.
+
+3. Testavimas
+   Atlieka programos nasumo testus, iskaitant failu kurimo, nuskaitymo, rusiavimo, kategorizavimo ir isvesties greicio matavimus.
+
+### Pastabos:
+
+Studentus isvesti galima tokiais budais:
+
+1. I viena bendra faila "rezultatai.txt"
+2. I du atskirus failus pagal galutini pazymi - "kietekai.txt" ir "vargsiukai.txt" - vartotojas turi pasirinkima tarp 3 strategiju, kurios nulemia, kokiu budu bus isrusuoti studentai i du failus.
+
+Noredami naudoti 4 punkta su savo failais, ikelkite juos i "NuskaitymoFailai" aplankala.
+Testavimo rezime galima ivertinti programos efektyvuma atliekant ivairias operacijas su skirtingo dydzio duomenu rinkiniais
+
+# v.pradine versija
+
+Pradineje versijoje suurta bazine studentu valdymo programa, kuri leido raniniu budu surasyti studentu vardus, pavardes, pazymius ir egzamino rezultata. Turejo funkcijas galutinio pazymio skaiciavimui pagal vidurki arba mediana.
+
+# v0.1 versija
+
+Optimizuota pradine versija, programai nebereikia is anksto zinoti, kiek viso bus studentu ir namu darbu. Taip pat pridetas meniu su 4 pasirinkimais:
+
+1. Ivesti studentu varda, pavarde, pazymius raniniu budu.
+2. Sugeneruoti pazymius atsitiktinai ir rankiniu budu surasyti studentu vardus ir pavardes.
+3. Atsititinai sugeneruoti visus studentu duomenis ir pazymius.
+4. Baigti programa.
+
+Si versija realizuota dviem budais:
+
+1. naudojamas masyvas pazymiu saugojimui;
+2. naudojamas std::vector tipo konteineris studentu ir pazymiu saugojimui.
+
+# v0.2 versija
+
+I meniu pridetas 5 pasirinkimas - skaitymas is failo. Taip pat programa testuoja, kaip greitai yra nuskaitomas failas priklausomai nuo jame esancio studentu kiekio. Taip pat atsirado pasirinkimas, ar studentus isvesti i konsole, ar i faila "rezultatati.txt".
+
+# v0.3 versija
+
+Prideta klaidu gaudymo sistema.
+
+# v0.4 versija
+
+Prideta galimybe generuoti failus is kuriu veliau bus nuskaitoma informacija. Visi failai yra archgyvuojami atsirame aplankale "NuskaitymoFailai". Atsirado pasirinkimas ar visus studentus isvesti i konsole/faila "rezultatai.txt", ar iskirstyti studentus i 2 atskirus failus "kietekai.txt" ir "vargsiukai.txt" pagal pazymius (galutinis balas < 5.0 ir galutinis balas >= 5.0). Taip pat vykdoma programos veikimo greičio (spartos) analizę.
+
+# v1.0 pradine versija
+
+Sukurtos 3 programos su skirtingais konteineriais - std::vector, std::list ir std::deque.
+
+# v1.0 versija
+
+Suurtos 3 skirtingos strategijos studentu rusiavimui i 2 failus - "kieteai.txt" ir "vargsiukai.txt"
+
+# Programos testavimo rezultatai pradiniam v1.0 release
 
 ## 1000 Studentų analizė
 
@@ -416,3 +486,11 @@ Viso faile yra 19 namų darbų pažymių
 # 5 failų kūrimas
 
 ![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/a4013df6d9d8fbc7987f3f46eff7fbc55adf39d2/Kurimo%20laikas.png)
+
+# Kompiuterio charakteristikos
+
+| Komponentas |      Specifikacija      |
+| :---------- | :---------------------: |
+| CPU         | AMD Ryzen 5 4600H </br> |
+| RAM         |     8GB DDR4 </br>      |
+| DISK        |    SSD (NVMe) </br>     |
