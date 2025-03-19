@@ -327,9 +327,9 @@ Viso faile yra 18 namų darbų pažymių
 
 #### List
 
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/a10446312f7d4c98d1f306f5e58180788a5acc32/Nuotraukos/1%20strategija/List/1000/Screenshot%202025-03-19%20152006.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/a10446312f7d4c98d1f306f5e58180788a5acc32/Nuotraukos/1%20strategija/List/1000/Screenshot%202025-03-19%20152056.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/a10446312f7d4c98d1f306f5e58180788a5acc32/Nuotraukos/1%20strategija/List/1000/Screenshot%202025-03-19%20152116.png)
 
 #### Deque
 
