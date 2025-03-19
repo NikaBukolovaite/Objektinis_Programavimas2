@@ -231,49 +231,49 @@ Viso faile yra 19 namų darbų pažymių
 
 Viso faile yra 18 namų darbų pažymių
 
-|                  |  Vector |   List |  Deque |
-| :--------------- | ------: | -----: | -----: |
-| 1 testas         |   60000 |  10001 |   8000 |
-| 2 testas         |    6133 |  11772 | 878032 |
-| 3 testas         |  647369 | 998839 | 881014 |
-| Bendras laikas   | 0000000 |   0000 |    000 |
-| Vidutinis laikas | 0000000 |   0000 |    000 |
+|                  |    Vector |      List |     Deque |
+| :--------------- | --------: | --------: | --------: |
+| 1 testas         |  0.002109 | 0.0012078 | 0.0014959 |
+| 2 testas         | 0.0029129 | 0.0018549 | 0.0015636 |
+| 3 testas         |  0.002204 | 0.0017481 | 0.0021251 |
+| Bendras laikas   |  0.007226 |  0.004811 |  0.005185 |
+| Vidutinis laikas |  0.002409 |  0.001604 |  0.001728 |
 
 ### 10000 Studentu analize
 
 Viso faile yra 18 namų darbų pažymių
 
-|                  |  Vector |   List |  Deque |
-| :--------------- | ------: | -----: | -----: |
-| 1 testas         |   60000 |  10001 |   8000 |
-| 2 testas         |    6133 |  11772 | 878032 |
-| 3 testas         |  647369 | 998839 | 881014 |
-| Bendras laikas   | 0000000 |   0000 |    000 |
-| Vidutinis laikas | 0000000 |   0000 |    000 |
+|                  |    Vector |      List |     Deque |
+| :--------------- | --------: | --------: | --------: |
+| 1 testas         | 0.0160859 | 0.0126965 | 0.0116877 |
+| 2 testas         | 0.0141176 | 0.0134405 | 0.0112872 |
+| 3 testas         | 0.0168775 | 0.0160783 | 0.0112756 |
+| Bendras laikas   |  0.047081 |  0.042215 |  0.034251 |
+| Vidutinis laikas |  0.015694 |  0.014072 |  0.011417 |
 
 ### 100000 Studentu analize
 
 Viso faile yra 14 namų darbų pažymių
 
-|                  |  Vector |   List |  Deque |
-| :--------------- | ------: | -----: | -----: |
-| 1 testas         |   60000 |  10001 |   8000 |
-| 2 testas         |    6133 |  11772 | 878032 |
-| 3 testas         |  647369 | 998839 | 881014 |
-| Bendras laikas   | 0000000 |   0000 |    000 |
-| Vidutinis laikas | 0000000 |   0000 |    000 |
+|                  |   Vector |     List |    Deque |
+| :--------------- | -------: | -------: | -------: |
+| 1 testas         | 0.134149 | 0.136899 | 0.113251 |
+| 2 testas         | 0.133631 | 0.142888 | 0.112049 |
+| 3 testas         | 0.129876 | 0.131859 | 0.121555 |
+| Bendras laikas   | 0.397656 | 0.411647 | 0.346855 |
+| Vidutinis laikas | 0.132552 | 0.137216 | 0.115618 |
 
 ### 1000000 Studentu analize
 
 Viso faile yra 19 namų darbų pažymių
 
-|                  |  Vector |   List |  Deque |
-| :--------------- | ------: | -----: | -----: |
-| 1 testas         |   60000 |  10001 |   8000 |
-| 2 testas         |    6133 |  11772 | 878032 |
-| 3 testas         |  647369 | 998839 | 881014 |
-| Bendras laikas   | 0000000 |   0000 |    000 |
-| Vidutinis laikas | 0000000 |   0000 |    000 |
+|                  |   Vector |     List |    Deque |
+| :--------------- | -------: | -------: | -------: |
+| 1 testas         |   1.5492 |  1.55088 |  1.45731 |
+| 2 testas         |  1.51583 |  1.61241 |  1.30246 |
+| 3 testas         |  1.49225 |  1.49797 |  1.39939 |
+| Bendras laikas   | 4.557273 | 4.661263 | 4.159162 |
+| Vidutinis laikas | 1.519091 | 1.553754 | 1.386387 |
 
 ### 10000000 Studentu analize
 
@@ -293,49 +293,49 @@ Viso faile yra 19 namų darbų pažymių
 
 Viso faile yra 18 namų darbų pažymių
 
-|                  |  Vector |   List |  Deque |
-| :--------------- | ------: | -----: | -----: |
-| 1 testas         |   60000 |  10001 |   8000 |
-| 2 testas         |    6133 |  11772 | 878032 |
-| 3 testas         |  647369 | 998839 | 881014 |
-| Bendras laikas   | 0000000 |   0000 |    000 |
-| Vidutinis laikas | 0000000 |   0000 |    000 |
+|                  |    Vector |      List |     Deque |
+| :--------------- | --------: | --------: | --------: |
+| 1 testas         | 0.0020277 | 0.0016194 | 0.0018491 |
+| 2 testas         | 0.0019987 | 0.0010802 | 0.0020192 |
+| 3 testas         | 0.0020458 | 0.0011127 | 0.0019972 |
+| Bendras laikas   |  0.006072 |  0.003812 |  0.005866 |
+| Vidutinis laikas |  0.002024 |  0.001271 |  0.001955 |
 
 ### 10000 Studentu analize
 
 Viso faile yra 18 namų darbų pažymių
 
-|                  |  Vector |   List |  Deque |
-| :--------------- | ------: | -----: | -----: |
-| 1 testas         |   60000 |  10001 |   8000 |
-| 2 testas         |    6133 |  11772 | 878032 |
-| 3 testas         |  647369 | 998839 | 881014 |
-| Bendras laikas   | 0000000 |   0000 |    000 |
-| Vidutinis laikas | 0000000 |   0000 |    000 |
+|                  |    Vector |      List |     Deque |
+| :--------------- | --------: | --------: | --------: |
+| 1 testas         | 0.0836527 | 0.0112158 | 0.0241349 |
+| 2 testas         | 0.0217737 | 0.0136404 |  0.023094 |
+| 3 testas         | 0.0217998 | 0.0179673 | 0.0218672 |
+| Bendras laikas   |  0.127226 |  0.042824 |  0.069096 |
+| Vidutinis laikas |  0.042409 |  0.014275 |  0.023032 |
 
 ### 100000 Studentu analize
 
 Viso faile yra 14 namų darbų pažymių
 
-|                  |  Vector |   List |  Deque |
-| :--------------- | ------: | -----: | -----: |
-| 1 testas         |   60000 |  10001 |   8000 |
-| 2 testas         |    6133 |  11772 | 878032 |
-| 3 testas         |  647369 | 998839 | 881014 |
-| Bendras laikas   | 0000000 |   0000 |    000 |
-| Vidutinis laikas | 0000000 |   0000 |    000 |
+|                  |   Vector |     List |    Deque |
+| :--------------- | -------: | -------: | -------: |
+| 1 testas         |  0.30975 | 0.177184 | 0.280622 |
+| 2 testas         | 0.260698 | 0.188116 |  0.28941 |
+| 3 testas         | 0.251467 | 0.181947 | 0.294386 |
+| Bendras laikas   | 0.821915 | 0.547246 | 0.864418 |
+| Vidutinis laikas | 0.273972 | 0.182415 | 0.288139 |
 
 ### 1000000 Studentu analize
 
 Viso faile yra 19 namų darbų pažymių
 
-|                  |  Vector |   List |  Deque |
-| :--------------- | ------: | -----: | -----: |
-| 1 testas         |   60000 |  10001 |   8000 |
-| 2 testas         |    6133 |  11772 | 878032 |
-| 3 testas         |  647369 | 998839 | 881014 |
-| Bendras laikas   | 0000000 |   0000 |    000 |
-| Vidutinis laikas | 0000000 |   0000 |    000 |
+|                  |   Vector |     List |     Deque |
+| :--------------- | -------: | -------: | --------: |
+| 1 testas         |  3.25533 |  2.65689 |   3.86107 |
+| 2 testas         |  3.19483 |  2.59375 |   3.61851 |
+| 3 testas         |  3.22155 |  2.47487 |   3.83965 |
+| Bendras laikas   | 9.671704 | 7.725517 | 11.319226 |
+| Vidutinis laikas | 3.223901 | 2.575172 |  3.773075 |
 
 ### 10000000 Studentu analize
 
@@ -357,61 +357,61 @@ Pagal 1 strategija naudojant std::stable_partition
 
 Viso faile yra 18 namų darbų pažymių
 
-|                  |  Vector |   List |  Deque |
-| :--------------- | ------: | -----: | -----: |
-| 1 testas         |   60000 |  10001 |   8000 |
-| 2 testas         |    6133 |  11772 | 878032 |
-| 3 testas         |  647369 | 998839 | 881014 |
-| Bendras laikas   | 0000000 |   0000 |    000 |
-| Vidutinis laikas | 0000000 |   0000 |    000 |
+|                  |    Vector |      List |     Deque |
+| :--------------- | --------: | --------: | --------: |
+| 1 testas         |  0.001565 | 0.0017377 | 0.0019046 |
+| 2 testas         | 0.0017442 | 0.0027647 | 0.0019809 |
+| 3 testas         | 0.0017182 | 0.0017408 | 0.0021929 |
+| Bendras laikas   |  0.005027 |  0.006243 |  0.006078 |
+| Vidutinis laikas |  0.001676 |  0.002081 |  0.002026 |
 
 ### 10000 Studentu analize
 
 Viso faile yra 18 namų darbų pažymių
 
-|                  |  Vector |   List |  Deque |
-| :--------------- | ------: | -----: | -----: |
-| 1 testas         |   60000 |  10001 |   8000 |
-| 2 testas         |    6133 |  11772 | 878032 |
-| 3 testas         |  647369 | 998839 | 881014 |
-| Bendras laikas   | 0000000 |   0000 |    000 |
-| Vidutinis laikas | 0000000 |   0000 |    000 |
+|                  |    Vector |      List |     Deque |
+| :--------------- | --------: | --------: | --------: |
+| 1 testas         | 0.0090895 | 0.0222504 | 0.0195486 |
+| 2 testas         | 0.0147448 |  0.021207 | 0.0163617 |
+| 3 testas         | 0.0151281 | 0.0176257 | 0.0240077 |
+| Bendras laikas   |  0.038962 | 0.4521997 |  0.059918 |
+| Vidutinis laikas |  0.012987 | 0.1507332 |  0.019973 |
 
 ### 100000 Studentu analize
 
 Viso faile yra 14 namų darbų pažymių
 
-|                  |  Vector |   List |  Deque |
-| :--------------- | ------: | -----: | -----: |
-| 1 testas         |   60000 |  10001 |   8000 |
-| 2 testas         |    6133 |  11772 | 878032 |
-| 3 testas         |  647369 | 998839 | 881014 |
-| Bendras laikas   | 0000000 |   0000 |    000 |
-| Vidutinis laikas | 0000000 |   0000 |    000 |
+|                  |    Vector |     List |    Deque |
+| :--------------- | --------: | -------: | -------: |
+| 1 testas         |  0.101376 |  0.10475 | 0.122028 |
+| 2 testas         | 0.0868336 | 0.103708 | 0.122189 |
+| 3 testas         | 0.0868577 |  0.10367 | 0.126421 |
+| Bendras laikas   |  0.275067 | 0.312128 | 0.370638 |
+| Vidutinis laikas |  0.091689 | 0.104043 | 0.123546 |
 
 ### 1000000 Studentu analize
 
 Viso faile yra 19 namų darbų pažymių
 
-|                  |  Vector |   List |  Deque |
-| :--------------- | ------: | -----: | -----: |
-| 1 testas         |   60000 |  10001 |   8000 |
-| 2 testas         |    6133 |  11772 | 878032 |
-| 3 testas         |  647369 | 998839 | 881014 |
-| Bendras laikas   | 0000000 |   0000 |    000 |
-| Vidutinis laikas | 0000000 |   0000 |    000 |
+|                  |   Vector |     List |    Deque |
+| :--------------- | -------: | -------: | -------: |
+| 1 testas         | 0.962317 |  1.11344 |  1.32951 |
+| 2 testas         | 0.967044 |  1.11441 |  1.31631 |
+| 3 testas         | 0.971096 |  1.12013 |  1.29266 |
+| Bendras laikas   | 2.900457 | 3.347979 | 3.938470 |
+| Vidutinis laikas | 0.966819 | 1.115993 | 1.312823 |
 
 ### 10000000 Studentu analize
 
 Viso faile yra 19 namų darbų pažymių
 
-|                  |  Vector |   List |  Deque |
-| :--------------- | ------: | -----: | -----: |
-| 1 testas         |   60000 |  10001 |   8000 |
-| 2 testas         |    6133 |  11772 | 878032 |
-| 3 testas         |  647369 | 998839 | 881014 |
-| Bendras laikas   | 0000000 |   0000 |    000 |
-| Vidutinis laikas | 0000000 |   0000 |    000 |
+|                  |    Vector |      List |     Deque |
+| :--------------- | --------: | --------: | --------: |
+| 1 testas         |   11.3622 |   12.7829 |   15.1868 |
+| 2 testas         |   11.2361 |   16.5202 |   16.1749 |
+| 3 testas         |    11.024 |   13.9905 |   17.4642 |
+| Bendras laikas   | 33.622268 | 43.293562 | 48.825895 |
+| Vidutinis laikas | 11.207423 | 14.431187 | 16.275298 |
 
 # 5 failų kūrimas
 
