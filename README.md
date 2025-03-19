@@ -1,3 +1,11 @@
+# 💻 Kompiuterio charakteristikos
+
+| Komponentas |      Specifikacija      |
+| :---------- | :---------------------: |
+| CPU         | AMD Ryzen 5 4600H </br> |
+| RAM         |     8GB DDR4 </br>      |
+| DISK        |    SSD (NVMe) </br>     |
+
 # 🛠️ Kompiliavimo instrukcijos
 
 1. [Atsisiusti g++](https://sourceforge.net/projects/mingw-w64/)
@@ -309,6 +317,26 @@ Viso faile yra 18 namų darbų pažymių
 | Bendras laikas   |  0.007226 |  0.004811 |  0.005185 |
 | Vidutinis laikas |  0.002409 |  0.001604 |  0.001728 |
 
+### Nuotraukos
+
+#### Vector
+
+![imagine alt]()
+![imagine alt]()
+![imagine alt]()
+
+#### List
+
+![imagine alt]()
+![imagine alt]()
+![imagine alt]()
+
+#### Deque
+
+![imagine alt]()
+![imagine alt]()
+![imagine alt]()
+
 ### 10000 Studentu analize
 
 Viso faile yra 18 namų darbų pažymių
@@ -320,6 +348,26 @@ Viso faile yra 18 namų darbų pažymių
 | 3 testas         | 0.0168775 | 0.0160783 | 0.0112756 |
 | Bendras laikas   |  0.047081 |  0.042215 |  0.034251 |
 | Vidutinis laikas |  0.015694 |  0.014072 |  0.011417 |
+
+### Nuotraukos
+
+#### Vector
+
+![imagine alt]()
+![imagine alt]()
+![imagine alt]()
+
+#### List
+
+![imagine alt]()
+![imagine alt]()
+![imagine alt]()
+
+#### Deque
+
+![imagine alt]()
+![imagine alt]()
+![imagine alt]()
 
 ### 100000 Studentu analize
 
@@ -333,6 +381,26 @@ Viso faile yra 14 namų darbų pažymių
 | Bendras laikas   | 0.397656 | 0.411647 | 0.346855 |
 | Vidutinis laikas | 0.132552 | 0.137216 | 0.115618 |
 
+### Nuotraukos
+
+#### Vector
+
+![imagine alt]()
+![imagine alt]()
+![imagine alt]()
+
+#### List
+
+![imagine alt]()
+![imagine alt]()
+![imagine alt]()
+
+#### Deque
+
+![imagine alt]()
+![imagine alt]()
+![imagine alt]()
+
 ### 1000000 Studentu analize
 
 Viso faile yra 19 namų darbų pažymių
@@ -345,6 +413,26 @@ Viso faile yra 19 namų darbų pažymių
 | Bendras laikas   | 4.557273 | 4.661263 | 4.159162 |
 | Vidutinis laikas | 1.519091 | 1.553754 | 1.386387 |
 
+### Nuotraukos
+
+#### Vector
+
+![imagine alt]()
+![imagine alt]()
+![imagine alt]()
+
+#### List
+
+![imagine alt]()
+![imagine alt]()
+![imagine alt]()
+
+#### Deque
+
+![imagine alt]()
+![imagine alt]()
+![imagine alt]()
+
 ### 10000000 Studentu analize
 
 Viso faile yra 19 namų darbų pažymių
@@ -356,6 +444,26 @@ Viso faile yra 19 namų darbų pažymių
 | 3 testas         |   13.9391 |   13.1281 |    11.968 |
 | Bendras laikas   | 43.283757 | 39.586256 | 36.559604 |
 | Vidutinis laikas | 14.427919 | 13.195419 | 12.186535 |
+
+### Nuotraukos
+
+#### Vector
+
+![imagine alt]()
+![imagine alt]()
+![imagine alt]()
+
+#### List
+
+![imagine alt]()
+![imagine alt]()
+![imagine alt]()
+
+#### Deque
+
+![imagine alt]()
+![imagine alt]()
+![imagine alt]()
 
 ## 2 strategija
 
@@ -371,6 +479,26 @@ Viso faile yra 18 namų darbų pažymių
 | Bendras laikas   |  0.006072 |  0.003812 |  0.005866 |
 | Vidutinis laikas |  0.002024 |  0.001271 |  0.001955 |
 
+### Nuotraukos
+
+#### Vector
+
+![imagine alt]()
+![imagine alt]()
+![imagine alt]()
+
+#### List
+
+![imagine alt]()
+![imagine alt]()
+![imagine alt]()
+
+#### Deque
+
+![imagine alt]()
+![imagine alt]()
+![imagine alt]()
+
 ### 10000 Studentu analize
 
 Viso faile yra 18 namų darbų pažymių
@@ -382,6 +510,26 @@ Viso faile yra 18 namų darbų pažymių
 | 3 testas         | 0.0217998 | 0.0179673 | 0.0218672 |
 | Bendras laikas   |  0.127226 |  0.042824 |  0.069096 |
 | Vidutinis laikas |  0.042409 |  0.014275 |  0.023032 |
+
+### Nuotraukos
+
+#### Vector
+
+![imagine alt]()
+![imagine alt]()
+![imagine alt]()
+
+#### List
+
+![imagine alt]()
+![imagine alt]()
+![imagine alt]()
+
+#### Deque
+
+![imagine alt]()
+![imagine alt]()
+![imagine alt]()
 
 ### 100000 Studentu analize
 
@@ -395,6 +543,26 @@ Viso faile yra 14 namų darbų pažymių
 | Bendras laikas   | 0.821915 | 0.547246 | 0.864418 |
 | Vidutinis laikas | 0.273972 | 0.182415 | 0.288139 |
 
+### Nuotraukos
+
+#### Vector
+
+![imagine alt]()
+![imagine alt]()
+![imagine alt]()
+
+#### List
+
+![imagine alt]()
+![imagine alt]()
+![imagine alt]()
+
+#### Deque
+
+![imagine alt]()
+![imagine alt]()
+![imagine alt]()
+
 ### 1000000 Studentu analize
 
 Viso faile yra 19 namų darbų pažymių
@@ -407,6 +575,26 @@ Viso faile yra 19 namų darbų pažymių
 | Bendras laikas   | 9.671704 | 7.725517 | 11.319226 |
 | Vidutinis laikas | 3.223901 | 2.575172 |  3.773075 |
 
+### Nuotraukos
+
+#### Vector
+
+![imagine alt]()
+![imagine alt]()
+![imagine alt]()
+
+#### List
+
+![imagine alt]()
+![imagine alt]()
+![imagine alt]()
+
+#### Deque
+
+![imagine alt]()
+![imagine alt]()
+![imagine alt]()
+
 ### 10000000 Studentu analize
 
 Viso faile yra 19 namų darbų pažymių
@@ -418,6 +606,26 @@ Viso faile yra 19 namų darbų pažymių
 | 3 testas         |   29.7513 |    23.138 |   30.6643 |
 | Bendras laikas   | 82.068295 | 72.444385 | 89.997919 |
 | Vidutinis laikas | 27.356098 | 24.148128 | 29.999306 |
+
+### Nuotraukos
+
+#### Vector
+
+![imagine alt]()
+![imagine alt]()
+![imagine alt]()
+
+#### List
+
+![imagine alt]()
+![imagine alt]()
+![imagine alt]()
+
+#### Deque
+
+![imagine alt]()
+![imagine alt]()
+![imagine alt]()
 
 ## 3 strategija
 
@@ -435,6 +643,26 @@ Viso faile yra 18 namų darbų pažymių
 | Bendras laikas   |  0.005027 |  0.006243 |  0.006078 |
 | Vidutinis laikas |  0.001676 |  0.002081 |  0.002026 |
 
+### Nuotraukos
+
+#### Vector
+
+![imagine alt]()
+![imagine alt]()
+![imagine alt]()
+
+#### List
+
+![imagine alt]()
+![imagine alt]()
+![imagine alt]()
+
+#### Deque
+
+![imagine alt]()
+![imagine alt]()
+![imagine alt]()
+
 ### 10000 Studentu analize
 
 Viso faile yra 18 namų darbų pažymių
@@ -446,6 +674,26 @@ Viso faile yra 18 namų darbų pažymių
 | 3 testas         | 0.0151281 | 0.0176257 | 0.0240077 |
 | Bendras laikas   |  0.038962 | 0.4521997 |  0.059918 |
 | Vidutinis laikas |  0.012987 | 0.1507332 |  0.019973 |
+
+### Nuotraukos
+
+#### Vector
+
+![imagine alt]()
+![imagine alt]()
+![imagine alt]()
+
+#### List
+
+![imagine alt]()
+![imagine alt]()
+![imagine alt]()
+
+#### Deque
+
+![imagine alt]()
+![imagine alt]()
+![imagine alt]()
 
 ### 100000 Studentu analize
 
@@ -459,6 +707,26 @@ Viso faile yra 14 namų darbų pažymių
 | Bendras laikas   |  0.275067 | 0.312128 | 0.370638 |
 | Vidutinis laikas |  0.091689 | 0.104043 | 0.123546 |
 
+### Nuotraukos
+
+#### Vector
+
+![imagine alt]()
+![imagine alt]()
+![imagine alt]()
+
+#### List
+
+![imagine alt]()
+![imagine alt]()
+![imagine alt]()
+
+#### Deque
+
+![imagine alt]()
+![imagine alt]()
+![imagine alt]()
+
 ### 1000000 Studentu analize
 
 Viso faile yra 19 namų darbų pažymių
@@ -470,6 +738,26 @@ Viso faile yra 19 namų darbų pažymių
 | 3 testas         | 0.971096 |  1.12013 |  1.29266 |
 | Bendras laikas   | 2.900457 | 3.347979 | 3.938470 |
 | Vidutinis laikas | 0.966819 | 1.115993 | 1.312823 |
+
+### Nuotraukos
+
+#### Vector
+
+![imagine alt]()
+![imagine alt]()
+![imagine alt]()
+
+#### List
+
+![imagine alt]()
+![imagine alt]()
+![imagine alt]()
+
+#### Deque
+
+![imagine alt]()
+![imagine alt]()
+![imagine alt]()
 
 ### 10000000 Studentu analize
 
@@ -483,14 +771,26 @@ Viso faile yra 19 namų darbų pažymių
 | Bendras laikas   | 33.622268 | 43.293562 | 48.825895 |
 | Vidutinis laikas | 11.207423 | 14.431187 | 16.275298 |
 
+### Nuotraukos
+
+#### Vector
+
+![imagine alt]()
+![imagine alt]()
+![imagine alt]()
+
+#### List
+
+![imagine alt]()
+![imagine alt]()
+![imagine alt]()
+
+#### Deque
+
+![imagine alt]()
+![imagine alt]()
+![imagine alt]()
+
 # 5 failų kūrimas
 
 ![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/a4013df6d9d8fbc7987f3f46eff7fbc55adf39d2/Kurimo%20laikas.png)
-
-# Kompiuterio charakteristikos
-
-| Komponentas |      Specifikacija      |
-| :---------- | :---------------------: |
-| CPU         | AMD Ryzen 5 4600H </br> |
-| RAM         |     8GB DDR4 </br>      |
-| DISK        |    SSD (NVMe) </br>     |
