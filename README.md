@@ -333,9 +333,9 @@ Viso faile yra 18 namų darbų pažymių
 
 #### Deque
 
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/1%20strategija/Deque/1000/Screenshot%202025-03-19%20152400.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/1%20strategija/Deque/1000/Screenshot%202025-03-19%20152416.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/1%20strategija/Deque/1000/Screenshot%202025-03-19%20152430.png)
 
 ### 10000 Studentu analize
 
@@ -353,21 +353,21 @@ Viso faile yra 18 namų darbų pažymių
 
 #### Vector
 
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/1%20strategija/Vector/10000/Screenshot%202025-03-19%20151453.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/1%20strategija/Vector/10000/Screenshot%202025-03-19%20151529.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/1%20strategija/Vector/10000/Screenshot%202025-03-19%20151547.png)
 
 #### List
 
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/1%20strategija/List/10000/Screenshot%202025-03-19%20151718.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/1%20strategija/List/10000/Screenshot%202025-03-19%20151734.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/1%20strategija/List/10000/Screenshot%202025-03-19%20151751.png)
 
 #### Deque
 
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/1%20strategija/Deque/10000/Screenshot%202025-03-19%20151834.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/1%20strategija/Deque/10000/Screenshot%202025-03-19%20151850.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/1%20strategija/Deque/10000/Screenshot%202025-03-19%20151906.png)
 
 ### 100000 Studentu analize
 
@@ -385,21 +385,21 @@ Viso faile yra 14 namų darbų pažymių
 
 #### Vector
 
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/1%20strategija/Vector/100000/Screenshot%202025-03-19%20151035.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/1%20strategija/Vector/100000/Screenshot%202025-03-19%20151052.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/1%20strategija/Vector/100000/Screenshot%202025-03-19%20151109.png)
 
 #### List
 
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/1%20strategija/List/100000/Screenshot%202025-03-19%20151204.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/1%20strategija/List/100000/Screenshot%202025-03-19%20151224.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/1%20strategija/List/100000/Screenshot%202025-03-19%20151244.png)
 
 #### Deque
 
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/1%20strategija/Deque/100000/Screenshot%202025-03-19%20151332.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/1%20strategija/Deque/100000/Screenshot%202025-03-19%20151348.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/1%20strategija/Deque/100000/Screenshot%202025-03-19%20151405.png)
 
 ### 1000000 Studentu analize
 
@@ -417,21 +417,21 @@ Viso faile yra 19 namų darbų pažymių
 
 #### Vector
 
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/1%20strategija/Vector/1000000/Screenshot%202025-03-19%20150401.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/1%20strategija/Vector/1000000/Screenshot%202025-03-19%20150432.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/1%20strategija/Vector/1000000/Screenshot%202025-03-19%20150513.png)
 
 #### List
 
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/1%20strategija/List/1000000/Screenshot%202025-03-19%20150638.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/1%20strategija/List/1000000/Screenshot%202025-03-19%20150708.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/1%20strategija/List/1000000/Screenshot%202025-03-19%20150743.png)
 
 #### Deque
 
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/1%20strategija/Deque/1000000/Screenshot%202025-03-19%20150840.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/1%20strategija/Deque/1000000/Screenshot%202025-03-19%20150910.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/1%20strategija/Deque/1000000/Screenshot%202025-03-19%20150939.png)
 
 ### 10000000 Studentu analize
 
@@ -449,21 +449,21 @@ Viso faile yra 19 namų darbų pažymių
 
 #### Vector
 
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/1%20strategija/Vector/10000000/Screenshot%202025-03-18%20213431.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/1%20strategija/Vector/10000000/Screenshot%202025-03-18%20213441.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/1%20strategija/Vector/10000000/Screenshot%202025-03-18%20213451.png)
 
 #### List
 
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/1%20strategija/List/10000000/Screenshot%202025-03-18%20213526.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/1%20strategija/List/10000000/Screenshot%202025-03-18%20213535.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/1%20strategija/List/10000000/Screenshot%202025-03-18%20213545.png)
 
 #### Deque
 
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/1%20strategija/Deque/10000000/Screenshot%202025-03-18%20213616.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/1%20strategija/Deque/10000000/Screenshot%202025-03-18%20213625.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/1%20strategija/Deque/10000000/Screenshot%202025-03-18%20213633.png)
 
 ## 2 strategija
 
@@ -483,21 +483,21 @@ Viso faile yra 18 namų darbų pažymių
 
 #### Vector
 
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/2%20strategija/Vector/1000/Screenshot%202025-03-19%20145855.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/2%20strategija/Vector/1000/Screenshot%202025-03-19%20145913.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/2%20strategija/Vector/1000/Screenshot%202025-03-19%20145938.png)
 
 #### List
 
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/2%20strategija/List/1000/Screenshot%202025-03-19%20150026.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/2%20strategija/List/1000/Screenshot%202025-03-19%20150040.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/2%20strategija/List/1000/Screenshot%202025-03-19%20150056.png)
 
 #### Deque
 
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/2%20strategija/Deque/1000/Screenshot%202025-03-19%20150146.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/2%20strategija/Deque/1000/Screenshot%202025-03-19%20150208.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/2%20strategija/Deque/1000/Screenshot%202025-03-19%20150226.png)
 
 ### 10000 Studentu analize
 
@@ -515,21 +515,21 @@ Viso faile yra 18 namų darbų pažymių
 
 #### Vector
 
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/2%20strategija/Vector/10000/Screenshot%202025-03-19%20145504.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/2%20strategija/Vector/10000/Screenshot%202025-03-19%20145522.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/2%20strategija/Vector/10000/Screenshot%202025-03-19%20145537.png)
 
 #### List
 
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/2%20strategija/List/10000/Screenshot%202025-03-19%20145625.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/2%20strategija/List/10000/Screenshot%202025-03-19%20145644.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/2%20strategija/List/10000/Screenshot%202025-03-19%20145658.png)
 
 #### Deque
 
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/2%20strategija/Deque/10000/Screenshot%202025-03-19%20145740.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/2%20strategija/Deque/10000/Screenshot%202025-03-19%20145754.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/2%20strategija/Deque/10000/Screenshot%202025-03-19%20145808.png)
 
 ### 100000 Studentu analize
 
@@ -547,21 +547,21 @@ Viso faile yra 14 namų darbų pažymių
 
 #### Vector
 
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/2%20strategija/Vector/100000/Screenshot%202025-03-19%20145012.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/2%20strategija/Vector/100000/Screenshot%202025-03-19%20145032.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/2%20strategija/Vector/100000/Screenshot%202025-03-19%20145050.png)
 
 #### List
 
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/2%20strategija/List/100000/Screenshot%202025-03-19%20145147.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/2%20strategija/List/100000/Screenshot%202025-03-19%20145207.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/2%20strategija/List/100000/Screenshot%202025-03-19%20145230.png)
 
 #### Deque
 
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/2%20strategija/Deque/100000/Screenshot%202025-03-19%20145339.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/2%20strategija/Deque/100000/Screenshot%202025-03-19%20145401.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/2%20strategija/Deque/100000/Screenshot%202025-03-19%20145417.png)
 
 ### 1000000 Studentu analize
 
@@ -579,21 +579,21 @@ Viso faile yra 19 namų darbų pažymių
 
 #### Vector
 
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/2%20strategija/Vector/1000000/Screenshot%202025-03-19%20144243.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/2%20strategija/Vector/1000000/Screenshot%202025-03-19%20144323.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/2%20strategija/Vector/1000000/Screenshot%202025-03-19%20144423.png)
 
 #### List
 
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/2%20strategija/List/1000000/Screenshot%202025-03-19%20144534.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/2%20strategija/List/1000000/Screenshot%202025-03-19%20144616.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/2%20strategija/List/1000000/Screenshot%202025-03-19%20144650.png)
 
 #### Deque
 
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/2%20strategija/Deque/1000000/Screenshot%202025-03-19%20144805.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/2%20strategija/Deque/1000000/Screenshot%202025-03-19%20144842.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/2%20strategija/Deque/1000000/Screenshot%202025-03-19%20144918.png)
 
 ### 10000000 Studentu analize
 
@@ -611,21 +611,21 @@ Viso faile yra 19 namų darbų pažymių
 
 #### Vector
 
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/2%20strategija/Vector/10000000/Screenshot%202025-03-18%20213712.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/2%20strategija/Vector/10000000/Screenshot%202025-03-18%20213745.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/2%20strategija/Vector/10000000/Screenshot%202025-03-18%20213757.png)
 
 #### List
 
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/2%20strategija/List/10000000/Screenshot%202025-03-18%20213820.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/2%20strategija/List/10000000/Screenshot%202025-03-18%20213828.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/2%20strategija/List/10000000/Screenshot%202025-03-18%20213838.png)
 
 #### Deque
 
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/2%20strategija/Deque/10000000/Screenshot%202025-03-18%20214443.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/2%20strategija/Deque/10000000/Screenshot%202025-03-18%20214455.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/2%20strategija/Deque/10000000/Screenshot%202025-03-18%20214835.png)
 
 ## 3 strategija
 
@@ -647,21 +647,21 @@ Viso faile yra 18 namų darbų pažymių
 
 #### Vector
 
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/3%20strategija/Vector/1000/Screenshot%202025-03-19%20143631.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/3%20strategija/Vector/1000/Screenshot%202025-03-19%20143705.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/3%20strategija/Vector/1000/Screenshot%202025-03-19%20143724.png)
 
 #### List
 
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/3%20strategija/List/1000/Screenshot%202025-03-19%20143812.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/3%20strategija/List/1000/Screenshot%202025-03-19%20143836.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/3%20strategija/List/1000/Screenshot%202025-03-19%20143916.png)
 
 #### Deque
 
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/3%20strategija/Deque/1000/Screenshot%202025-03-19%20144025.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/3%20strategija/Deque/1000/Screenshot%202025-03-19%20144051.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/3%20strategija/Deque/1000/Screenshot%202025-03-19%20144109.png)
 
 ### 10000 Studentu analize
 
@@ -679,21 +679,21 @@ Viso faile yra 18 namų darbų pažymių
 
 #### Vector
 
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/3%20strategija/Vector/10000/Screenshot%202025-03-19%20143014.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/3%20strategija/Vector/10000/Screenshot%202025-03-19%20143035.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/3%20strategija/Vector/10000/Screenshot%202025-03-19%20143106.png)
 
 #### List
 
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/3%20strategija/List/10000/Screenshot%202025-03-19%20143218.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/3%20strategija/List/10000/Screenshot%202025-03-19%20143236.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/3%20strategija/List/10000/Screenshot%202025-03-19%20143254.png)
 
 #### Deque
 
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/3%20strategija/Deque/10000/Screenshot%202025-03-19%20143508.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/3%20strategija/Deque/10000/Screenshot%202025-03-19%20143536.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/3%20strategija/Deque/10000/Screenshot%202025-03-19%20143553.png)
 
 ### 100000 Studentu analize
 
@@ -711,21 +711,21 @@ Viso faile yra 14 namų darbų pažymių
 
 #### Vector
 
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/3%20strategija/Vector/100000/Screenshot%202025-03-19%20135425.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/3%20strategija/Vector/100000/Screenshot%202025-03-19%20135443.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/3%20strategija/Vector/100000/Screenshot%202025-03-19%20135511.png)
 
 #### List
 
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/3%20strategija/List/100000/Screenshot%202025-03-19%20135602.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/3%20strategija/List/100000/Screenshot%202025-03-19%20135619.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/3%20strategija/List/100000/Screenshot%202025-03-19%20135635.png)
 
 #### Deque
 
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/3%20strategija/Deque/100000/Screenshot%202025-03-19%20135248.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/3%20strategija/Deque/100000/Screenshot%202025-03-19%20135310.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/3%20strategija/Deque/100000/Screenshot%202025-03-19%20135330.png)
 
 ### 1000000 Studentu analize
 
@@ -743,21 +743,21 @@ Viso faile yra 19 namų darbų pažymių
 
 #### Vector
 
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/3%20strategija/Vector/1000000/Screenshot%202025-03-19%20134231.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/3%20strategija/Vector/1000000/Screenshot%202025-03-19%20134310.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/3%20strategija/Vector/1000000/Screenshot%202025-03-19%20134341.png)
 
 #### List
 
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/3%20strategija/List/1000000/Screenshot%202025-03-19%20134805.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/3%20strategija/List/1000000/Screenshot%202025-03-19%20134852.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/3%20strategija/List/1000000/Screenshot%202025-03-19%20134922.png)
 
 #### Deque
 
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/3%20strategija/Deque/1000000/Screenshot%202025-03-19%20135033.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/3%20strategija/Deque/1000000/Screenshot%202025-03-19%20135109.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/3%20strategija/Deque/1000000/Screenshot%202025-03-19%20135141.png)
 
 ### 10000000 Studentu analize
 
@@ -775,21 +775,21 @@ Viso faile yra 19 namų darbų pažymių
 
 #### Vector
 
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/3%20strategija/Vector/10000000/Screenshot%202025-03-19%20131908.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/3%20strategija/Vector/10000000/Screenshot%202025-03-19%20132218.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/3%20strategija/Vector/10000000/Screenshot%202025-03-19%20132417.png)
 
 #### List
 
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/3%20strategija/List/10000000/Screenshot%202025-03-19%20132900.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/3%20strategija/List/10000000/Screenshot%202025-03-19%20133110.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/3%20strategija/List/10000000/Screenshot%202025-03-19%20133329.png)
 
 #### Deque
 
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/3%20strategija/Deque/10000000/Screenshot%202025-03-19%20133616.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/3%20strategija/Deque/10000000/Screenshot%202025-03-19%20133820.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/3%20strategija/Deque/10000000/Screenshot%202025-03-19%20134029.png)
 
 # 5 failų kūrimas
 
