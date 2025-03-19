@@ -321,9 +321,9 @@ Viso faile yra 18 namų darbų pažymių
 
 #### Vector
 
-![imagine alt]()
-![imagine alt]()
-![imagine alt]()
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/aff19a1cb921c4d338acc87bfdcb4804c7485dbc/Nuotraukos/1%20strategija/Vector/1000/Screenshot%202025-03-19%20152246.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/aff19a1cb921c4d338acc87bfdcb4804c7485dbc/Nuotraukos/1%20strategija/Vector/1000/Screenshot%202025-03-19%20152301.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/aff19a1cb921c4d338acc87bfdcb4804c7485dbc/Nuotraukos/1%20strategija/Vector/1000/Screenshot%202025-03-19%20152317.png)
 
 #### List
 
