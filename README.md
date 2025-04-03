@@ -1,3 +1,5 @@
+# Antra versija
+
 # 💻 Kompiuterio charakteristikos
 
 | Komponentas |      Specifikacija      |
