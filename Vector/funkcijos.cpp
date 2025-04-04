@@ -253,7 +253,7 @@ void failo_nuskaitymas(vector<Studentas> &studentai, const string &failo_pavadin
 				laikinas.setEgzaminoPazymys(laikinas.getPazymiai().back());
 				laikinas.removeLastPazymys(pazymys);
 			}
-			studentai.push_back(laikinas);
+			studentai.push_back(std::move(laikinas));
 		}
 		failas.close();
 		auto end = std::chrono::high_resolution_clock::now();

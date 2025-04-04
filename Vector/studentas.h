@@ -15,7 +15,15 @@ private:
 public:
 	Studentas() : vardas_{"Vardenis"}, pavarde_{"Pavardenis"}, pazymiai_{0}, egzamino_pazymys_{0} {};
 	Studentas(string vardas, string pavarde, vector<int> pazymiai, int egzamino_pazymys) : vardas_{vardas}, pavarde_{pavarde}, pazymiai_{pazymiai}, egzamino_pazymys_{egzamino_pazymys} {};
-	~Studentas() { pazymiai_.clear(); };
+	~Studentas()
+	{
+		vardas_ = "";
+		pavarde_ = "";
+		pazymiai_.clear();
+		egzamino_pazymys_ = 0;
+		galutinis_pazymys_vid_ = 0;
+		galutinis_pazymys_med_ = 0;
+	};
 
 	string getVardas() const { return vardas_; };
 	string getPavarde() const { return pavarde_; };
