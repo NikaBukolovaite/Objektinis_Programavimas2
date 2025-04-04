@@ -31,21 +31,8 @@ int main()
 			pap_rusiavimas = papildomas_rusiavimas();
 			if (pap_rusiavimas == 1)
 			{
-				int kokia_strategija = strategijos_pasirinkimas();
-				if (kokia_strategija == 1)
-				{
-					studentu_rusiavimas_1strategija(studentai, skaiciavimo_budas, kaip_surusiuoti);
-				}
-				else if (kokia_strategija == 2)
-				{
-					int koks_rusiavimas_failuose = pagal_ka_rusiuoti_studentus_i_failus(studentai, skaiciavimo_budas);
-					studentu_rusiavimas_2strategija(studentai, skaiciavimo_budas, kaip_surusiuoti, koks_rusiavimas_failuose);
-				}
-				else if (kokia_strategija == 3)
-				{
-					int koks_rusiavimas_failuose = pagal_ka_rusiuoti_studentus_i_failus(studentai, skaiciavimo_budas);
-					studentu_rusiavimas_3strategija(studentai, skaiciavimo_budas, kaip_surusiuoti);
-				}
+				int koks_rusiavimas_failuose = pagal_ka_rusiuoti_studentus_i_failus(studentai, skaiciavimo_budas);
+				studentu_rusiavimas_3strategija(studentai, skaiciavimo_budas, kaip_surusiuoti);
 			}
 			if (isvedimo_budas == 1)
 			{

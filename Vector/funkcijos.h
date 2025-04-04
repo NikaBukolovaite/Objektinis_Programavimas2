@@ -1,16 +1,8 @@
 #ifndef FUNCTIONS_H
 #define FUNCTIONS_H
 #include "../santrauka.h"
+#include "studentas.h"
 
-struct Studentas
-{
-	string vardas;
-	string pavarde;
-	vector<int> pazymiai;
-	int egzamino_pazymys = 0;
-	double galutinis_pazymys_vid;
-	double galutinis_pazymys_med;
-};
 const string aplankalo_pavadinimas = "NuskaitymoFailai";
 extern vector<std::chrono::duration<double>> testuLaikai;
 extern vector<std::chrono::duration<double>> kurimoLaikai;
@@ -37,8 +29,6 @@ void generuotiVardaPavarde(Studentas &laikinas);
 void ivestiPazymius(Studentas &laikinas);
 void generuotiPazymius(Studentas &laikinas);
 void informacijos_ivedimas(vector<Studentas> &studentai, int pasirinkimas, string failo_pavadinimas);
-double galutinis_pazymys_vid(Studentas studentas);
-double galutinis_pazymys_med(Studentas studentas);
 int koks_galutinis();
 int failas_ar_konsole();
 int rusiavimas(int skaiciavimo_budas);
@@ -50,9 +40,6 @@ bool medianosNuoMazRusiavimas(const Studentas &studentas, const Studentas &stude
 bool medianosNuoDidRusiavimas(const Studentas &studentas, const Studentas &studentas2);
 int pagal_ka_rusiuoti_studentus_i_failus(vector<Studentas> &studentai, int skaiciavimo_budas);
 int papildomas_rusiavimas();
-int strategijos_pasirinkimas();
-void studentu_rusiavimas_1strategija(vector<Studentas> &studentai, int skaiciavimo_budas, int kaip_surusiuoti);
-void studentu_rusiavimas_2strategija(vector<Studentas> &studentai, int skaiciavimo_budas, int kaip_surusiuoti, int rusiavimo_budas);
 void studentu_rusiavimas_3strategija(vector<Studentas> &studentai, int skaiciavimo_budas, int kaip_surusiuoti);
 void output(ostream &out, vector<Studentas> studentai, int skaiciavimo_budas, int isvedimo_budas);
 void rusiavimoIf(vector<Studentas> &studentai, int kaip_surusiuoti, int skaiciavimo_budas);
