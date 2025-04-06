@@ -102,7 +102,7 @@ Palikta viena - greiciausia strategija, vieno tipo konteineris (vector), pagreit
 
 # V1.1 versijos testavimai ir palyginimas su V1.0 versija (Nauja)
 
-### Pastaba: Kiekvienas greitis - vidutinis 3 testu laikas (sek.). Konteineris - vektorius. 3 strategija.
+### Pastaba: Kiekvienas greitis - vidutinis 3 testu laikas (sek.). Programoje naudojamas konteineris - vektorius. Paleidziama 3 strategija.
 
 | Kompiliavimo veliava | Greitis 100000 (Naudojant struct) | Greitis 1000000 (Naudojant struct) | Exe failo dydis (Naudojant struct) | Greitis 100000 (Naudojant class) | Greitis 1000000 (Naudojant class) | Exe failo dydis (Naudojant class) |
 | :------------------: | :-------------------------------: | :--------------------------------: | :--------------------------------: | :------------------------------: | :-------------------------------: | :-------------------------------: |
