@@ -40,7 +40,7 @@ bool medianosNuoMazRusiavimas(const Studentas &studentas, const Studentas &stude
 bool medianosNuoDidRusiavimas(const Studentas &studentas, const Studentas &studentas2);
 int pagal_ka_rusiuoti_studentus_i_failus(vector<Studentas> &studentai, int skaiciavimo_budas);
 int papildomas_rusiavimas();
-void studentu_rusiavimas_3strategija(vector<Studentas> &studentai, int skaiciavimo_budas, int kaip_surusiuoti);
+void studentu_rusiavimas_3strategija(vector<Studentas> &studentai, int skaiciavimo_budas, int kaip_surusiuoti, int rusiavimo_budas);
 void output(ostream &out, vector<Studentas> studentai, int skaiciavimo_budas, int isvedimo_budas);
 void rusiavimoIf(vector<Studentas> &studentai, int kaip_surusiuoti, int skaiciavimo_budas);
 void terminalas(vector<Studentas> &studentai, int kaip_surusiuoti, int skaiciavimo_budas);

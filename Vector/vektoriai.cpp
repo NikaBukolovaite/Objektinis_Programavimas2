@@ -32,7 +32,7 @@ int main()
 			if (pap_rusiavimas == 1)
 			{
 				int koks_rusiavimas_failuose = pagal_ka_rusiuoti_studentus_i_failus(studentai, skaiciavimo_budas);
-				studentu_rusiavimas_3strategija(studentai, skaiciavimo_budas, kaip_surusiuoti);
+				studentu_rusiavimas_3strategija(studentai, skaiciavimo_budas, kaip_surusiuoti, koks_rusiavimas_failuose);
 			}
 			if (isvedimo_budas == 1)
 			{

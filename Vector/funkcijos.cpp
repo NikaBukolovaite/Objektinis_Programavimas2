@@ -811,10 +811,9 @@ int pagal_ka_rusiuoti_studentus_i_failus(vector<Studentas> &studentai, int skaic
 	return rusiavimo_budas;
 }
 
-void studentu_rusiavimas_3strategija(vector<Studentas> &studentai, int skaiciavimo_budas, int kaip_surusiuoti)
+void studentu_rusiavimas_3strategija(vector<Studentas> &studentai, int skaiciavimo_budas, int kaip_surusiuoti, int rusiavimo_budas)
 {
 	std::vector<Studentas> kietekai, vargsiukai;
-	int rusiavimo_budas = 0;
 
 	auto start = std::chrono::high_resolution_clock::now();
 	if (skaiciavimo_budas == 1)
