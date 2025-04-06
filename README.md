@@ -94,7 +94,24 @@ Sukurtos 3 programos su skirtingais konteineriais - std::vector, std::list ir st
 
 # v1.0 versija
 
-Suurtos 3 skirtingos strategijos studentu rusiavimui i 2 failus - "kieteai.txt" ir "vargsiukai.txt"
+Sukurtos 3 skirtingos strategijos studentu rusiavimui i 2 failus - "kieteai.txt" ir "vargsiukai.txt"
+
+# v1.1 versija
+
+Palikta viena - greiciausia strategija, vieno tipo konteineris (vector), pagreitintas failu nuskaitymas ir kodas perrasytas objetiskai (naudojant klases).
+
+# V1.1 versijos testavimai ir palyginimas su V1.0 versija (Nauja)
+
+### Pastaba: Kiekvienas greitis - vidutinis 3 testu laikas.
+
+| Kompiliavimo veliava | Greitis 100000 (Naudojant struct) | Greitis 1000000 (Naudojant struct) | Exe failo dydis (Naudojant struct) | Greitis 100000 (Naudojant class) | Greitis 1000000 (Naudojant class) | Exe failo dydis (Naudojant class) |
+| :------------------: | :-------------------------------: | :--------------------------------: | :--------------------------------: | -------------------------------- | --------------------------------- | --------------------------------- |
+|    Jokia veliava     |                                   |                                    |                                    |                                  |                                   |                                   |
+|          O1          |                                   |                                    |                                    |                                  |                                   |                                   |
+|          O2          |                                   |                                    |                                    |                                  |                                   |                                   |
+|          O3          |                                   |                                    |                                    |                                  |                                   |                                   |
+
+# V1.0 versijos testavimai (Sena)
 
 # Programos testavimo rezultatai pradiniam v1.0 release
 
