@@ -106,10 +106,10 @@ Palikta viena - greiciausia strategija, vieno tipo konteineris (vector), pagreit
 
 | Kompiliavimo veliava | Greitis 100000 (Naudojant struct) | Greitis 1000000 (Naudojant struct) | Exe failo dydis (Naudojant struct) | Greitis 100000 (Naudojant class) | Greitis 1000000 (Naudojant class) | Exe failo dydis (Naudojant class) |
 | :------------------: | :-------------------------------: | :--------------------------------: | :--------------------------------: | :------------------------------: | :-------------------------------: | :-------------------------------: |
-|    Jokia veliava     |                                   |                                    |                                    |             0.728926             |             15.676393             |              544 KB               |
-|          O1          |                                   |                                    |                                    |             0.743053             |             15.877131             |              532 KB               |
-|          O2          |                                   |                                    |                                    |             0.729011             |             15.71323              |              532 KB               |
-|          O3          |                                   |                                    |                                    |             0.734674             |             15.707292             |              532 KB               |
+|    Jokia veliava     |             0.444916              |                                    |               544 KB               |             0.728926             |             15.676393             |              544 KB               |
+|          O1          |             0.448639              |                                    |               544 KB               |             0.743053             |             15.877131             |              532 KB               |
+|          O2          |             0.454392              |                                    |               544 KB               |             0.729011             |             15.71323              |              532 KB               |
+|          O3          |             0.451663              |              5.422904              |               538 KB               |             0.734674             |             15.707292             |              532 KB               |
 
 # V1.0 versijos testavimai (Sena)
 
