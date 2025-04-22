@@ -1,3 +1,5 @@
+#include "studentas.h"
+
 bool testas_1()
 {
 	Studentas studentas("Vardenis", "Pavardenis", {9, 8, 7}, 10);
