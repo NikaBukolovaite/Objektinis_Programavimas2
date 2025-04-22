@@ -7,5 +7,5 @@ bool testas_1()
 	studentas.getEgzaminoPazymys();
 
 	if ()
-		cout <<
+		cout << "Veikia" << endl;
 }
