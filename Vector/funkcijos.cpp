@@ -966,6 +966,7 @@ void terminalas(vector<Studentas> &studentai, int kaip_surusiuoti, int skaiciavi
 }
 
 void failas(vector<Studentas> &studentai, int kaip_surusiuoti, int skaiciavimo_budas)
+
 {
 	rusiavimoIf(studentai, kaip_surusiuoti, skaiciavimo_budas);
 	ofstream failas("rezultatai.txt");

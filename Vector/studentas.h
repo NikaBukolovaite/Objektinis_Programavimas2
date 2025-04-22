@@ -13,6 +13,7 @@ private:
 	double galutinis_pazymys_med_;
 
 public:
+	// Default konstruktorius, destruktorius
 	Studentas() : vardas_{"Vardenis"}, pavarde_{"Pavardenis"}, pazymiai_{}, egzamino_pazymys_{0} {};
 	Studentas(string vardas, string pavarde, vector<int> pazymiai, int egzamino_pazymys) : vardas_{vardas}, pavarde_{pavarde}, pazymiai_{pazymiai}, egzamino_pazymys_{egzamino_pazymys} {};
 	~Studentas()
@@ -24,6 +25,38 @@ public:
 		galutinis_pazymys_vid_ = 0;
 		galutinis_pazymys_med_ = 0;
 	};
+
+	// Copy constructor
+	Studentas(Studentas &studentas) : vardas_{studentas.vardas_}, pavarde_{studentas.pavarde_}, pazymiai_{studentas.pazymiai_}, egzamino_pazymys_{studentas.egzamino_pazymys_}, galutinis_pazymys_vid_{studentas.galutinis_pazymys_vid_}, galutinis_pazymys_med_{studentas.galutinis_pazymys_med_} {};
+
+	// Copy assignment operator
+	Studentas operator=(Studentas studentas)
+	{
+		this->vardas_ = studentas.vardas_;
+		this->pavarde_ = studentas.pavarde_;
+		this->pazymiai_ = studentas.pazymiai_;
+		this->egzamino_pazymys_ = studentas.egzamino_pazymys_;
+		this->galutinis_pazymys_vid_ = studentas.galutinis_pazymys_vid_;
+		this->galutinis_pazymys_med_ = studentas.galutinis_pazymys_med_;
+
+		return *this;
+	}
+
+	// Move konstruktorius
+	Studentas(Studentas &studentas) : vardas_{move(studentas.vardas_)}, pavarde_{move(studentas.pavarde_)}, pazymiai_{move(studentas.pazymiai_)}, egzamino_pazymys_{move(studentas.egzamino_pazymys_)}, galutinis_pazymys_vid_{move(studentas.galutinis_pazymys_vid_)}, galutinis_pazymys_med_{move(studentas.galutinis_pazymys_med_)} {};
+
+	// Move assignment operator
+	Studentas operator=(Studentas &&studentas)
+	{
+		vardas_ = move(studentas.vardas_);
+		pavarde_ = move(studentas.pavarde_);
+		pazymiai_ = move(studentas.pazymiai_);
+		egzamino_pazymys_ = move(studentas.egzamino_pazymys_);
+		galutinis_pazymys_vid_ = move(studentas.galutinis_pazymys_vid_);
+		galutinis_pazymys_med_ = move(studentas.galutinis_pazymys_med_);
+
+		return *this;
+	}
 
 	string getVardas() const { return vardas_; };
 	string getPavarde() const { return pavarde_; };
