@@ -128,7 +128,7 @@ Visi „Rule of Five“ metodai bei IO operatoriai testuojami naudojant `assert`
 - Perkėlimo konstruktorius ir operatorius
 - IO operatoriai (>> ir <<)
 
-![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/1%20strategija/Deque/10000/Screenshot%202025-03-19%20151834.png)
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas2/blob/516d1dcd726c9766854f47e2f61d16d386ab181b/Nuotraukos/Testai/Screenshot%202025-04-24%20161042.png)
 
 # V1.1 versijos testavimai ir palyginimas su V1.0 versija (Nauja)
 
