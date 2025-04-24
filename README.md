@@ -104,6 +104,11 @@ Palikta viena - greiciausia strategija, vieno tipo konteineris (vector), pagreit
 
 Igyvendintas ,,Rule of Five" ir ivesties/isvesties operatoriai. Padaryti siu metodu testai.
 
+# v1.5 versija
+
+Sukurta abstrakti klase "Zmogus"ir dabar klase "Studentas" yra isvestine klase is "Zmogus". Kad patikrinti abstrakciaja klase faile testai.cpp daromas papildomas testavimas.
+![imagine alt]()
+
 # Rule of Five realizacija
 
 | Metodas                                  | Paskirtis                         |
