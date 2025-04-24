@@ -36,7 +36,7 @@ public:
 		  galutinis_pazymys_vid_{studentas.galutinis_pazymys_vid_},
 		  galutinis_pazymys_med_{studentas.galutinis_pazymys_med_} {}
 
-	// Copy priskyrimo operatorius
+	// Copy assigment operatorius
 	Studentas &operator=(const Studentas &studentas)
 	{
 		if (this != &studentas)
@@ -59,7 +59,7 @@ public:
 		  galutinis_pazymys_vid_{std::move(studentas.galutinis_pazymys_vid_)},
 		  galutinis_pazymys_med_{std::move(studentas.galutinis_pazymys_med_)} {}
 
-	// Move priskyrimo operatorius
+	// Move assigment operatorius
 	Studentas &operator=(Studentas &&studentas) noexcept
 	{
 		if (this != &studentas)
