@@ -62,6 +62,10 @@ public:
 		return *this;
 	}
 
+	// IO operatoriai
+	friend std::istream &operator>>(std::istream &is, Studentas &s);
+	friend std::ostream &operator<<(std::ostream &os, const Studentas &s);
+
 	string getVardas() const { return vardas_; };
 	string getPavarde() const { return pavarde_; };
 	vector<int> getPazymiai() { return pazymiai_; };
