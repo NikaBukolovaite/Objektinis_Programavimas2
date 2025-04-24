@@ -13,8 +13,8 @@
 1. [Atsisiusti g++](https://sourceforge.net/projects/mingw-w64/)
 2. [Atsisiusti Make](https://gnuwin32.sourceforge.net/packages/make.htm)
 3. Kopijuoti projekto direktorija `git clone https://github.com/NikaBukolovaite/Objektinis_Programavimas.git` (arba Download zip)
-4. Atsidaryti komandine eilute projekto direktorijoje ir irasyti: `make -C Vector ; make -C List ; make -C Deque`
-5. Paleisti norima programos versija: `./Vector/vektoriai.exe`, `./List/list_main.exe` arba `./Deque/deque_main.exe`
+4. Atsidaryti komandine eilute projekto direktorijoje ir irasyti: `make -C Vector`. Jei norima paleisti testus: `make -C Vector testai`.
+5. Paleisti norima programos versija: `./Vector/vektoriai.exe`
 
 # 📃 Programos naudojimosi instrukcijos
 
@@ -99,6 +99,36 @@ Sukurtos 3 skirtingos strategijos studentu rusiavimui i 2 failus - "kieteai.txt"
 # v1.1 versija
 
 Palikta viena - greiciausia strategija, vieno tipo konteineris (vector), pagreitintas failu nuskaitymas ir kodas perrasytas objetiskai (naudojant klases).
+
+# v1.2 versija
+
+Igyvendintas ,,Rule of Five" ir ivesties/isvesties operatoriai. Padaryti siu metodu testai.
+
+# Rule of Five realizacija
+
+| Metodas                                  | Paskirtis                         |
+| ---------------------------------------- | --------------------------------- |
+| `Studentas(const Studentas&)`            | Kopijavimo konstruktorius         |
+| `Studentas& operator=(const Studentas&)` | Kopijavimo priskyrimo operatorius |
+| `Studentas(Studentas&&)`                 | Perkelimo konstruktorius          |
+| `Studentas& operator=(Studentas&&)`      | Perkelimo priskyrimo operatorius  |
+| `~Studentas()`                           | Destruktorius                     |
+
+# IO operatoriai
+
+- `operator>>` leidzia nuskaityti studenta is srauto.
+- `operator<<` leidzia isvesti studenta i srauta.
+
+# Testų aprėptis
+
+Visi „Rule of Five“ metodai bei IO operatoriai testuojami naudojant `assert`:
+
+- Default konstruktorius
+- Kopijavimo konstruktorius ir operatorius
+- Perkėlimo konstruktorius ir operatorius
+- IO operatoriai (>> ir <<)
+
+![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas/blob/e8e4ee747cc1ebead3f8aa1cf97aff440ad396cd/Nuotraukos/1%20strategija/Deque/10000/Screenshot%202025-03-19%20151834.png)
 
 # V1.1 versijos testavimai ir palyginimas su V1.0 versija (Nauja)
 
