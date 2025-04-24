@@ -1,8 +1,9 @@
 #ifndef STUDENTAS_H
 #define STUDENTAS_H
 #include "../santrauka.h"
+#include "zmogus.h"
 
-class Studentas
+class Studentas : public Zmogus
 {
 private:
 	string vardas_;

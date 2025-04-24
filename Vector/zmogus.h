@@ -5,15 +5,15 @@
 class Zmogus
 {
 protected:
-	string vardas_;
-	string pavarde_;
+	std::string vardas_;
+	std::string pavarde_;
 
 public:
-	virtual void setVardas(const string &vardas) = 0;
-	virtual string getVardas() const = 0;
+	virtual void setVardas(const std::string &vardas) = 0;
+	virtual std::string getVardas() const = 0;
 
-	virtual void setPavarde(const string &pavarde) = 0;
-	virtual string getPavarde() const = 0;
+	virtual void setPavarde(const std::string &pavarde) = 0;
+	virtual std::string getPavarde() const = 0;
 
 	virtual ~Zmogus() = default;
 };
