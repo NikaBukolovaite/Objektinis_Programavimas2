@@ -119,7 +119,7 @@ Igyvendintas ,,Rule of Five" ir ivesties/isvesties operatoriai. Padaryti siu met
 - `operator>>` leidzia nuskaityti studenta is srauto.
 - `operator<<` leidzia isvesti studenta i srauta.
 
-# Testų aprėptis
+# Rule of Five ir IO operatorius testai
 
 Visi „Rule of Five“ metodai bei IO operatoriai testuojami naudojant `assert`:
 
