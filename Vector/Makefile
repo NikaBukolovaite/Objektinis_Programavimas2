@@ -10,3 +10,8 @@ funkcijos.o: funkcijos.cpp
 
 studentas.o: studentas.cpp
 	g++ -c studentas.cpp -o studentas.o
+
+testas: testas.cpp studentas.cpp
+	g++ testas.cpp studentas.cpp -o testas
+	./testas
+	rm -f testas

@@ -20,6 +20,7 @@
 #include <filesystem>
 #include <list>
 #include <deque>
+#include <cassert>
 
 using std::cerr;
 using std::cin;
