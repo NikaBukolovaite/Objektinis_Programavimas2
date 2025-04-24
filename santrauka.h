@@ -33,6 +33,7 @@ using std::istringstream;
 using std::left;
 using std::list;
 using std::max;
+using std::move;
 using std::ofstream;
 using std::ostream;
 using std::right;

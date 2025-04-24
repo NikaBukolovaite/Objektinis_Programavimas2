@@ -14,25 +14,22 @@ private:
 
 public:
 	// Default konstruktorius, destruktorius
-	Studentas() : vardas_{"Vardenis"}, pavarde_{"Pavardenis"}, pazymiai_{}, egzamino_pazymys_{0} {};
+	Studentas() : vardas_{"Vardenis"},
+				  pavarde_{"Pavardenis"},
+				  pazymiai_{},
+				  egzamino_pazymys_{0},
+				  galutinis_pazymys_vid_{0.0},
+				  galutinis_pazymys_med_{0.0} {}
 	Studentas(string vardas, string pavarde, vector<int> pazymiai, int egzamino_pazymys) : vardas_{vardas}, pavarde_{pavarde}, pazymiai_{pazymiai}, egzamino_pazymys_{egzamino_pazymys} {};
-	~Studentas()
-	{
-		vardas_ = "";
-		pavarde_ = "";
-		pazymiai_.clear();
-		egzamino_pazymys_ = 0;
-		galutinis_pazymys_vid_ = 0;
-		galutinis_pazymys_med_ = 0;
-	};
+	~Studentas() = default;
 
 	// Copy konstruktorius
 	Studentas(const Studentas &studentas) : vardas_{studentas.vardas_}, pavarde_{studentas.pavarde_}, pazymiai_{studentas.pazymiai_}, egzamino_pazymys_{studentas.egzamino_pazymys_}, galutinis_pazymys_vid_{studentas.galutinis_pazymys_vid_}, galutinis_pazymys_med_{studentas.galutinis_pazymys_med_} {};
 
 	// Copy assignment operatorius
-	Studentas operator=(const Studentas &studentas)
+	Studentas &operator=(const Studentas &studentas)
 	{
-		if (this == &studentas)
+		if (this != &studentas)
 		{
 			vardas_ = studentas.vardas_;
 			pavarde_ = studentas.pavarde_;
@@ -50,7 +47,7 @@ public:
 	// Move assignment operatorius
 	Studentas &operator=(Studentas &&studentas) noexcept
 	{
-		if (this != &other)
+		if (this != &studentas)
 		{
 			vardas_ = move(studentas.vardas_);
 			pavarde_ = move(studentas.pavarde_);

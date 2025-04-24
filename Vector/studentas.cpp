@@ -5,6 +5,7 @@ void Studentas::galutinis_pazymys_vid()
 	if (pazymiai_.size() == 0)
 	{
 		galutinis_pazymys_vid_ = getEgzaminoPazymys() * 0.6;
+		return;
 	}
 	double vidurkis;
 	double suma = 0;
@@ -22,6 +23,7 @@ void Studentas::galutinis_pazymys_med()
 	if (pazymiai_.size() == 0)
 	{
 		galutinis_pazymys_med_ = getEgzaminoPazymys() * 0.6;
+		return;
 	}
 	double mediana;
 	sort(pazymiai_.begin(), pazymiai_.end());
@@ -51,18 +53,20 @@ std::istream &operator>>(std::istream &is, Studentas &studentas)
 			is.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 			break;
 		}
+		else
 		{
 			studentas.pazymiai_.push_back(pazymys);
 			if (is.peek() == '\n')
 				break;
 		}
-		if (!studentas.pazymiai_.empty())
-		{
-			studentas.egzamino_pazymys_ = studentas.pazymiai_.back();
-			studentas.pazymiai_.pop_back();
-		}
-		return is;
 	}
+
+	if (!studentas.pazymiai_.empty())
+	{
+		studentas.egzamino_pazymys_ = studentas.pazymiai_.back();
+		studentas.pazymiai_.pop_back();
+	}
+	return is;
 }
 
 std::ostream &operator<<(std::ostream &os, const Studentas &studentas)

@@ -13,6 +13,8 @@ void testas()
 {
 	// Default constructor
 	Studentas studentas;
+	studentas.galutinis_pazymys_vid();
+	studentas.galutinis_pazymys_med();
 	assert(studentas.getVardas() == "Vardenis");
 	assert(studentas.getPavarde() == "Pavardenis");
 	assert(studentas.getEgzaminoPazymys() == 0);
