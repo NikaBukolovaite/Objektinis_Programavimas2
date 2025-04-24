@@ -93,5 +93,6 @@ void testas()
 int main()
 {
 	testas();
+	// Zmogus z; // Zmogus yra abstrakti klase, negalima sukurti jos objekto
 	return 0;
 }

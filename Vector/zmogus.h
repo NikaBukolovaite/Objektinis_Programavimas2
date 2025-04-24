@@ -9,6 +9,10 @@ protected:
 	std::string pavarde_;
 
 public:
+	Zmogus() = default;
+	Zmogus(const std::string &vardas, const std::string &pavarde)
+		: vardas_(vardas), pavarde_(pavarde) {}
+
 	virtual void setVardas(const std::string &vardas) = 0;
 	virtual std::string getVardas() const = 0;
 
