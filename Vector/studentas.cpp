@@ -37,3 +37,39 @@ void Studentas::galutinis_pazymys_med()
 
 	galutinis_pazymys_med_ = mediana * 0.4 + getEgzaminoPazymys() * 0.6;
 }
+
+std::istream &operator>>(std::istream &is, Studentas &studentas)
+{
+	studentas.pazymiai_.clear();
+	is >> studentas.vardas_ >> studentas.pavarde_;
+	int pazymys;
+	while (is >> pazymys)
+	{
+		if (pazymys < 1 || pazymys > 10 || is.fail())
+		{
+			is.clear();
+			is.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			break;
+		}
+		{
+			studentas.pazymiai_.push_back(pazymys);
+			if (is.peek() == '\n')
+				break;
+		}
+		if (!studentas.pazymiai_.empty())
+		{
+			studentas.egzamino_pazymys_ = studentas.pazymiai_.back();
+			studentas.pazymiai_.pop_back();
+		}
+		return is;
+	}
+}
+
+std::ostream &operator<<(std::ostream &os, const Studentas &studentas)
+{
+	os << studentas.vardas_ << " " << studentas.pavarde_ << " | ND: ";
+	for (int p : studentas.pazymiai_)
+		os << p << " ";
+	os << "| Egzamino pazymys: " << studentas.egzamino_pazymys_;
+	return os;
+}

@@ -63,8 +63,8 @@ public:
 	}
 
 	// IO operatoriai
-	friend std::istream &operator>>(std::istream &is, Studentas &s);
-	friend std::ostream &operator<<(std::ostream &os, const Studentas &s);
+	friend std::istream &operator>>(std::istream &is, Studentas &studentas);
+	friend std::ostream &operator<<(std::ostream &os, const Studentas &studentas);
 
 	string getVardas() const { return vardas_; };
 	string getPavarde() const { return pavarde_; };
