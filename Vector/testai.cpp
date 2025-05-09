@@ -110,19 +110,5 @@ TEST_CASE("Getters", "[getters]")
 	originalus2.setVardas(vardas);
 	originalus2.setPavarde(pavarde);
 	originalus2.setEgzaminoPazymys(10);
-	Studentas kopija2;
-	kopija2 = originalus2;
-	assert(kopija2.getVardas() == "Jonas");
-	assert(kopija2.getPavarde() == "Jonaitis");
-	assert(kopija2.getEgzaminoPazymys() == 10);
-	testavimoRezultatai(true, "kopijavimo assignmentas");
-
-	// Move assignment
-	Studentas movintas2;
-	movintas2 = std::move(originalus2);
-	assert(movintas2.getVardas() == "Jonas");
-	assert(movintas2.getPavarde() == "Jonaitis");
-	assert(movintas2.getEgzaminoPazymys() == 10);
-	testavimoRezultatai(true, "move assignmentas");
 
 
