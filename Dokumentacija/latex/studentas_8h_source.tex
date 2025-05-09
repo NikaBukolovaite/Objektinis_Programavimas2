@@ -1,0 +1,123 @@
+\doxysection{studentas.\+h}
+\hypertarget{studentas_8h_source}{}\label{studentas_8h_source}\index{Vector/studentas.h@{Vector/studentas.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ STUDENTAS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ STUDENTAS\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}../santrauka.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}zmogus.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }Studentas\ :\ \textcolor{keyword}{public}\ Zmogus}
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00009\ \ \ \ \ std::vector<int>\ pazymiai\_;}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{int}\ egzamino\_pazymys\_\ =\ 0;}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{double}\ galutinis\_pazymys\_vid\_\ =\ 0.0;}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{double}\ galutinis\_pazymys\_med\_\ =\ 0.0;}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{comment}{//\ Default\ konstruktorius}}
+\DoxyCodeLine{00016\ \ \ \ \ Studentas()}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ :\ Zmogus(\textcolor{stringliteral}{"{}Vardenis"{}},\ \textcolor{stringliteral}{"{}Pavardenis"{}}),}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ pazymiai\_\{\},}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ egzamino\_pazymys\_\{0\},}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ galutinis\_pazymys\_vid\_\{0.0\},}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ galutinis\_pazymys\_med\_\{0.0\}\ \{\}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ Studentas(std::string\ vardas,\ std::string\ pavarde,\ std::vector<int>\ pazymiai,\ \textcolor{keywordtype}{int}\ egzamino\_pazymys)}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ :\ Zmogus(vardas,\ pavarde),}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ pazymiai\_\{pazymiai\},}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ egzamino\_pazymys\_\{egzamino\_pazymys\}\ \{\}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{//\ Destruktorius}}
+\DoxyCodeLine{00029\ \ \ \ \ \string~Studentas()}
+\DoxyCodeLine{00030\ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ vardas\_.clear();}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ pavarde\_.clear();}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ pazymiai\_.clear();}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ egzamino\_pazymys\_\ =\ 0;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ galutinis\_pazymys\_vid\_\ =\ 0.0;}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ galutinis\_pazymys\_med\_\ =\ 0.0;}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//\ Copy\ konstruktorius}}
+\DoxyCodeLine{00040\ \ \ \ \ Studentas(\textcolor{keyword}{const}\ Studentas\ \&studentas)}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ :\ Zmogus(studentas.vardas\_,\ studentas.pavarde\_),}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ pazymiai\_\{studentas.pazymiai\_\},}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ egzamino\_pazymys\_\{studentas.egzamino\_pazymys\_\},}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ galutinis\_pazymys\_vid\_\{studentas.galutinis\_pazymys\_vid\_\},}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ galutinis\_pazymys\_med\_\{studentas.galutinis\_pazymys\_med\_\}\ \{\}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{comment}{//\ Copy\ assigment\ operatorius}}
+\DoxyCodeLine{00048\ \ \ \ \ Studentas\ \&operator=(\textcolor{keyword}{const}\ Studentas\ \&studentas)}
+\DoxyCodeLine{00049\ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ !=\ \&studentas)}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ vardas\_\ =\ studentas.vardas\_;}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ pavarde\_\ =\ studentas.pavarde\_;}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ pazymiai\_\ =\ studentas.pazymiai\_;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ egzamino\_pazymys\_\ =\ studentas.egzamino\_pazymys\_;}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ galutinis\_pazymys\_vid\_\ =\ studentas.galutinis\_pazymys\_vid\_;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ galutinis\_pazymys\_med\_\ =\ studentas.galutinis\_pazymys\_med\_;}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00060\ \ \ \ \ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{comment}{//\ Move\ konstruktorius}}
+\DoxyCodeLine{00063\ \ \ \ \ Studentas(Studentas\ \&\&studentas)\ noexcept}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ :\ Zmogus(std::move(studentas.vardas\_),\ std::move(studentas.pavarde\_)),}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ pazymiai\_\{std::move(studentas.pazymiai\_)\},}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ egzamino\_pazymys\_\{std::move(studentas.egzamino\_pazymys\_)\},}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ galutinis\_pazymys\_vid\_\{std::move(studentas.galutinis\_pazymys\_vid\_)\},}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ galutinis\_pazymys\_med\_\{std::move(studentas.galutinis\_pazymys\_med\_)\}}
+\DoxyCodeLine{00069\ \ \ \ \ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ studentas.\string~Studentas();}
+\DoxyCodeLine{00071\ \ \ \ \ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{comment}{//\ Move\ assigment\ operatorius}}
+\DoxyCodeLine{00074\ \ \ \ \ Studentas\ \&operator=(Studentas\ \&\&studentas)\ \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{00075\ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ !=\ \&studentas)}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ vardas\_\ =\ std::move(studentas.vardas\_);}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ pavarde\_\ =\ std::move(studentas.pavarde\_);}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ pazymiai\_\ =\ std::move(studentas.pazymiai\_);}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ egzamino\_pazymys\_\ =\ std::move(studentas.egzamino\_pazymys\_);}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ galutinis\_pazymys\_vid\_\ =\ std::move(studentas.galutinis\_pazymys\_vid\_);}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ galutinis\_pazymys\_med\_\ =\ std::move(studentas.galutinis\_pazymys\_med\_);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ studentas.\string~Studentas();}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00088\ \ \ \ \ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{comment}{//\ IO\ operatoriai}}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{friend}\ std::istream\ \&operator>>(std::istream\ \&,\ Studentas\ \&);}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\ \&operator<<(std::ostream\ \&,\ \textcolor{keyword}{const}\ Studentas\ \&);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{void}\ setVardas(\textcolor{keyword}{const}\ std::string\ \&vardas)\textcolor{keyword}{\ override\ }\{\ vardas\_\ =\ vardas;\ \}}
+\DoxyCodeLine{00095\ \ \ \ \ std::string\ getVardas()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ vardas\_;\ \}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ setPavarde(\textcolor{keyword}{const}\ std::string\ \&pavarde)\textcolor{keyword}{\ override\ }\{\ pavarde\_\ =\ pavarde;\ \}}
+\DoxyCodeLine{00098\ \ \ \ \ std::string\ getPavarde()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ pavarde\_;\ \}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ std::vector<int>\ getPazymiai()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ pazymiai\_;\ \}}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{int}\ getEgzaminoPazymys()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ egzamino\_pazymys\_;\ \}}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{double}\ getGalutinisPazymysVid()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ galutinis\_pazymys\_vid\_;\ \}}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{double}\ getGalutinisPazymysMed()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ galutinis\_pazymys\_med\_;\ \}}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{void}\ setPazymiai(std::vector<int>\ pazymiai)\ \{\ pazymiai\_\ =\ pazymiai;\ \}}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{void}\ setEgzaminoPazymys(\textcolor{keywordtype}{int}\ egzamino\_pazymys)\ \{\ egzamino\_pazymys\_\ =\ egzamino\_pazymys;\ \}}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ addPazymys(\textcolor{keywordtype}{int}\ pazymys)\ \{\ pazymiai\_.push\_back(pazymys);\ \}}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{void}\ removeLastPazymys(\textcolor{keywordtype}{int}\ pazymys)\ \{\ pazymiai\_.pop\_back();\ \}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{void}\ galutinis\_pazymys\_vid();}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{void}\ galutinis\_pazymys\_med();}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{bool}\ vardoPaieska()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ vardas\_.find(\textcolor{stringliteral}{"{}Vardas"{}})\ ==\ 0;\ \}}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{bool}\ pavardesPaieska()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ pavarde\_.find(\textcolor{stringliteral}{"{}Pavarde"{}})\ ==\ 0;\ \}}
+\DoxyCodeLine{00115\ \};}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

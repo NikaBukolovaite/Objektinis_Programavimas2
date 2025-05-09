@@ -1,0 +1,5 @@
+var searchData=
+[
+  ['laikas_20sek_20programoje_20naudojamas_20konteineris_20vektorius_20paleidziama_203_20strategija_0',['Pastaba: Kiekvienas greitis - vidutinis 3 testu laikas (sek.). Programoje naudojamas konteineris - vektorius. Paleidziama 3 strategija.',['../md__r_e_a_d_m_e.html#autotoc_md21',1,'']]],
+  ['list_1',['List',['../md__r_e_a_d_m_e.html#autotoc_md54',1,'List'],['../md__r_e_a_d_m_e.html#autotoc_md59',1,'List'],['../md__r_e_a_d_m_e.html#autotoc_md64',1,'List'],['../md__r_e_a_d_m_e.html#autotoc_md69',1,'List'],['../md__r_e_a_d_m_e.html#autotoc_md74',1,'List'],['../md__r_e_a_d_m_e.html#autotoc_md80',1,'List'],['../md__r_e_a_d_m_e.html#autotoc_md85',1,'List'],['../md__r_e_a_d_m_e.html#autotoc_md90',1,'List'],['../md__r_e_a_d_m_e.html#autotoc_md95',1,'List'],['../md__r_e_a_d_m_e.html#autotoc_md100',1,'List'],['../md__r_e_a_d_m_e.html#autotoc_md106',1,'List'],['../md__r_e_a_d_m_e.html#autotoc_md111',1,'List'],['../md__r_e_a_d_m_e.html#autotoc_md116',1,'List'],['../md__r_e_a_d_m_e.html#autotoc_md121',1,'List'],['../md__r_e_a_d_m_e.html#autotoc_md126',1,'List']]]
+];

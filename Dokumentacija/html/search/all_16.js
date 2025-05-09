@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['v_20pradine_20versija_0',['v.pradine versija',['../md__r_e_a_d_m_e.html#autotoc_md7',1,'']]],
+  ['v0_201_20versija_1',['v0.1 versija',['../md__r_e_a_d_m_e.html#autotoc_md8',1,'']]],
+  ['v0_202_20versija_2',['v0.2 versija',['../md__r_e_a_d_m_e.html#autotoc_md9',1,'']]],
+  ['v0_203_20versija_3',['v0.3 versija',['../md__r_e_a_d_m_e.html#autotoc_md10',1,'']]],
+  ['v0_204_20versija_4',['v0.4 versija',['../md__r_e_a_d_m_e.html#autotoc_md11',1,'']]],
+  ['v1_200_20pradine_20versija_5',['v1.0 pradine versija',['../md__r_e_a_d_m_e.html#autotoc_md12',1,'']]],
+  ['v1_200_20release_6',['Programos testavimo rezultatai pradiniam v1.0 release',['../md__r_e_a_d_m_e.html#autotoc_md23',1,'']]],
+  ['v1_200_20versija_7',['v1.0 versija',['../md__r_e_a_d_m_e.html#autotoc_md13',1,'']]],
+  ['v1_200_20versija_20nauja_8',['V1.1 versijos testavimai ir palyginimas su V1.0 versija (Nauja)',['../md__r_e_a_d_m_e.html#autotoc_md20',1,'']]],
+  ['v1_200_20versijos_20testavimai_20sena_9',['V1.0 versijos testavimai (Sena)',['../md__r_e_a_d_m_e.html#autotoc_md22',1,'']]],
+  ['v1_201_20versija_10',['v1.1 versija',['../md__r_e_a_d_m_e.html#autotoc_md14',1,'']]],
+  ['v1_201_20versijos_20testavimai_20ir_20palyginimas_20su_20v1_200_20versija_20nauja_11',['V1.1 versijos testavimai ir palyginimas su V1.0 versija (Nauja)',['../md__r_e_a_d_m_e.html#autotoc_md20',1,'']]],
+  ['v1_202_20versija_12',['v1.2 versija',['../md__r_e_a_d_m_e.html#autotoc_md15',1,'']]],
+  ['v1_205_20versija_13',['v1.5 versija',['../md__r_e_a_d_m_e.html#autotoc_md16',1,'']]],
+  ['vargsiukus_20greitis_20priklausomai_20nuo_20strategiju_20rezultatai_14',['Programos rusiavimo i kietekus ir vargsiukus greitis priklausomai nuo strategiju rezultatai',['../md__r_e_a_d_m_e.html#autotoc_md49',1,'']]],
+  ['vargsiukus_20sek_20_3a_15',['vargsiukus sek :',['../md__r_e_a_d_m_e.html#autotoc_md27',1,'Rusiavimas i kietekus ir vargsiukus (sek.):'],['../md__r_e_a_d_m_e.html#autotoc_md32',1,'Rusiavimas i kietekus ir vargsiukus (sek.):'],['../md__r_e_a_d_m_e.html#autotoc_md37',1,'Rusiavimas i kietekus ir vargsiukus (sek.):'],['../md__r_e_a_d_m_e.html#autotoc_md42',1,'Rusiavimas i kietekus ir vargsiukus (sek.):'],['../md__r_e_a_d_m_e.html#autotoc_md47',1,'Rusiavimas i kietekus ir vargsiukus (sek.):']]],
+  ['vector_16',['Vector',['../md__r_e_a_d_m_e.html#autotoc_md53',1,'Vector'],['../md__r_e_a_d_m_e.html#autotoc_md58',1,'Vector'],['../md__r_e_a_d_m_e.html#autotoc_md63',1,'Vector'],['../md__r_e_a_d_m_e.html#autotoc_md68',1,'Vector'],['../md__r_e_a_d_m_e.html#autotoc_md73',1,'Vector'],['../md__r_e_a_d_m_e.html#autotoc_md79',1,'Vector'],['../md__r_e_a_d_m_e.html#autotoc_md84',1,'Vector'],['../md__r_e_a_d_m_e.html#autotoc_md89',1,'Vector'],['../md__r_e_a_d_m_e.html#autotoc_md94',1,'Vector'],['../md__r_e_a_d_m_e.html#autotoc_md99',1,'Vector'],['../md__r_e_a_d_m_e.html#autotoc_md105',1,'Vector'],['../md__r_e_a_d_m_e.html#autotoc_md110',1,'Vector'],['../md__r_e_a_d_m_e.html#autotoc_md115',1,'Vector'],['../md__r_e_a_d_m_e.html#autotoc_md120',1,'Vector'],['../md__r_e_a_d_m_e.html#autotoc_md125',1,'Vector']]],
+  ['vektorius_20paleidziama_203_20strategija_17',['Pastaba: Kiekvienas greitis - vidutinis 3 testu laikas (sek.). Programoje naudojamas konteineris - vektorius. Paleidziama 3 strategija.',['../md__r_e_a_d_m_e.html#autotoc_md21',1,'']]],
+  ['versija_18',['versija',['../md__r_e_a_d_m_e.html',1,'Antra versija'],['../md__r_e_a_d_m_e.html#autotoc_md7',1,'v.pradine versija'],['../md__r_e_a_d_m_e.html#autotoc_md8',1,'v0.1 versija'],['../md__r_e_a_d_m_e.html#autotoc_md9',1,'v0.2 versija'],['../md__r_e_a_d_m_e.html#autotoc_md10',1,'v0.3 versija'],['../md__r_e_a_d_m_e.html#autotoc_md11',1,'v0.4 versija'],['../md__r_e_a_d_m_e.html#autotoc_md12',1,'v1.0 pradine versija'],['../md__r_e_a_d_m_e.html#autotoc_md13',1,'v1.0 versija'],['../md__r_e_a_d_m_e.html#autotoc_md14',1,'v1.1 versija'],['../md__r_e_a_d_m_e.html#autotoc_md15',1,'v1.2 versija'],['../md__r_e_a_d_m_e.html#autotoc_md16',1,'v1.5 versija']]],
+  ['versija_20nauja_19',['V1.1 versijos testavimai ir palyginimas su V1.0 versija (Nauja)',['../md__r_e_a_d_m_e.html#autotoc_md20',1,'']]],
+  ['versijos_20testavimai_20ir_20palyginimas_20su_20v1_200_20versija_20nauja_20',['V1.1 versijos testavimai ir palyginimas su V1.0 versija (Nauja)',['../md__r_e_a_d_m_e.html#autotoc_md20',1,'']]],
+  ['versijos_20testavimai_20sena_21',['V1.0 versijos testavimai (Sena)',['../md__r_e_a_d_m_e.html#autotoc_md22',1,'']]],
+  ['vidurkiai_20sek_20_3a_22',['Vidurkiai sek :',['../md__r_e_a_d_m_e.html#autotoc_md28',1,'Vidurkiai (sek.):'],['../md__r_e_a_d_m_e.html#autotoc_md33',1,'Vidurkiai (sek.):'],['../md__r_e_a_d_m_e.html#autotoc_md38',1,'Vidurkiai (sek.):'],['../md__r_e_a_d_m_e.html#autotoc_md43',1,'Vidurkiai (sek.):'],['../md__r_e_a_d_m_e.html#autotoc_md48',1,'Vidurkiai (sek.):']]],
+  ['vidutinis_203_20testu_20laikas_20sek_20programoje_20naudojamas_20konteineris_20vektorius_20paleidziama_203_20strategija_23',['Pastaba: Kiekvienas greitis - vidutinis 3 testu laikas (sek.). Programoje naudojamas konteineris - vektorius. Paleidziama 3 strategija.',['../md__r_e_a_d_m_e.html#autotoc_md21',1,'']]]
+];

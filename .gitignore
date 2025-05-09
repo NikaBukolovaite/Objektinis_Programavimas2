@@ -26,3 +26,7 @@ echo "rezultatai.txt" >> .gitignore
 !Vector/**
 !Nuotraukos/
 !Nuotraukos/**
+!UnitTestai/
+!UnitTestai/**
+!Dokumentacija/
+!Dokumentacija/**

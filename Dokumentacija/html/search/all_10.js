@@ -1,0 +1,9 @@
+var searchData=
+[
+  ['naudojamas_20konteineris_20vektorius_20paleidziama_203_20strategija_0',['Pastaba: Kiekvienas greitis - vidutinis 3 testu laikas (sek.). Programoje naudojamas konteineris - vektorius. Paleidziama 3 strategija.',['../md__r_e_a_d_m_e.html#autotoc_md21',1,'']]],
+  ['naudojimosi_20instrukcijos_1',['📃 Programos naudojimosi instrukcijos',['../md__r_e_a_d_m_e.html#autotoc_md3',1,'']]],
+  ['nauja_2',['V1.1 versijos testavimai ir palyginimas su V1.0 versija (Nauja)',['../md__r_e_a_d_m_e.html#autotoc_md20',1,'']]],
+  ['nuo_20strategiju_20rezultatai_3',['Programos rusiavimo i kietekus ir vargsiukus greitis priklausomai nuo strategiju rezultatai',['../md__r_e_a_d_m_e.html#autotoc_md49',1,'']]],
+  ['nuotraukos_4',['Nuotraukos',['../md__r_e_a_d_m_e.html#autotoc_md52',1,'Nuotraukos'],['../md__r_e_a_d_m_e.html#autotoc_md57',1,'Nuotraukos'],['../md__r_e_a_d_m_e.html#autotoc_md62',1,'Nuotraukos'],['../md__r_e_a_d_m_e.html#autotoc_md67',1,'Nuotraukos'],['../md__r_e_a_d_m_e.html#autotoc_md72',1,'Nuotraukos'],['../md__r_e_a_d_m_e.html#autotoc_md78',1,'Nuotraukos'],['../md__r_e_a_d_m_e.html#autotoc_md83',1,'Nuotraukos'],['../md__r_e_a_d_m_e.html#autotoc_md88',1,'Nuotraukos'],['../md__r_e_a_d_m_e.html#autotoc_md93',1,'Nuotraukos'],['../md__r_e_a_d_m_e.html#autotoc_md98',1,'Nuotraukos'],['../md__r_e_a_d_m_e.html#autotoc_md104',1,'Nuotraukos'],['../md__r_e_a_d_m_e.html#autotoc_md109',1,'Nuotraukos'],['../md__r_e_a_d_m_e.html#autotoc_md114',1,'Nuotraukos'],['../md__r_e_a_d_m_e.html#autotoc_md119',1,'Nuotraukos'],['../md__r_e_a_d_m_e.html#autotoc_md124',1,'Nuotraukos']]],
+  ['nuskaitymas_20sek_20_3a_5',['Nuskaitymas sek :',['../md__r_e_a_d_m_e.html#autotoc_md25',1,'Nuskaitymas (sek.):'],['../md__r_e_a_d_m_e.html#autotoc_md30',1,'Nuskaitymas (sek.):'],['../md__r_e_a_d_m_e.html#autotoc_md35',1,'Nuskaitymas (sek.):'],['../md__r_e_a_d_m_e.html#autotoc_md40',1,'Nuskaitymas (sek.):'],['../md__r_e_a_d_m_e.html#autotoc_md45',1,'Nuskaitymas (sek.):']]]
+];
