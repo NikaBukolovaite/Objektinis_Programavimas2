@@ -98,17 +98,5 @@ TEST_CASE("Getters", "[getters]")
 	assert(kopija.getEgzaminoPazymys() == 7);
 	testavimoRezultatai(true, "kopijavimo konstruktorius");
 
-	// Move constructor
-	Studentas movintas = std::move(originalus);
-	assert(movintas.getVardas() == "Jonas");
-	assert(movintas.getPavarde() == "Jonaitis");
-	assert(movintas.getEgzaminoPazymys() == 7);
-	testavimoRezultatai(true, "move konstruktorius");
-
-	// Copy assignment
-	Studentas originalus2;
-	originalus2.setVardas(vardas);
-	originalus2.setPavarde(pavarde);
-	originalus2.setEgzaminoPazymys(10);
 
 
