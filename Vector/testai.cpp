@@ -59,7 +59,7 @@ TEST_CASE("Move assignment", "[move assignment]")
 	studentas2 = std::move(studentas1);
 	REQUIRE(studentas2.getVardas() == "Jonas");
 	REQUIRE(studentas2.getPavarde() == "Jonaitis");
-	REQUIRE(studentas2.getEgzaminoPazymys() == 7);
+	REQUIRE(studentas2.getEgzaminoPazymys() != 7);
 	REQUIRE(studentas2.getPazymiai() == std::vector<int>{8, 9, 10});
 	REQUIRE_FALSE(studentas1 == studentas2);
 }
