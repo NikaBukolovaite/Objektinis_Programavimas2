@@ -25,8 +25,13 @@ public:
 		  pazymiai_{pazymiai},
 		  egzamino_pazymys_{egzamino_pazymys} {}
 
+	void clear()
+	{
+		pazymiai_.clear();
+		egzamino_pazymys_ = 0;
+	}
 	// Destruktorius
-	~Studentas() = default;
+	~Studentas() { clear(); }
 
 	// Copy konstruktorius
 	Studentas(const Studentas &studentas)
@@ -99,6 +104,28 @@ public:
 
 	bool vardoPaieska() const { return vardas_.find("Vardas") == 0; }
 	bool pavardesPaieska() const { return pavarde_.find("Pavarde") == 0; }
+
+	bool operator==(const Studentas &s) const
+	{
+		if (vardas_ == s.vardas_ && pavarde_ == s.pavarde_ && pazymiai_ == s.pazymiai_ &&
+			egzamino_pazymys_ == s.egzamino_pazymys_ && galutinis_pazymys_vid_ == s.galutinis_pazymys_vid_ && galutinis_pazymys_med_ == s.galutinis_pazymys_med_)
+		{
+			return true;
+		}
+		else
+			return false;
+	}
+
+	bool operator!=(const Studentas &s) const
+	{
+		if (vardas_ != s.vardas_ || pavarde_ != s.pavarde_ || pazymiai_ != s.pazymiai_ ||
+			egzamino_pazymys_ != s.egzamino_pazymys_ || galutinis_pazymys_vid_ != s.galutinis_pazymys_vid_ || galutinis_pazymys_med_ != s.galutinis_pazymys_med_)
+		{
+			return true;
+		}
+		else
+			return false;
+	}
 };
 
 #endif
