@@ -1,27 +1,78 @@
+#define CATCH_CONFIG_MAIN
+
+#include "catch.hpp"
+
 #include "studentas.h"
 #include "../santrauka.h"
 
-void testavimoRezultatai(bool salyga, const std::string &testas)
+TEST_CASE("Konstruktorius", "[constructor]")
 {
-	if (salyga)
-		cout << testas << " praejo.\n";
-	else
-		cout << testas << " nepraejo.\n";
-}
-
-void testas()
-{
-	// Default constructor
 	Studentas studentas;
 	studentas.galutinis_pazymys_vid();
 	studentas.galutinis_pazymys_med();
-	assert(studentas.getVardas() == "Vardenis");
-	assert(studentas.getPavarde() == "Pavardenis");
-	assert(studentas.getEgzaminoPazymys() == 0);
-	assert(studentas.getGalutinisPazymysVid() == 0.0);
-	assert(studentas.getGalutinisPazymysMed() == 0.0);
-	testavimoRezultatai(true, "default konstruktorius");
+	REQUIRE(studentas == Studentas("Vardenis", "Pavardenis", {}, 0));
+}
 
+TEST_CASE("Destruktorius", "[destructor]")
+{
+	Studentas *studentas = new Studentas("Vardenis", "Pavardenis", {1, 2, 3}, 8);
+	studentas->~Studentas();
+	REQUIRE(studentas->getEgzaminoPazymys() == 0);
+	REQUIRE(studentas->getPazymiai().empty());
+	operator delete(studentas);
+}
+
+TEST_CASE("Copy constructor", "[copy constructor]")
+{
+	Studentas studentas1("Jonas", "Jonaitis", {8, 9, 10}, 7);
+	Studentas studentas2(studentas1);
+	REQUIRE(studentas2.getVardas() == "Jonas");
+	REQUIRE(studentas2.getPavarde() == "Jonaitis");
+	REQUIRE(studentas2.getEgzaminoPazymys() == 7);
+	REQUIRE(studentas2.getPazymiai() == std::vector<int>{8, 9, 10});
+}
+
+TEST_CASE("Copy assignment", "[copy assignment]")
+{
+	Studentas studentas1("Jonas", "Jonaitis", {8, 9, 10}, 7), studentas2;
+	studentas2 = studentas1;
+	REQUIRE(studentas2.getVardas() == "Jonas");
+	REQUIRE(studentas2.getPavarde() == "Jonaitis");
+	REQUIRE(studentas2.getEgzaminoPazymys() == 7);
+	REQUIRE(studentas2.getPazymiai() == std::vector<int>{8, 9, 10});
+}
+
+TEST_CASE("Move constructor", "[move constructor]")
+{
+	Studentas studentas1("Jonas", "Jonaitis", {8, 9, 10}, 7);
+	Studentas studentas2(std::move(studentas1));
+	REQUIRE(studentas2.getVardas() == "Jonas");
+	REQUIRE(studentas2.getPavarde() == "Jonaitis");
+	REQUIRE(studentas2.getEgzaminoPazymys() == 7);
+	REQUIRE(studentas2.getPazymiai() == std::vector<int>{8, 9, 10});
+	REQUIRE_FALSE(studentas1 == studentas2);
+}
+
+TEST_CASE("Move assignment", "[move assignment]")
+{
+	Studentas studentas1("Jonas", "Jonaitis", {8, 9, 10}, 7), studentas2;
+	studentas2 = std::move(studentas1);
+	REQUIRE(studentas2.getVardas() == "Jonas");
+	REQUIRE(studentas2.getPavarde() == "Jonaitis");
+	REQUIRE(studentas2.getEgzaminoPazymys() == 7);
+	REQUIRE(studentas2.getPazymiai() == std::vector<int>{8, 9, 10});
+	REQUIRE_FALSE(studentas1 == studentas2);
+}
+
+TEST_CASE("Getters", "[getters]")
+{
+	Studentas s1("Jonas", "Jonaitis", {8, 9, 10}, 7);
+	REQUIRE(s1.getVardas() == "Jonas");
+	REQUIRE(s1.getPavarde() == "Jonaitis");
+	REQUIRE_FALSE(s1.getPazymiai().empty());
+}
+
+/*
 	// Set/get
 	string vardas = "Jonas";
 	string pavarde = "Jonaitis";
@@ -88,11 +139,4 @@ void testas()
 	testavimoRezultatai(true, "IO operatoriai (>> ir <<)");
 
 	cout << "\nVisi testai atlikti sekmingai.\n";
-}
-
-int main()
-{
-	testas();
-	// Zmogus z; // Zmogus yra abstrakti klase, negalima sukurti jos objekto
-	return 0;
-}
+}*/

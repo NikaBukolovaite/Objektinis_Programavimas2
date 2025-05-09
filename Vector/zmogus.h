@@ -19,7 +19,10 @@ public:
 	virtual void setPavarde(const std::string &pavarde) = 0;
 	virtual std::string getPavarde() const = 0;
 
-	virtual ~Zmogus() = default;
+	virtual ~Zmogus()
+	{
+		vardas_ = "";
+		pavarde_ = "";
+	}
 };
-
 #endif
