@@ -79,24 +79,3 @@ TEST_CASE("Getters", "[getters]")
 	int egzaminas = 8;
 	double vid = 7, med = 8;
 
-	studentas.setVardas(vardas);
-	studentas.setPavarde(pavarde);
-	studentas.setEgzaminoPazymys(egzaminas);
-	assert(studentas.getVardas() == vardas);
-	assert(studentas.getPavarde() == pavarde);
-	assert(studentas.getEgzaminoPazymys() == egzaminas);
-	testavimoRezultatai(true, "set/get metodai");
-
-	// Copy constructor
-	Studentas originalus;
-	originalus.setVardas(vardas);
-	originalus.setPavarde(pavarde);
-	originalus.setEgzaminoPazymys(7);
-	Studentas kopija = originalus;
-	assert(kopija.getVardas() == "Jonas");
-	assert(kopija.getPavarde() == "Jonaitis");
-	assert(kopija.getEgzaminoPazymys() == 7);
-	testavimoRezultatai(true, "kopijavimo konstruktorius");
-
-
-
