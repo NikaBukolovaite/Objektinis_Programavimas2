@@ -125,18 +125,4 @@ TEST_CASE("Getters", "[getters]")
 	assert(movintas2.getEgzaminoPazymys() == 10);
 	testavimoRezultatai(true, "move assignmentas");
 
-	// IO test
-	stringstream in("Tomas Tomaitis 10 9 8 7\n");
-	Studentas ioStudent;
-	in >> ioStudent;
-	assert(ioStudent.getVardas() == "Tomas");
-	assert(ioStudent.getPavarde() == "Tomaitis");
-	assert(ioStudent.getEgzaminoPazymys() == 7);
 
-	stringstream out;
-	out << ioStudent;
-	assert(out.str().find("Tomas") != string::npos);
-	testavimoRezultatai(true, "IO operatoriai (>> ir <<)");
-
-	cout << "\nVisi testai atlikti sekmingai.\n";
-}*/
