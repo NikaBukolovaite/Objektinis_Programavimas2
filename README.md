@@ -109,6 +109,12 @@ Igyvendintas ,,Rule of Five" ir ivesties/isvesties operatoriai. Padaryti siu met
 Sukurta abstrakti klase "Zmogus"ir dabar klase "Studentas" yra isvestine klase is "Zmogus". Kad patikrinti abstrakciaja klase faile testai.cpp daromas papildomas testavimas.
 ![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas2/blob/a9b2ad68fe4f7cb63bb6e90d131ae9c11f2281db/Nuotraukos/Testai/Screenshot%202025-04-25%20013829.png)
 
+# v2.0 versija
+
+Padaryta dokumentacija su Doxygen ir realizuoti Unit testai naudojant "Google test".
+Visi testai praejo sekmingai.
+![imagine alt]()
+
 # Rule of Five realizacija
 
 | Metodas                                  | Paskirtis                         |
