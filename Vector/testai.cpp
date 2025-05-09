@@ -71,11 +71,3 @@ TEST_CASE("Getters", "[getters]")
 	REQUIRE(s1.getPavarde() == "Jonaitis");
 	REQUIRE_FALSE(s1.getPazymiai().empty());
 }
-
-/*
-	// Set/get
-	string vardas = "Jonas";
-	string pavarde = "Jonaitis";
-	int egzaminas = 8;
-	double vid = 7, med = 8;
-
