@@ -111,7 +111,7 @@ Sukurta abstrakti klase "Zmogus"ir dabar klase "Studentas" yra isvestine klase i
 
 # v2.0 versija
 
-Padaryta dokumentacija su Doxygen ir realizuoti Unit testai naudojant "Google test".
+Padaryta dokumentacija su Doxygen (html ir latex.pdf) ir realizuoti Unit testai naudojant "Google test".
 Visi testai praejo sekmingai.
 ![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas2/blob/430e4f3d45d5afef750e2593f5c82c40b9666eb7/Nuotraukos/Testai/Screenshot%202025-05-09%20212011.png)
 
